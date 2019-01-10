@@ -14,7 +14,7 @@
 
 body
 {
-  background-color: #ff9900;
+  background-color: #F6A07C;
   margin: 0;
   padding: 0;
 }
@@ -27,8 +27,8 @@ button
 #sprite
 {
   position: absolute;
-  top: 120px;
-  left: 180px;
+  top: 150px;
+  left: 170px;
 
 }
 
