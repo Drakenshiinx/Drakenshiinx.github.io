@@ -19,22 +19,14 @@ body
   padding: 0;
 }
 
-button
-{
-  margin-left: 50px;  
-}
-
 #sprite
 {
   position: absolute;
   top: 150px;
   left: 170px;
-
 }
 
-}
-
-#bottom-footer 
+#bottom-footer
 {
  background-color: #C8B037;
 position: absolute;
