@@ -22,14 +22,13 @@ body
 #sprite
 {
   position: absolute;
-  top: 150px;
-  left: 170px;
+  top: 170px;
+  left: 175px;
 }
 
 #bottom-footer
 {
  background-color: #C8B037;
-position: absolute;
 left: 0;
 bottom: 0;
 height: 100px;
