@@ -1,0 +1,50 @@
+#header 
+{
+  background-color: #45BF6E;
+  padding: 15px;
+  color: black;
+  font-size: 30px;
+}
+
+#stage
+{
+  position: relative;
+  display: block;
+  width: 400px;
+  height: 300px;
+  border: 1px dashed black;
+}
+
+body
+{
+  background-color: #ff9900;
+  margin: 0;
+  padding: 0;
+}
+
+button
+{
+  margin-left: 50px;  
+}
+
+#square
+{
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+
+#bottom-footer 
+{
+  background-color: #C8B037;
+position: absolute;
+left: 0;
+bottom: 0;
+height: 100px;
+width: 100%;
+text-align: center;
+}
