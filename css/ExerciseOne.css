@@ -29,6 +29,7 @@ body
 #bottom-footer
 {
  background-color: #C8B037;
+position: absolute;
 left: 0;
 bottom: 0;
 height: 100px;
