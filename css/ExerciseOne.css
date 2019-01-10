@@ -6,7 +6,7 @@
   font-size: 30px;
 }
 
-#stage
+#map
 {
   position: relative;
 
@@ -24,18 +24,13 @@ button
   margin-left: 50px;  
 }
 
-#square
+#sprite
 {
   position: absolute;
-  top: 100px;
-  left: 200px;
+  top: 120px;
+  left: 180px;
 
 }
-#img
-{
-  position: absolute;
-  top: 100px;
-  left: 200px;
 
 }
 
