@@ -40,22 +40,26 @@ font-family: Arial, Helvetica, sans-serif;
 font-weight: bold;
 }
 
-.button
-{	height: 20px;
-	width: 100px;
-		margin: -20px 50px;
-	text-align:center;
-	display: block;
+.btn-group .button {
+  background-color: #4CAF50; /* Green */
+  border: 1px solid green;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  width: 150px;
+  display: block;
 }
-.btn1
-{
 
+.btn-group .button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
 }
 
-.btn2
-{
-	top: 400px;
-	left: 500px;
+.btn-group .button:hover {
+  background-color: #3e8e41;
 }
 
 .column {
