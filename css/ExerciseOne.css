@@ -64,6 +64,11 @@ font-weight: bold;
   display: table;
   clear: both;
 }
+.p
+{
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+}
 * {
 	box-sizing: border-box;
 }
