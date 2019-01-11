@@ -30,8 +30,7 @@ body
 #bottom-footer
 {
  background-color: #C8B037;
-left: 0;
-bottom: 0;
+position: absolute;
 height: 50px;
 width: 100%;
 text-align: center;
