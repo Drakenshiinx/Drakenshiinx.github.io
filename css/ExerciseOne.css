@@ -16,8 +16,8 @@ font-weight: bold;
 body
 {
   background-color: #F6A07C;
-  margin: auto;
-  padding: auto;
+  margin: 0;
+  padding: 0;
 }
 
 #sprite
@@ -30,8 +30,9 @@ body
 #bottom-footer
 {
  background-color: #C8B037;
-
-
+position: absolute;
+left: 0;
+bottom: 0;
 height: 50px;
 width: 100%;
 text-align: center;
