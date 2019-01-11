@@ -46,6 +46,8 @@ font-weight: bold;
   display: inline-block;
   cursor: pointer;
   display: block;
+  height: auto;
+  margin: auto;
 }
 
 .column {
