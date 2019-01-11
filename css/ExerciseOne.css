@@ -13,13 +13,6 @@ font-weight: bold;
   position: relative;
 }
 
-body
-{
-  background-color: #F6A07C;
-  margin: 0;
-  padding: 0;
-}
-
 #sprite
 {
   position: absolute;
