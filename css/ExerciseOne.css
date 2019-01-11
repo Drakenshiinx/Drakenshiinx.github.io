@@ -41,22 +41,11 @@ font-weight: bold;
 }
 
 .btn-group .button {
-  background-color: #4CAF50; /* Green */
-  border: 1px solid green;
-  color: white;
-  margin-bottom: 10px;
-  padding: 15px 32px;
+  margin-bottom: 5px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
-  font-size: 16px;
   cursor: pointer;
-  width: 150px;
   display: block;
-}
-
-.btn-group .button:hover {
-  background-color: #3e8e41;
 }
 
 .column {
