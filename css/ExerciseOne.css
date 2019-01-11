@@ -40,25 +40,21 @@ font-family: Arial, Helvetica, sans-serif;
 font-weight: bold;
 }
 
-.buttons
-{
+.button
+{	height: 20px;
+	width: 100px;
+		margin: -20px 50px;
+	text-align:center;
+	display: inline-block;
 }
 .btn1
 {
-	height: 20px;
-	width: 100px;
-	margin: -20px 50px;
-	display: block;
 	top: 500px;
 	left: 500px;
 }
 
 .btn2
 {
-	height: 20px;
-	width: 100px;
-	margin: -20px 50px;
-	display: block;
 	top: 400px;
 	left: 500px;
 }
