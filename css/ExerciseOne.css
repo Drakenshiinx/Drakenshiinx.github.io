@@ -1,7 +1,7 @@
 #header
 {
   background-color: #45BF6E;
-
+  padding: 15px;
   color: black;
   font-size: 30px;
 font-family: Arial, Helvetica, sans-serif;
@@ -16,8 +16,8 @@ font-weight: bold;
 body
 {
   background-color: #F6A07C;
-  margin: 0;
-  padding: 0;
+  margin: auto;
+  padding: auto;
 }
 
 #sprite
@@ -44,6 +44,7 @@ font-weight: bold;
   margin-bottom: 5px;
   text-align: center;
   display: inline-block;
+  cursor: pointer;
   display: block;
   height: auto;
   margin: auto;
