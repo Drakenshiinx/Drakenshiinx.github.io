@@ -11,8 +11,6 @@ font-weight: bold;
 #map
 {
   position: relative;
-  margin: auto;
-  height: auto;
 }
 
 body
@@ -42,7 +40,8 @@ font-family: Arial, Helvetica, sans-serif;
 font-weight: bold;
 }
 
-.btn-group .button {
+.button-group .button 
+{
   margin-bottom: 5px;
   text-align: center;
   display: inline-block;
