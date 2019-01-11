@@ -11,6 +11,15 @@ font-weight: bold;
 #map
 {
   position: relative;
+  margin: auto;
+  height: auto;
+}
+
+body
+{
+  background-color: #F6A07C;
+  margin: 0;
+  padding: 0;
 }
 
 #sprite
