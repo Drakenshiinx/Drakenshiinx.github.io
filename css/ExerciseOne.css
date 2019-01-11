@@ -45,7 +45,7 @@ font-weight: bold;
 	width: 100px;
 		margin: -20px 50px;
 	text-align:center;
-	display: inline-block;
+	display: block;
 }
 .btn1
 {
