@@ -61,6 +61,11 @@ height: 500px;
 
 }
 
+.row:after 
+{
+display: table;
+clear: both;
+}
 
 p
 {
