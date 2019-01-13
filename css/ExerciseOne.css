@@ -11,8 +11,8 @@ font-weight: bold;
 #map
 {
   position: relative;
-  top: -5px;
-  right: 5px;
+  top: -10px;
+  right: 0px;
 }
 
 body
