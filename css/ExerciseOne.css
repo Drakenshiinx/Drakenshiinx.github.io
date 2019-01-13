@@ -1,6 +1,6 @@
 #header
 {
-background-color: #45BF6E;
+background-color: #82bc88;
 padding: 14px;
 color: black;
 font-size: 28px;
@@ -17,7 +17,7 @@ right: 10px;
 
 body
 {
-background-color: #F6A07C;
+background-color: #ffd1ce;
 margin: 0;
 padding: 0;
 }
@@ -31,7 +31,7 @@ left: 176px;
 
 #bottom-footer
 {
-background-color: #C8B037;
+background-color: #ccc088;
 position: absolute;
 left: 0;
 bottom: 0;
