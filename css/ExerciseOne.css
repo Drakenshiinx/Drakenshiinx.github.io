@@ -1,6 +1,6 @@
 #header
 {
-  background-color: #82bc88;
+  background-color: #45BF6E;
   padding: 14px;
   color: black;
   font-size: 28px;
@@ -17,7 +17,7 @@ font-weight: bold;
 
 body
 {
-  background-color: #ffd1ce;
+  background-color: #F6A07C;
   margin: 0;
   padding: 0;
 }
@@ -31,7 +31,7 @@ body
 
 #bottom-footer
 {
- background-color: #ccc088;
+ background-color: #C8B037;
 position: absolute;
 left: 0;
 bottom: 0;
@@ -56,7 +56,7 @@ font-weight: bold;
 .column {
   float: left;
   width: 50%;
-  padding: 5px;
+  padding: 10px;
   height: 500px;
 
 }
