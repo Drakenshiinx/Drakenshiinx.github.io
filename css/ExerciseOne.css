@@ -56,7 +56,7 @@ font-weight: bold;
 .column {
   float: left;
   width: 50%;
-
+  padding: 5px;
   height: 500px;
 
 }
