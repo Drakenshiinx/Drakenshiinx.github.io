@@ -61,11 +61,7 @@ height: 500px;
 
 }
 
-.row:after 
-{
 
-clear: both;
-}
 p
 {
 text-align: center;
