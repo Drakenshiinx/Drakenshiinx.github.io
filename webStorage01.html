@@ -39,13 +39,17 @@ function saveInfo(){
 
 function display(){
 	var rightBox=document.getElementById("useroutput");
+  
 	var theCity=localStorage.getItem("cityName");
+  var donutType=localStorage.getItem("donutType");
+  var theToppings=localStorage.getItem("theToppings");
+  
 	var theComments=localStorage.getItem("userComments");
 	
 	if(theComments==undefined){
 		document.getElementById("useroutput").innerHTML="";
 	}
-	else{ document.getElementById("useroutput").innerHTML="OUTPUT  <hr /><br /><br />The City: "+theCity+"<br /><br />  The Weather: "+theComments;
+	else{ document.getElementById("useroutput").innerHTML="OUTPUT  <hr /><br /><br />Quantity: "+theCity+"<br /><br /> Donut Type: "+donutType+"<br /><br /> Extra Toppings: "+theToppings+"<br /><br /> The Weather: "+theComments;
 	}
 	
 }
@@ -65,7 +69,11 @@ function display(){
     <br /><br />
     <form>
     
-    <div>City: <br /><input type="input" id="city" size="20"></div>
+    <div>Quantity: <br /><input type="input" id="city" size="20"></div>
+    <br />
+     <div>Donut Name: <br /><input type="input" id="city" size="20"></div>
+    <br />
+     <div>Extra Toppings: <br /><input type="input" id="city" size="20"></div>
     <br />
     <div>Weather:<br /> <textarea id="comments" rows="10"></textarea></div>
     <br />
