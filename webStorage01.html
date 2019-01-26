@@ -28,7 +28,7 @@ function init(){
 function saveInfo(){
 	var quantity=document.getElementById("quantity").value;
   //number of donuts
-  var donutType=document.getElementById("donutType").value;
+  var donuts=document.getElementById("donutTypes").value;
   //type of donut the user wants
   var donutFrosting=document.getElementById("donutFrosting").value;
   //allows user to enter type of frosting
@@ -40,7 +40,7 @@ function saveInfo(){
 	
 	localStorage.setItem("numDonuts",quantity);
   //number of donuts
-  localStorage.setItem("donutType",donutType);
+  localStorage.setItem("donutTypes",donuts);
   //type of donut the user wants
   localStorage.setItem("frosting",donutFrosting);
   //frosting
@@ -59,7 +59,7 @@ function display(){
   
 	var theQuantity=localStorage.getItem("numDonuts");
   //quantity of donuts
-  var theDonut=localStorage.getItem("donutType");
+  var theDonut=localStorage.getItem("donutTypes");
   //type of donut
     var theFrosting=localStorage.getItem("frosting");
   //type of frosting
