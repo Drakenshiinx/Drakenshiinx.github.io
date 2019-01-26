@@ -26,25 +26,25 @@ function init(){
 }
 
 function saveInfo(){
-	var quantity=document.getElementById("quantity").value;
+  var quantity=document.getElementById("quantity").value;
   //number of donuts
-  var donuts=document.getElementById("donutTypes").value;
+  var donutInterior=document.getElementById("donutInterior").value;
   //type of donut the user wants
   var donutFrosting=document.getElementById("donutFrosting").value;
   //allows user to enter type of frosting
   var toppings=document.getElementById("toppings").value;
   //optional toppings
   
-	var comments=document.getElementById("comments").value;
+  var comments=document.getElementById("comments").value;
   //remove this
 	
 	localStorage.setItem("numDonuts",quantity);
   //number of donuts
-  localStorage.setItem("donutTypes",donuts);
+  localStorage.setItem("donutTypes",donutInterior);
   //type of donut the user wants
   localStorage.setItem("frosting",donutFrosting);
   //frosting
-  localStorage.setItem("toppings",toppings);
+  localStorage.setItem("optionalToppings",toppings);
   //optional toppings
 
 	localStorage.setItem("userComments",comments);
@@ -63,7 +63,7 @@ function display(){
   //type of donut
     var theFrosting=localStorage.getItem("frosting");
   //type of frosting
-  var theToppings=localStorage.getItem("toppings");
+  var theToppings=localStorage.getItem("optionalToppings");
   //optional toppings
 
 	var theComments=localStorage.getItem("userComments");
