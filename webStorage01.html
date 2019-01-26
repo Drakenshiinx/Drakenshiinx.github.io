@@ -27,9 +27,13 @@ function init(){
 
 function saveInfo(){
 	var city=document.getElementById("city").value;
+  var donutType=document.getElementById("donutType").value;
+  var toppings=document.getElementById("toppings").value;
 	var comments=document.getElementById("comments").value;
 	
 	localStorage.setItem("cityName",city);
+  localStorage.setItem("donutType",donutType);
+  localStorage.setItem("toppings",toppings);
 	localStorage.setItem("userComments",comments);
 	
 	
@@ -41,19 +45,18 @@ function display(){
 	var rightBox=document.getElementById("useroutput");
   
 	var theCity=localStorage.getItem("cityName");
-  var donutType=localStorage.getItem("donutType");
-  var theToppings=localStorage.getItem("theToppings");
+  var theDonut=localStorage.getItem("donutType");
+  var theToppings=localStorage.getItem("toppings");
   
 	var theComments=localStorage.getItem("userComments");
 	
 	if(theComments==undefined){
 		document.getElementById("useroutput").innerHTML="";
 	}
-	else{ document.getElementById("useroutput").innerHTML="OUTPUT  <hr /><br /><br />Quantity: "+theCity+"<br /><br /> Donut Type: "+donutType+"<br /><br /> Extra Toppings: "+theToppings+"<br /><br /> The Weather: "+theComments;
+	else{ document.getElementById("useroutput").innerHTML="OUTPUT  <hr /><br /><br />Quantity: "+theCity+"<br /><br /> Donut Type: "+theDonut+"<br /><br /> Extra Toppings: "+theToppings+"<br /><br /> The Weather: "+theComments;
 	}
 	
 }
-
 </script>
 
 
@@ -71,9 +74,9 @@ function display(){
     
     <div>Quantity: <br /><input type="input" id="city" size="20"></div>
     <br />
-     <div>Donut Name: <br /><input type="input" id="city" size="20"></div>
+     <div>Donut Name: <br /><input type="input" id="donutType" size="20"></div>
     <br />
-     <div>Extra Toppings: <br /><input type="input" id="city" size="20"></div>
+     <div>Extra Toppings: <br /><input type="input" id="toppings" size="20"></div>
     <br />
     <div>Weather:<br /> <textarea id="comments" rows="10"></textarea></div>
     <br />
