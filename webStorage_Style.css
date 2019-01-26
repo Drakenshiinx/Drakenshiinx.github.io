@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /* CSS Document */
-
+body
+{
+  background-color:#7c4c24;
+}
 #main{
 width:750px; height:500px;
 margin:0 auto;	
