@@ -26,14 +26,27 @@ function init(){
 }
 
 function saveInfo(){
-	var city=document.getElementById("city").value;
+	var quantity=document.getElementById("quantity").value;
+  //number of donuts
   var donutType=document.getElementById("donutType").value;
+  //type of donut the user wants
+  var donutFrosting=document.getElementById("donutFrosting").value;
+  //allows user to enter type of frosting
   var toppings=document.getElementById("toppings").value;
+  //optional toppings
+  
 	var comments=document.getElementById("comments").value;
+  //remove this
 	
-	localStorage.setItem("cityName",city);
+	localStorage.setItem("numDonuts",quantity);
+  //number of donuts
   localStorage.setItem("donutType",donutType);
+  //type of donut the user wants
+  localStorage.setItem("frosting",donutFrosting);
+  //frosting
   localStorage.setItem("toppings",toppings);
+  //optional toppings
+
 	localStorage.setItem("userComments",comments);
 	
 	
@@ -44,16 +57,21 @@ function saveInfo(){
 function display(){
 	var rightBox=document.getElementById("useroutput");
   
-	var theCity=localStorage.getItem("cityName");
+	var theQuantity=localStorage.getItem("numDonuts");
+  //quantity of donuts
   var theDonut=localStorage.getItem("donutType");
+  //type of donut
+    var theFrosting=localStorage.getItem("frosting");
+  //type of frosting
   var theToppings=localStorage.getItem("toppings");
-  
+  //optional toppings
+
 	var theComments=localStorage.getItem("userComments");
 	
 	if(theComments==undefined){
 		document.getElementById("useroutput").innerHTML="";
 	}
-	else{ document.getElementById("useroutput").innerHTML="OUTPUT  <hr /><br /><br />Quantity: "+theCity+"<br /><br /> Donut Type: "+theDonut+"<br /><br /> Extra Toppings: "+theToppings+"<br /><br /> The Weather: "+theComments;
+	else{ document.getElementById("useroutput").innerHTML="OUTPUT  <hr /><br /><br />Quantity: "+theQuantity+"<br /><br /> Donut Type: "+theDonut+"<br /><br />Frosting Type: "+theFrosting+" <br /><br /> Extra Toppings: "+theToppings+"<br /><br /> The Weather: "+theComments;
 	}
 	
 }
@@ -72,15 +90,26 @@ function display(){
     <br /><br />
     <form>
     
-    <div>Quantity: <br /><input type="input" id="city" size="20"></div>
+     <div>Type of Donut: <input list="donutType" name="types">
+  <datalist id="doughType">
+    <option value="cake">
+    <option value="yeast">
+    <option value="cream filled">
+    <option value="jelly">
+  </datalist>
+
+    </div>
+    <div>Quantity: <br /><input type="text" id="quantity" size="20"></div>
     <br />
-     <div>Donut Name: <br /><input type="input" id="donutType" size="20"></div>
+     <div>Donut Frosting: <br /><input type="text" id="donutFrosting" size="20"></div>
     <br />
-     <div>Extra Toppings: <br /><input type="input" id="toppings" size="20"></div>
+
+     <div>Extra Toppings: <br /><input type="text" id="toppings" size="20"></div>
     <br />
     <div>Weather:<br /> <textarea id="comments" rows="10"></textarea></div>
     <br />
-     <div><input type="button" id="button" value="Save"></div>
+     <div><input type="button" id="button" value="Save">
+     <input type="reset"></div>
     
     </form>
     </section>
@@ -98,3 +127,4 @@ function display(){
 
 </body>
 </html>
+
