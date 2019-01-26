@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form Example 1</title>
+
+<link rel="stylesheet" type="text/css" href="reset.css" />
+
+<style>
+
+fieldset{
+	background-color:rgb(255,246,205);	
+	border:1px solid rgb(233,69,0);
+	/*float:left; */
+	margin:10px 0px 100px 2.5%;
+	width:46%;
+	
+}
+
+legend{
+background-color:rgb(233,69,0);
+color:white;
+padding:3px 0px;
+text-indent:5px;
+width:100%;	
+}
+
+label{
+	clear:left;
+	display:block;
+	float:left;
+	font-size:0.9em;
+	margin: 7px 4% 7px  5px;
+	width:40%;
+}
+
+input{
+	display:block;
+	float:left;
+	font-size:0.9em;
+	margin:7px 0px;
+	width:50%;
+}
+
+input#state{
+	width:50px;	
+}
+
+select{
+display:block;
+float:left;
+font-size:0.9em;
+margin:7px 0px;	
+	
+}
+
+#correct{
+font-size:0.9em;
+background-color:rgb(233,69,0);
+width:48%;
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<form autocomplete="false">
+
+	<fieldset id="custInfo">
+    <legend>Customer Information</legend>
+    
+   <label for="custname"> Name:</label> 
+    <input name="custname" id="custname" placeholder="first and last name" type="text" />
+    
+    <label for="street">Street address:</label>
+    <input name="street" id="street" type="text" />
+    
+     <label for="city">City:</label>
+    <input name="city" id="city" value="Seattle" type="text" />
+      
+		<label for="state">State (abbr.):</label>
+    <input name="state" id="state"  value="WA" type="text" />
+    
+      <label for="zip"> Postal code</label>
+    <input name="zip" id="zip" placeholder="nnnn" type="text" />
+    
+      <label for="phone"> Phone number:</label> 
+    <input name="phone" id="phone" placeholder="nnnn-nnn-nnnn" type="phone" />
+    
+    <label for="email">E-mail:</label>
+    <input name="email" id="email" type="email" />
+    
+    <label for="ordertype">Order type</label>
+    <select name="ordertype" id="ordertype" size="1">
+    <option value="type1"> Carry out</option>
+    <option value="type2" selected="selected"> Delivery</option>
+       <option value="type3"> Dine in</option>
+       </select>
+    
+    </fieldset>
+    
+	<fieldset id="experience">
+        <legend>Share Your Experience</legend>
+        
+     <label for="visitdate">Date of visit:</label>
+    <input name="visitdate" id="visitdate"  placeholder="nn/nn/nn" type="text" />
+    
+    <label for="receipt">Reciept number:</label>
+    <input name="receipt" id="receipt" placeholder="re-nnnnnn" type="text" />
+    
+    <label id="correct">Was your order correct?</label>
+    <label for="yes">Yes</label>
+    <input type="radio" name="ordercorrect1" id="yes">
+    <label for="no">No</label>
+    <input type="radio" name="ordercorrect2" id="no">
+
+    
+    
+    
+    
+    
+    </fieldset>
+
+	
+
+</form>
+
+</body>
+</html>
