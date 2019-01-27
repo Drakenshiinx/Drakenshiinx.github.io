@@ -47,7 +47,7 @@ function saveInfo(){
   localStorage.setItem("optionalToppings",toppings);
   //optional toppings
 
-	localStorage.setItem("userComments",addlInstructions);
+	localStorage.setItem("instructions",addlInstructions);
 	
 	
 	display();
@@ -66,7 +66,7 @@ function display(){
   var theToppings=localStorage.getItem("optionalToppings");
   //optional toppings
 
-	var theAddlInstructions=localStorage.getItem("userComments");
+	var theAddlInstructions=localStorage.getItem("instructions");
 	
 	if(theAddlInstructions==undefined){
 		document.getElementById("useroutput").innerHTML="";
