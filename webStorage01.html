@@ -35,7 +35,7 @@ function saveInfo(){
   var toppings=document.getElementById("toppings").value;
   //optional toppings
   
-  var comments=document.getElementById("comments").value;
+  var addlInstructions=document.getElementById("addlInstructions").value;
   //remove this
 	
 	localStorage.setItem("numDonuts",quantity);
@@ -47,7 +47,7 @@ function saveInfo(){
   localStorage.setItem("optionalToppings",toppings);
   //optional toppings
 
-	localStorage.setItem("userComments",comments);
+	localStorage.setItem("additional",addlInstructions);
 	
 	
 	display();
@@ -66,12 +66,12 @@ function display(){
   var theToppings=localStorage.getItem("optionalToppings");
   //optional toppings
 
-	var theComments=localStorage.getItem("userComments");
+	var theAddlInstructions=localStorage.getItem("additional");
 	
 	if(theComments==undefined){
 		document.getElementById("useroutput").innerHTML="";
 	}
-	else{ document.getElementById("useroutput").innerHTML="OUTPUT  <hr /><br /><br />Quantity: "+theQuantity+"<br /><br /> Donut Type: "+theDonut+"<br /><br />Frosting Type: "+theFrosting+" <br /><br /> Extra Toppings: "+theToppings+"<br /><br /> The Weather: "+theComments;
+	else{ document.getElementById("useroutput").innerHTML="OUTPUT  <hr /><br /><br /> Donut Type: "+theDonut+"<br /><br /> Quantity: "+theQuantity+"<br /><br /> Frosting Type: "+theFrosting+" <br /><br /> Extra Toppings: "+theToppings+"<br /><br /> Additional Instructions: "+theAddlInstructions+";
 	}
 	
 }
@@ -86,7 +86,7 @@ function display(){
 <div id="main">
 	<section id="userinput">
 <div class="donut">
-<img src="images/Donut.png" alt="donut" style="float:right;width:80px;height:80px;">
+<img src="images/Donut.png" alt="donut" style="float:right;width:50px;height:50px;">
 </div>
     INPUT <br>
 	<hr />
@@ -110,7 +110,7 @@ function display(){
 
      <div>Extra Toppings: <br /><input type="text" id="toppings" size="20"></div>
     <br />
-    <div>Weather:<br /> <textarea id="comments" rows="10"></textarea></div>
+    <div>Additional Instructions:<br /> <textarea id="addlInstructions" rows="10"></textarea></div>
     <br />
      <div><input type="button" id="button" value="Save">
      <input type="reset"></div>
