@@ -35,7 +35,7 @@ function saveInfo(){
   var toppings=document.getElementById("toppings").value;
   //optional toppings
   
-  var comments=document.getElementById("comments").value;
+  var addlInstructions=document.getElementById("addlInstructions").value;
   //remove this
 	
 	localStorage.setItem("numDonuts",quantity);
@@ -47,7 +47,7 @@ function saveInfo(){
   localStorage.setItem("optionalToppings",toppings);
   //optional toppings
 
-	localStorage.setItem("userComments",comments);
+	localStorage.setItem("userComments",addlInstructions);
 	
 	
 	display();
