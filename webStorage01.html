@@ -35,7 +35,7 @@ function saveInfo(){
   var toppings=document.getElementById("toppings").value;
   //optional toppings
   
-  var addlInstructions=document.getElementById("addlInstructions").value;
+  var comments=document.getElementById("comments").value;
   //remove this
 	
 	localStorage.setItem("numDonuts",quantity);
@@ -47,7 +47,7 @@ function saveInfo(){
   localStorage.setItem("optionalToppings",toppings);
   //optional toppings
 
-	localStorage.setItem("additional",addlInstructions);
+	localStorage.setItem("userComments",comments);
 	
 	
 	display();
@@ -66,7 +66,7 @@ function display(){
   var theToppings=localStorage.getItem("optionalToppings");
   //optional toppings
 
-	var theAddlInstructions=localStorage.getItem("additional");
+	var theComments=localStorage.getItem("userComments");
 	
 	if(theComments==undefined){
 		document.getElementById("useroutput").innerHTML="";
@@ -110,7 +110,7 @@ function display(){
 
      <div>Extra Toppings: <br /><input type="text" id="toppings" size="20"></div>
     <br />
-    <div>Additional Instructions:<br /> <textarea id="addlInstructions" rows="10"></textarea></div>
+    <div>Additional Instructions:<br /> <textarea id="comments" rows="10"></textarea></div>
     <br />
      <div><input type="button" id="button" value="Save">
      <input type="reset"></div>
