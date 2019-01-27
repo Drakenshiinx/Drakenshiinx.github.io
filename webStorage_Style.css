@@ -26,3 +26,10 @@ margin:0 auto;
 	background-color:#ffbff3;
 	
 	}
+
+#donut
+{
+position: absolute;
+top: 164px;
+left: 176px;
+}
