@@ -92,7 +92,7 @@ function display(){
 	<br />
     <form>
     
-     <div>Type of Donut: <br/><input list="donutType" id="donutInterior">
+    <div>Type of Donut: <br/><input list="donutType" id="donutInterior">
   <datalist id="donutType">
     <option value="Cake">
     <option value="Yeast">
@@ -107,7 +107,14 @@ function display(){
     <br />
     <div>Donut Frosting: <br /><input type="text" id="donutFrosting" size="20"></div>
     <br />
-
+    <div>Extra Toppings: <br/><input list="donutToppings" id="toppings">
+  <datalist id="donutToppings">
+    <option value="Cinnamon Sugar">
+    <option value="Marshmallow">
+    <option value="Sprinkles">
+    <option value="Mini Chocolate Chips">
+	<option value="Crushed Oreo">
+  </datalist>
     <div>Extra Toppings: <br /><input type="text" id="toppings" size="20"></div>
     <br />
     <div>Additional Instructions:<br /> <textarea id="addlInstructions" rows="10"></textarea></div>
