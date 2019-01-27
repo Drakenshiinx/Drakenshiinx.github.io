@@ -66,12 +66,12 @@ function display(){
   var theToppings=localStorage.getItem("optionalToppings");
   //optional toppings
 
-	var theComments=localStorage.getItem("userComments");
+	var theAddlInstructions=localStorage.getItem("userComments");
 	
-	if(theComments==undefined){
+	if(theAddlInstructions==undefined){
 		document.getElementById("useroutput").innerHTML="";
 	}
-	else{ document.getElementById("useroutput").innerHTML="OUTPUT  <hr /><br /><br /> Donut Type: "+theDonut+"<br /><br />Quantity: "+theQuantity+"<br /><br /> Donut Frosting: "+theFrosting+" <br /><br /> Extra Toppings: "+theToppings+"<br /><br /> Additional Instructions: "+theComments;
+	else{ document.getElementById("useroutput").innerHTML="OUTPUT  <hr /><br /><br /> Donut Type: "+theDonut+"<br /><br />Quantity: "+theQuantity+"<br /><br /> Donut Frosting: "+theFrosting+" <br /><br /> Extra Toppings: "+theToppings+"<br /><br /> Additional Instructions: "+theAddlInstructions;
 	}
 	
 }
