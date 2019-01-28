@@ -17,17 +17,17 @@ function clickHandler(e) {
 	
     if (x < 0 || x > 255 || isNaN(x))
     {
-    	alert("You must enter a number from 1 to 255 in Red!");
+    	alert("You must enter a number from 0 to 255 in Red!");
 		//does a check for values not 0-255 and if its not a number for red
     }
 		else if (y < 0 || y > 255 || isNaN(y))
     {
-    	alert("You must enter a number from 1 to 255 in Green!");
+    	alert("You must enter a number from 0 to 255 in Green!");
 		//does a check for values not 0-255 and if its not a number for green
     }
         else if (z < 0 || z > 255 || isNaN(z))
     {
-    	alert("You must enter a number from 1 to 255 in Blue!");
+    	alert("You must enter a number from 0 to 255 in Blue!");
 		//does a check for values not 0-255 and if its not a number for blue
     }
 		else
