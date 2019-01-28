@@ -16,9 +16,16 @@ body {
 	padding: 10px 30px;
 }
 
-button {
-	margin-left: 10px;
-    position: center;
+div.b {
+ position: absolute;
+  left: 200px;
+  top: 150px;
+}
+
+div.c {
+ position: absolute;
+  left: 350px;
+  top: 150px;
 }
 
 input {
@@ -29,7 +36,9 @@ input {
 div.a
 {
   text-align: center;
+  text-shadow: 2px 2px #A8A8A8;
 }
+
 
 #colorBar {
 	width: 400px;
