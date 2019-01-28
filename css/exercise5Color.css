@@ -17,8 +17,9 @@ body {
 }
 
 button {
-	margin-left: 10px;
-    position: center;
+  position: relative;
+	margin-left: 130px;
+    
 }
 
 input {
