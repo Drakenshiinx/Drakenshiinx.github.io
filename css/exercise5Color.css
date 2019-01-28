@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Verdana, Arial, sans-serif;
+}
+
+#container {
+	margin: 25px auto;
+	background-color: OldLace ;
+	border: 1px solid Silver;
+	width: 440px;
+	height: 250px;
+	padding: 10px 30px;
+}
+
+button {
+	margin-left: 10px;
+    position: center;
+}
+
+input {
+	margin: 20px 0;
+	text-align: right;
+}
+
+#colorBar {
+	width: 400px;
+	height: 50px;
+	background-color: OldLace;
+	margin-top: 20px;
+	border: 1px solid LightGray;
+}
