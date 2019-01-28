@@ -16,16 +16,9 @@ body {
 	padding: 10px 20px;
 }
 
-div.b {
- position: absolute;
-  left: 225px;
-  top: 150px;
-}
-
-div.c {
- position: absolute;
-  left: 330px;
-  top: 150px;
+button {
+	margin-left: 10px;
+    position: center;
 }
 
 input {
