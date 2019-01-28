@@ -11,20 +11,20 @@ body {
 	margin: 25px auto;
 	background-color: OldLace ;
 	border: 1px solid Silver;
-	width: 440px;
+	width: 350px;
 	height: 250px;
-	padding: 10px 30px;
+	padding: 10px 20px;
 }
 
 div.b {
  position: absolute;
-  left: 200px;
+  left: 225px;
   top: 150px;
 }
 
 div.c {
  position: absolute;
-  left: 350px;
+  left: 330px;
   top: 150px;
 }
 
@@ -41,7 +41,8 @@ div.a
 
 
 #colorBar {
-	width: 400px;
+  position: center;
+	width: 345px;
 	height: 50px;
 	background-color: OldLace;
 	margin-top: 20px;
