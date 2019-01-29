@@ -32,7 +32,6 @@ function clickHandler(e) {
     }
 		else
     {
-    
 		return colorBar.style.backgroundColor = "rgb("+x+"," +y+ "," +z+")";
 		//this fills the color bar with the RGB values
 	}
