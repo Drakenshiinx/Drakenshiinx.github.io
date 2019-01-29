@@ -38,7 +38,7 @@ function saveInfo(){
   var addlInstructions=document.getElementById("addlInstructions").value;
   //remove this
 	
-	localStorage.setItem("numDonuts",quantity);
+  localStorage.setItem("numDonuts",quantity);
   //number of donuts
   localStorage.setItem("donutTypes",donutInterior);
   //type of donut the user wants
@@ -46,12 +46,9 @@ function saveInfo(){
   //frosting
   localStorage.setItem("optionalToppings",toppings);
   //optional toppings
-
-	localStorage.setItem("instructions",addlInstructions);
-	
-	
+  localStorage.setItem("instructions",addlInstructions);
+  //optional instructions the user can enter
 	display();
-	
 }
 
 function display(){
