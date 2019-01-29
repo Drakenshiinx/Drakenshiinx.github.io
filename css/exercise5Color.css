@@ -4,6 +4,7 @@
     padding: 0;
 }
 body {
+	background-color: #ffffcc;
     font-family: Verdana, Arial, sans-serif;
 }
 #container {
@@ -37,7 +38,7 @@ div.a
   position: center;
     width: 345px;
     height: 50px;
-    background-color: OldLace;
+    background-color: #ffcc99;
     margin-top: 8px;
     border: 1px solid LightGray;
 }
