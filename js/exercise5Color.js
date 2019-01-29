@@ -43,8 +43,9 @@ function clearColorHandler(e) {
 
 function clear() {
 	colorBar.style.backgroundColor = "#ffcc99";
+	//clears the color bar
 	document.getElementById('inputRed').value = '';
 	document.getElementById('inputGreen').value = '';
 	document.getElementById('inputBlue').value = '';
-	//clears the color bar
+	//clears the values in red, green and blue
 }
