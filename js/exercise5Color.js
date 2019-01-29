@@ -42,6 +42,6 @@ function clearColorHandler(e) {
 }
 
 function clear() {
-	colorBar.style.backgroundColor = "OldLace";
+	colorBar.style.backgroundColor = "#ffcc99";
 	//clears the color bar
 }
