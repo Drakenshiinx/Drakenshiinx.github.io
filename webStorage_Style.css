@@ -29,8 +29,7 @@ margin:0 auto;
 
 #donut
 {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-
+position: absolute;
+top: 190px;
+left: 190px;
 }
