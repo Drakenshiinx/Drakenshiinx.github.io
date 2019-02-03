@@ -5,7 +5,7 @@ function addGame()
 {
 gameList[x] = document.getElementById("nameOfGame").value;
 x++;
-document.getElementById("nameOfGame").value;
+document.getElementById("nameOfGame").value = "";
 }
 
 function displayGames()
