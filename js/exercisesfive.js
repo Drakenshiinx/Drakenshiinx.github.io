@@ -11,11 +11,11 @@ document.getElementById("nameOfGame").value = "";
 
 function displayGames()
 {
-var e ="<hr/>";
+  var e ="<hr/>";
 
-for (var z = 0; z < gameList.length; z++)
+   for (var z = 0; z < gameList.length; z++)
    {
-    e += "Element " + z + "= " + gamelist[z] + "<br/>";
+   e += "Element " + z + "= " + gameList[z] + "<br/>";
    }
-  document.getElementById("gameList").innerHTML = e;
+   document.getElementById("list").innerHTML = e;
 }
