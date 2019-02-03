@@ -11,12 +11,21 @@ document.getElementById("nameOfGame").value = "";
 
 function displayGames()
 {
-  var shuffledList = [];
-  while (gameList.length >0)
+    var shuffledList = [];
+  
+  	if (gameList.length < 9)
+	{
+		alert("please enter at least 9 items");
+	}
+  else
     {
-      let rnd = Math.floor(Math.random()* gameList.length);
-      shuffledList.push(gameList[rnd]);
-      gameList.splice(rnd,1);
+
+    while (gameList.length >0)
+      {
+        let rnd = Math.floor(Math.random()* gameList.length);
+        shuffledList.push(gameList[rnd]);
+        gameList.splice(rnd,1);
+      }
     }
 
   document.getElementById("list").innerHTML = shuffledList;
