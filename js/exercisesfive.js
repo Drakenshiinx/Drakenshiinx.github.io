@@ -11,11 +11,14 @@ document.getElementById("nameOfGame").value = "";
 
 function displayGames()
 {
-  var e ="<hr/>";
+  var shuffledList = [];
+  while (gameList.length >0)
+    {
+      let rnd = Math.floor(Math.random()* gameList.length);
+      shuffledList.push(gameList[rnd]);
+      gameList.splice(rnd,1);
+    }
 
-   for (var z = 0; z < gameList.length; z++)
-   {
-   e += "Element " + z + "= " + gameList[z] + "<br/>";
-   }
-   document.getElementById("list").innerHTML = e;
+  document.getElementById("list").innerHTML = shuffledList;
+    
 }
