@@ -2,16 +2,15 @@
 <html>
 <body>
 
-<form action="/action_page.php">
   Input a Video Game You Like:<br>
-  <input type="text" id="nameOfGame" >
+  <input type="text" id="nameOfGame"></input>
   <br>
   <br>
-  <input type="button" id="addButton" value="add" oneclick="addGame();">
-   <input type="button" id="displayButton" value="display" oneclick="displayGames();">
+  <input type="button" id="addButton" value="add" onclick="addGame();"></input>
+  <input type="button" id="displayButton" value="display" onclick="displayGames();"></input>
    <br>
-   <div id="displayedinfo"></div>
-</form> 
-<script src="js/exercisefive.js"></script>
+   <div id="gameList"></div>
+ 
+<script src="js/exercisesfive.js"></script>
 </body>
 </html>
