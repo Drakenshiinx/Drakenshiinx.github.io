@@ -1,3 +1,4 @@
+"use strict";
 var x = 0;
 var gameList = Array();
 
