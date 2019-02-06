@@ -5,10 +5,10 @@ var gameList = Array();
 function addGame()
 {
 gameList[x] = document.getElementById("nameOfGame").value;
-alert("Element: " + gameList[x] + " Added at index " + x);
+alert("You added " + gameList[x] + " to the the array.  It is in position " + x);
 x++;
-//document.getElementById("nameOfGame").value = "";
 }
+//this function adds items to the array
 
 function displayGames()
 {
@@ -17,6 +17,7 @@ function displayGames()
   	if (gameList.length < 9)
 	{
 		alert("please enter at least 9 items");
+		//this gives you a pop up alert if you do not enter enough items to the array
 	}
   else
     {
@@ -35,17 +36,17 @@ function displayGames()
     }
 
 }
-//function clearArray()
-//{
-//gameList.length = 0;
-//}
+
 function clearArray() 
   {
   for (var i = 0; gameList.length; i++)
     {
       gameList.splice(i, gameList.length);
     }
-	console.log(gameList);
+	document.getElementById("list").innerHTML =" clear ";
+	//console.log(gameList);
+	//this is to confirm array is cleared in the console
 	x = 0;
-   //this clears the array, but it for some reason still starts off at the index I last left off
+   //this resets x
 }
+//this clears the array and resets it
