@@ -46,5 +46,6 @@ function clearArray()
       gameList.splice(i, gameList.length);
     }
 	console.log(gameList);
-   
+	x = 0;
+   //this clears the array, but it for some reason still starts off at the index I last left off
 }
