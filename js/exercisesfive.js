@@ -27,7 +27,7 @@ function displayGames()
         shuffledList.push(gameList[rnd]);
         gameList.splice(rnd,1);
       }
-	  	      for (i = 0; i<shuffledList.length; i++)
+	  	      for (var i = 0; i<shuffledList.length; i++)
         {
           document.getElementById("list").innerHTML += shuffledList[i] + "<br/>";
         }
