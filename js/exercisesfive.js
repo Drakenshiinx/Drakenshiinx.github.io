@@ -30,14 +30,20 @@ function displayGames()
 	  	      for (var i = 0; i<shuffledList.length; i++)
         {
           document.getElementById("list").innerHTML += shuffledList[i] + "<br/>";
+		  //this will display the results of the array
         }
     }
 
-
-  //document.getElementById("list").innerHTML = shuffledList;
-    
 }
-function clearArray()
-{
-gameList.length = 0;
+//function clearArray()
+//{
+//gameList.length = 0;
+//}
+function clearArray() 
+  {
+  for (var i = 0; gameList.length; i++)
+    {
+      gameList.splice(i, gameList.length);
+    }
+   
 }
