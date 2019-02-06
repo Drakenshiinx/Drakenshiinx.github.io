@@ -6,7 +6,10 @@ map[1] = "The backyard.";
 map[2] = "The tool shed.";
 
 //set player location
-var mapLocation = 4;
+var mapLocation = 1;
 
 //the output element
 var output = document.querySelector("#output");
+
+//display the players location
+output.innerHTML = map[mapLocation];
