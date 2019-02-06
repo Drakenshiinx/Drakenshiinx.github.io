@@ -44,6 +44,7 @@ function clearArray()
   for (var i = 0; gameList.length; i++)
     {
       gameList.splice(i, gameList.length);
+	  x=0;
     }
    
 }
