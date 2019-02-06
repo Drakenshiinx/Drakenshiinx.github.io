@@ -28,6 +28,10 @@ function displayGames()
       }
     }
 
-  document.getElementById("list").innerHTML = shuffledList;
+	      for (i = 0; i<shuffledList.length; i++)
+        {
+          document.getElementById("list").innerHTML += shuffledList[i] + "<br/>";
+        }
+  //document.getElementById("list").innerHTML = shuffledList;
     
 }
