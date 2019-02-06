@@ -43,7 +43,7 @@ function clearArray()
     {
       gameList.splice(i, gameList.length);
     }
-	document.getElementById("list").innerHTML =" clear ";
+	document.getElementById("list").innerHTML ="";
 	//console.log(gameList);
 	//this is to confirm array is cleared in the console
 	x = 0;
