@@ -36,3 +36,7 @@ function displayGames()
   //document.getElementById("list").innerHTML = shuffledList;
     
 }
+function clearArray()
+{
+gameList.length = 0;
+}
