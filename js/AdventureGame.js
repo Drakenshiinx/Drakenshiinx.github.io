@@ -4,7 +4,9 @@ var map = [];
 map[0] = "The back patio.";
 map[1] = "The backyard.";
 map[2] = "The tool shed.";
-
+map[3] = "The kitchen.";
+map[4] = "The livingroom.";
+map[5] = "The Bedroom";
 //set player start location
 var mapLocation = 1;
 
