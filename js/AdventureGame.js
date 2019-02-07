@@ -91,4 +91,4 @@ function render()
 	}
 
 //display the players location
-//output.innerHTML = map[mapLocation];
+output.innerHTML = map[mapLocation];
