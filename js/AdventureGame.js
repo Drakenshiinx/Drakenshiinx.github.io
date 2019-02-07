@@ -52,7 +52,7 @@ function playGame()
 	{
 		if(playersInput.indexOf(actionsIKnow[i]) !== -1)
 		{
-			action = actionsIknow[i];
+			action = actionsIKnow[i];
 			console.log("player's action: " + action);
 			break;
 		}
