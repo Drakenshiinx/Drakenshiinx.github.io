@@ -64,20 +64,20 @@ function playGame()
 		mapLocation -= 3;
 		break;
 		
-		case "east""
+		case "east":
 		mapLocation += 1;
 		break;
 		
-		case "south""
+		case "south":
 		mapLocation += 3;
 		break;
 		
-		case "west""
+		case "west":
 		mapLocation -= 1;
 		break;
 		
 		default:
-		gameMessage ="I don't understand that.";		
+		gameMessage ="I don't understand that.";
 	}
 	render();
 }
