@@ -79,14 +79,14 @@ function playGame()
 	}
 	render();
 }
-		function render()
-		{
-			//render the location
-			output.innerHTML = map[mapLocation];
+function render()
+	{
+		//render the location
+		output.innerHTML = map[mapLocation];
 			
-			//display the game message
-			output.innerHTML += "<br><em>" + gameMessage + "</em>";
-		}
+		//display the game message
+		output.innerHTML += "<br><em>" + gameMessage + "</em>";
+	}
 
 //display the players location
 //output.innerHTML = map[mapLocation];
