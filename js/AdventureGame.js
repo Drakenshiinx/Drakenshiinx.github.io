@@ -40,9 +40,11 @@ function playGame()
 	//get the players input and convert it to lowercase
 	playersInput = input.value;
 	playersInput = playersInput.toLowerCase();
+	
 	//reset these variables from the previous turn
 	gameMessage = "";
 	action = "";
+	
 	//figure out the players action
 	for(i=0; i < actionsIKnow.length; i++)
 	{
@@ -53,6 +55,7 @@ function playGame()
 			break;
 		}
 	}
+	//choose the correct action
 	switch(action)
 	{
 		case "north":
@@ -76,7 +79,14 @@ function playGame()
 	}
 	render();
 }
-
+		function render()
+		{
+			//render the location
+			output.innerHTML = map[mapLocation];
+			
+			//display the game message
+			output.innerHTML += "<br><em>" + gameMessage + "</em>";
+		}
 
 //display the players location
-output.innerHTML = map[mapLocation];
+//output.innerHTML = map[mapLocation];
