@@ -48,9 +48,9 @@ function playGame()
 	action = "";
 	
 	//figure out the players action
-	for(i=0; i < actionsIKnow.length; i++)
+	for(var i=0; i < actionsIKnow.length; i++)
 	{
-		if(playersInput.indexOf(actionsIKnow[i] !== -1)
+		if(playersInput.indexOf(actionsIKnow[i]) !== -1)
 		{
 			action = actionsIknow[i];
 			console.log("player's action: " + action);
