@@ -44,8 +44,39 @@ function playGame()
 	gameMessage = "";
 	action = "";
 	//figure out the players action
-	
+	for(i=0; i < actionsIKnow.length; i++)
+	{
+		if(playersInput.indexOf(actionsIKnow[i] !== -1)
+		{
+			action = actionsIknow[i];
+			console.log("player's action: " + action);
+			break;
+		}
+	}
+	switch(action)
+	{
+		case "north":
+		mapLocation -= 3;
+		break;
+		
+		case "east""
+		mapLocation += 1;
+		break;
+		
+		case "south""
+		mapLocation += 3;
+		break;
+		
+		case "west""
+		mapLocation -= 1;
+		break;
+		
+		default:
+		gameMessage ="I don't understand that.";		
+	}
+	render();
 }
+
 
 //display the players location
 output.innerHTML = map[mapLocation];
