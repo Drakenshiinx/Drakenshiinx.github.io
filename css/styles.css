@@ -1,0 +1,115 @@
+* { margin: 0; 
+	padding: 0;
+}
+
+@font-face {
+    font-family: 'spaceAge';
+    src: url('../fonts/space_age-webfont.eot');
+    src: url('../fonts/space_age-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/space_age-webfont.woff') format('woff'),
+         url('../fonts/space_age-webfont.ttf') format('truetype'),
+         url('../fonts/space_age-webfont.svg#space_ageregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#introScreen {
+	margin: 50px auto;
+	padding: 50px 30px;
+	width: 540px;
+	height: 350px;
+	position: relative;
+	background-color: #0d152a;
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+}
+#title {
+	font-size: 32px;
+	line-height: 1.1em;
+	font-family: spaceAge;
+}
+#introScreen img {
+	float: left;
+	margin-right: 20px;
+}
+#introScreen h3 {
+	clear: both;
+	font-family: spaceAge;
+	margin-top: 40px;
+}
+#introScreen div {
+	margin-top: 40px;
+	text-align: center;
+}
+
+button {
+	font-family: spaceAge;
+	font-size: 150%;
+	padding: 4px 8px;
+	cursor: pointer;
+	color: white;
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	background: -webkit-linear-gradient(top, #a3a3a3, #000);
+	background: -moz-linear-gradient(top, #a3a3a3, #000);
+	background: linear-gradient(top, #a3a3a3, #000);
+
+	-webkit-box-shadow: 0px 5px 8px 3px rgba(255,255,255,0.3);
+	-moz-box-shadow: 0px 5px 8px 3px rgba(255,255,255,0.3);
+	box-shadow: 0px 5px 8px 3px rgba(255,255,255,0.3);
+}
+button:hover {
+	background: -webkit-linear-gradient(top, #acc7a3, #506651);
+	background: -moz-linear-gradient(top, #acc7a3, #506651);
+	background: linear-gradient(top, #acc7a3, #506651);	
+}
+#gameScreen {
+	margin: 50px auto;
+	width: 600px;
+	height: 450px;
+	background-image: url("../images/bkg.jpg");
+	display:none;
+	position: relative;
+}
+#rocket {
+	position: absolute;
+	display: none;
+}
+#torpedo {
+	position: absolute;
+
+	/* transition */
+	-webkit-transition: left 0.5s ease-out 0s;
+	-moz-transition: left 0.5s ease-out 0s;
+	transition: left 0.5s ease-out 0s;
+}
+#ufo {
+	position: absolute;
+	display: none;
+	top: 100px;
+	left: 30px;
+}
+#gameUI {
+	width: 560px;
+	height: 50px;
+	padding: 10px 20px;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	font-family: spaceAge;
+	line-height: 1em;
+}
+#gameInfo {
+	width: 450px;
+	height: 120px;
+	font-size: 120%;
+	float: left;
+}
+#gameControls {
+	width: 50px;
+	height: 55px;
+	padding-top: 5px;
+	float:left;
+}
