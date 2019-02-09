@@ -11,6 +11,13 @@ var rocket = {
 	y: 390,
 	width: 100
 };
+
+var ufo = {
+	img: document.querySelector("#ufo"),
+	x: 190,
+	y: 290,
+	width: 100
+};
 var velocity = 2;
 
 var torpedo = document.querySelector("#torpedo"),
