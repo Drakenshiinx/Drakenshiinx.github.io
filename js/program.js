@@ -63,6 +63,9 @@ function keydownHandler(event) {
 	if (event.keyCode == RIGHT) {
 		rocket.x += velocity;
 	}
+	if (event.keyCode == "w")   {
+		rocket.x += velocity;
+	}
 
 	render( );
 }
