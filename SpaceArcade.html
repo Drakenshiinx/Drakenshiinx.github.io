@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Space Arcade</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<section id="introScreen">
+		<img src="images/introImage.jpg" alt="intro image">
+		<span id="title">Big<br>Space<br>Sprite<br>Mover</span>
+		<h3>How to play:</h3>
+		<p>Use the arrow keys to move the rocket ship up, down, left, or right. Hit the <strong>Fire!</strong> button to fire a photon torpedo.</p>
+		<div>
+			<button id="start">Engage!</button>
+		</div>
+	</section>
+
+	<section id="gameScreen">
+		<div id="gameUI">
+			<div id="gameInfo">
+				<p>Dilithium fuel: 100%</p>
+				<p>Phasers: 25</p>
+				<p>Photon torpedoes: 10</p>
+			</div>
+			<div id="gameControls">
+				<button id="fire">Fire!</button>
+			</div>			
+		</div>
+
+		<!-- absolutely positioned elements -->
+		<img id="ufo" src="images/ufo.png" alt="UFO">
+		<img id="torpedo" src="images/torpedo.png" alt="torpedo">
+		<img id="rocket" src="images/rocket.png" alt="Rocket Ship sprite">
+	</section>
+
+	<script src="js/program.js"></script>
+</body>
+</html>
