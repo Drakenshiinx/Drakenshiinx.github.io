@@ -14,8 +14,8 @@ var rocket = {
 
 var ufo = {
 	img: document.querySelector("#ufo"),
-	x: 200,
-	y: 200,
+	x: 100,
+	y: 30,
 	width: 100
 };
 var velocity = 2;
