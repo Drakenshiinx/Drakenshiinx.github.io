@@ -66,6 +66,9 @@ function keydownHandler(event) {
 	if (event.keyCode == 87)   {
 		ufo.x -= velocity;
 	}
+	if (event.keyCode == 90)   {
+		ufo.x -= velocity;
+	}
 
 	render( );
 }
