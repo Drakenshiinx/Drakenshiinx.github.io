@@ -3,7 +3,9 @@
 var UP = 38,
     DOWN = 40,
     RIGHT = 39,
-    LEFT = 37;
+    LEFT = 37,
+	W = 87,
+	Z = 90;
 
 // rocket object
 var rocket = {
@@ -64,10 +66,10 @@ function keydownHandler(event) {
 	if (event.keyCode == RIGHT) {
 		rocket.x += velocity;
 	}
-	if (event.keyCode == 87)   {
+	if (event.keyCode == W)   {
 		ufo.y -= velocity;
 	}
-	if (event.keyCode == 90)   {
+	if (event.keyCode == Z)   {
 		ufo.y += velocity;
 	}
 
