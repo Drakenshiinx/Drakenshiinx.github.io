@@ -7,15 +7,15 @@ var UP = 38,
 // rocket object
 var rocket = {
 	img: document.querySelector("#rocket"),
-	//x: 490,
-	//y: 390,
+	x: 490,
+	y: 390,
 	width: 100
 };
 
 var ufo = {
 	img: document.querySelector("#ufo"),
-	x: 10,
-	y: 50,
+	//x: 10,
+	//y: 50,
 	width: 100
 };
 var velocity = 2;
