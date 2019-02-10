@@ -64,7 +64,7 @@ function keydownHandler(event) {
 		rocket.x += velocity;
 	}
 	if (event.keyCode == 87)   {
-		ufo.x -= velocity;
+		ufo.x += velocity;
 	}
 
 	render( );
