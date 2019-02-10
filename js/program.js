@@ -80,6 +80,6 @@ function render( ) {
 	torpedo.style.left = (rocket.x +10) + "px";
 	torpedo.style.top = (rocket.y+8) + "px";
 	torpedo.style.visibility = "hidden";
-	//ufo.img.style.right = ufo.x + "px";
-	//ufo.img.style.top = ufo.y + "px";
+	ufo.img.style.right = ufo.x + "px";
+	ufo.img.style.top = ufo.y + "px";
 }
