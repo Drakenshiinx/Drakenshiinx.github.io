@@ -9,7 +9,6 @@ var UP = 38,
 
 // rocket object
 var rocket = {
-	"use strict";
 	img: document.querySelector("#rocket"),
 	x: 490,
 	y: 390,
@@ -18,7 +17,6 @@ var rocket = {
 
 //ufo object
 var ufo = {
-	"use strict";
 	img: document.querySelector("#ufo"),
 	x: 490,
 	y: 75,
