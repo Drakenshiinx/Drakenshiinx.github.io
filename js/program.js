@@ -22,8 +22,8 @@ var velocity = 2;
 
 var torpedo = document.querySelector("#torpedo"),
     startBtn = document.querySelector("#start"),
-    fireBtn = document.querySelector("#fire"),
-    ufo = document.querySelector("#ufo");
+    fireBtn = document.querySelector("#fire");
+    //ufo = document.querySelector("#ufo");
 
 // Initialize objects on the screen
 render ( );
