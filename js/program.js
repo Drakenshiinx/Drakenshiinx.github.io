@@ -14,8 +14,8 @@ var rocket = {
 
 var ufo = {
 	img: document.querySelector("#ufo"),
-	x: 100,
-	y: 30,
+	x: 10,
+	y: 50,
 	width: 100
 };
 var velocity = 2;
@@ -64,10 +64,10 @@ function keydownHandler(event) {
 		rocket.x += velocity;
 	}
 	if (event.keyCode == 87)   {
-		ufo.x -= velocity;
+		ufo.y -= velocity;
 	}
 	if (event.keyCode == 90)   {
-		ufo.x -= velocity;
+		ufo.y += velocity;
 	}
 
 	render( );
