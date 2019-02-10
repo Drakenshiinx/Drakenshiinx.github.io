@@ -9,13 +9,16 @@ var UP = 38,
 
 // rocket object
 var rocket = {
+	"use strict";
 	img: document.querySelector("#rocket"),
 	x: 490,
 	y: 390,
 	width: 100
 };
 
+//ufo object
 var ufo = {
+	"use strict";
 	img: document.querySelector("#ufo"),
 	x: 490,
 	y: 75,
@@ -36,6 +39,7 @@ fireBtn.addEventListener("click",fireTorpedoHandler,false)
 window.addEventListener("keydown",keydownHandler,false);
 
 function startGameHandler( ) {
+	"use strict";
 	// Hide the intro screen, show the game screen
 	introScreen.style.display = "none";
 	gameScreen.style.display = "block";
@@ -44,6 +48,7 @@ function startGameHandler( ) {
 }
 
 function fireTorpedoHandler( ) {
+	"use strict";
 	// Fire the photon torpedo!
 	// CSS animation occurs whenever torpedo
 	// 'left' property changes value
@@ -52,6 +57,7 @@ function fireTorpedoHandler( ) {
 }
 
 function keydownHandler(event) {
+	"use strict";
 	// handle user keyboard input
 
 	if (event.keyCode == UP) {
@@ -77,6 +83,7 @@ function keydownHandler(event) {
 }
 
 function render( ) {
+	"use strict";
 	// position objects on the screen
 	rocket.img.style.left = rocket.x + "px";
 	rocket.img.style.top = rocket.y + "px";
