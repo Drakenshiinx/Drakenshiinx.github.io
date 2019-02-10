@@ -7,8 +7,8 @@ var UP = 38,
 // rocket object
 var rocket = {
 	img: document.querySelector("#rocket"),
-	x: 490,
-	y: 390,
+	//x: 490,
+	//y: 390,
 	width: 100
 };
 
