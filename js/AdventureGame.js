@@ -8,6 +8,14 @@ map[3] = "The kitchen.";
 map[4] = "The livingroom.";
 map[5] = "The Bedroom";
 //set player start location
+
+var images = [];
+images[0] = "images/backpatio1.jpg";
+images[1] = "images/garden1.jpg";
+images[2] = "images/toolshed1.png";
+images[3] = "";
+images[4] = "";
+images[5] = "";
 var mapLocation = 1;
 
 //initialize the players input
