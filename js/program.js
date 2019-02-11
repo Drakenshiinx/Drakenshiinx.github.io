@@ -22,6 +22,10 @@ var ufo = {
 	y: 75,
 	width: 100
 };
+
+var sounds = [
+"#laserBlast"
+];
 var velocity = 2;
 
 var torpedo = document.querySelector("#torpedo"),
