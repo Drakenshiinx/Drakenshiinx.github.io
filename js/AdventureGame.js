@@ -11,7 +11,7 @@ map[5] = "The Bedroom";
 
 var images = [];
 images[0] = "images/backpatio1.jpg";
-images[1] = "images/garden1.jpg";
+images[1] = "garden1.jpg";
 images[2] = "images/toolshed1.png";
 images[3] = "";
 images[4] = "";
