@@ -11,7 +11,7 @@ map[5] = "The Bedroom";
 
 var images = [];
 images[0] = "images\backpatio1.jpg";
-images[1] = "C:\Users\Shino\Desktop\PROG209\Drakenshiinx.github.io\images\garden1.jpg";
+images[1] = "garden1.jpg";
 images[2] = "images/toolshed1.png";
 images[3] = "";
 images[4] = "";
@@ -93,6 +93,7 @@ function render()
 	{
 		//render the location
 		output.innerHTML = map[mapLocation];
+		image.src = "../images/" + images[mapLocation];
 			
 		//display the game message
 		output.innerHTML += "<br><em>" + gameMessage + "</em>";
