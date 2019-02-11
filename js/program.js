@@ -24,7 +24,7 @@ var ufo = {
 };
 
 var sounds = [
-"#laserBlast"
+"#LaserBlast"
 ];
 var velocity = 2;
 
