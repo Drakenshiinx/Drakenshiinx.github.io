@@ -40,6 +40,10 @@ startBtn.addEventListener("click",startGameHandler,false);
 fireBtn.addEventListener("click",fireTorpedoHandler,false)
 window.addEventListener("keydown",keydownHandler,false);
 
+function playAudio(){
+	play(sounds);
+}
+
 function startGameHandler( ) {
 	"use strict";
 	// Hide the intro screen, show the game screen
@@ -56,6 +60,7 @@ function fireTorpedoHandler( ) {
 	// 'left' property changes value
 	torpedo.style.visibility = "visible";
 	torpedo.style.left = (rocket.x - 200)+ "px";
+	playAudio();
 }
 
 function keydownHandler(event) {
