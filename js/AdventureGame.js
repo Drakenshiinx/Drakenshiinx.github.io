@@ -10,12 +10,12 @@ map[5] = "The Bedroom";
 //set player start location
 
 var images = [];
-images[0] = "images\backpatio1.jpg";
+images[0] = "backpatio1.jpg";
 images[1] = "garden1.jpg";
-images[2] = "images/toolshed1.png";
-images[3] = "";
-images[4] = "";
-images[5] = "";
+images[2] = "toolshed1.png";
+images[3] = "kitchen1.jpg";
+images[4] = "livingroom1.jpg";
+images[5] = "bedroom1.jpg";
 var mapLocation = 1;
 
 //initialize the players input
