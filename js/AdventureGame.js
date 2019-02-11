@@ -10,7 +10,7 @@ map[5] = "The Bedroom";
 //set player start location
 
 var images = [];
-images[0] = "images/backpatio1.jpg";
+images[0] = "images\backpatio1.jpg";
 images[1] = "C:\Users\Shino\Desktop\PROG209\Drakenshiinx.github.io\images\garden1.jpg";
 images[2] = "images/toolshed1.png";
 images[3] = "";
