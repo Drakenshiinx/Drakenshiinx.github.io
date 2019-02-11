@@ -40,9 +40,7 @@ startBtn.addEventListener("click",startGameHandler,false);
 fireBtn.addEventListener("click",fireTorpedoHandler,false)
 window.addEventListener("keydown",keydownHandler,false);
 
-function playAudio(){
-	play(sounds);
-}
+var currentSound = null;
 
 function startGameHandler( ) {
 	"use strict";
@@ -60,7 +58,9 @@ function fireTorpedoHandler( ) {
 	// 'left' property changes value
 	torpedo.style.visibility = "visible";
 	torpedo.style.left = (rocket.x - 200)+ "px";
-	playAudio();
+	currentSound = document.querySelector(sounds);
+	currentSound.play();
+	
 }
 
 function keydownHandler(event) {
