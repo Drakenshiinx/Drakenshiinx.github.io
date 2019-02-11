@@ -95,7 +95,7 @@ function render()
 	{
 		//render the location
 		output.innerHTML = map[mapLocation];
-		image.src = "C:\Users\Shino\Desktop\PROG209\Drakenshiinx.github.io\images" + images[mapLocation];
+		image.src = "../images/" + images[mapLocation];
 			
 		//display the game message
 		output.innerHTML += "<br><em>" + gameMessage + "</em>";
