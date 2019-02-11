@@ -18,7 +18,8 @@ images[4] = "livingroom1.jpg";
 images[5] = "bedroom1.jpg";
 var mapLocation = 1;
 
-var image = document.querySelector("img");
+var gameMessage = "Welcome to a game where you explore some strangers home!"
+gameMessage += "To explore the home, you will want to use words north, south, east and west."
 
 //initialize the players input
 var playersInput = "";
@@ -30,7 +31,8 @@ var gameMessage = "";
 var actionsIKnow = ["north","east","south","west"];
 var action = "";
 
-//the output and input fields
+//the output, input and image fields
+var image = document.querySelector("img");
 var output = document.querySelector("#output");
 var input = document.querySelector("#input");
 
