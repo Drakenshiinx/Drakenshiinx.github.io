@@ -18,6 +18,8 @@ images[4] = "livingroom1.jpg";
 images[5] = "bedroom1.jpg";
 var mapLocation = 1;
 
+var image = document.querySelector("img");
+
 //initialize the players input
 var playersInput = "";
 
