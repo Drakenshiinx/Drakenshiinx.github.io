@@ -50,7 +50,7 @@ function startGameHandler( ) {
 }
 
 function fireLaser(){
-	var laserSound = document.GetElementById("LaserBlast");
+	var laserSound = document.getElementById("LaserBlast");
 	laserSound.play();
 }
 
