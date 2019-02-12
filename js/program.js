@@ -8,7 +8,7 @@ const UP = 38,
 	Z = 90;
 
 // rocket object
-var rocket = {
+const rocket = {
 	img: document.querySelector("#rocket"),
 	x: 490,
 	y: 390,
@@ -16,7 +16,7 @@ var rocket = {
 };
 
 //ufo object
-var ufo = {
+const ufo = {
 	img: document.querySelector("#ufo"),
 	x: 490,
 	y: 75,
@@ -34,7 +34,7 @@ var torpedo = document.querySelector("#torpedo"),
 render ( );
 
 startBtn.addEventListener("click",startGameHandler,false);
-fireBtn.addEventListener("click",fireTorpedoHandler,false)
+fireBtn.addEventListener("click",fireTorpedoHandler,false);
 window.addEventListener("keydown",keydownHandler,false);
 
 
