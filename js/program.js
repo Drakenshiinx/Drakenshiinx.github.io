@@ -23,7 +23,7 @@ var ufo = {
 	width: 100
 };
 
-var laserSound = document.GetElementById("LaserBlast");
+
 
 var velocity = 2;
 
@@ -50,6 +50,7 @@ function startGameHandler( ) {
 }
 
 function fireLaser(){
+	var laserSound = document.GetElementById("LaserBlast");
 	laserSound.play();
 }
 
