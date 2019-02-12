@@ -1,4 +1,4 @@
-//"use strict";
+"use strict";
 // Arrow key codes
 var UP = 38,
     DOWN = 40,
@@ -50,6 +50,7 @@ function startGameHandler( ) {
 }
 
 function fireLaser(){
+	"use strict";
 	var laserSound = document.getElementById("LaserBlast");
 	laserSound.play();
 }
