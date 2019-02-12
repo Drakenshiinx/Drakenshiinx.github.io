@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 // Arrow key codes
 var UP = 38,
     DOWN = 40,
