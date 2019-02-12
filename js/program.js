@@ -25,7 +25,7 @@ var ufo = {
 
 
 
-var velocity = 2;
+const velocity = 2;
 
 var torpedo = document.querySelector("#torpedo"),
     startBtn = document.querySelector("#start"),
@@ -51,7 +51,7 @@ function startGameHandler( ) {
 
 function fireLaser(){
 	"use strict";
-	var laserSound = document.getElementById("LaserBlast");
+	let laserSound = document.getElementById("LaserBlast");
 	laserSound.play();
 }
 
