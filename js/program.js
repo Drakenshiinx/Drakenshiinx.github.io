@@ -23,9 +23,8 @@ var ufo = {
 	width: 100
 };
 
-var sounds = [
-"#LaserBlast"
-];
+var laserSound;
+
 var velocity = 2;
 
 var torpedo = document.querySelector("#torpedo"),
@@ -40,7 +39,6 @@ startBtn.addEventListener("click",startGameHandler,false);
 fireBtn.addEventListener("click",fireTorpedoHandler,false)
 window.addEventListener("keydown",keydownHandler,false);
 
-var currentSound = null;
 
 function startGameHandler( ) {
 	"use strict";
@@ -51,6 +49,10 @@ function startGameHandler( ) {
 	ufo.img.style.display = "block";
 }
 
+function preload(){
+	laserSound = loadSound("sounds/LaserBlast.mp3");
+}
+
 function fireTorpedoHandler( ) {
 	"use strict";
 	// Fire the photon torpedo!
@@ -58,8 +60,7 @@ function fireTorpedoHandler( ) {
 	// 'left' property changes value
 	torpedo.style.visibility = "visible";
 	torpedo.style.left = (rocket.x - 200)+ "px";
-	currentSound = document.querySelector(sounds);
-	currentSound.play();
+
 	
 }
 
