@@ -1,6 +1,6 @@
 "use strict";
 // Arrow key codes
-var UP = 38,
+const UP = 38,
     DOWN = 40,
     RIGHT = 39,
     LEFT = 37,
@@ -22,8 +22,6 @@ var ufo = {
 	y: 75,
 	width: 100
 };
-
-
 
 const velocity = 2;
 
