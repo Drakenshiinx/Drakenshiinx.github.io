@@ -31,7 +31,6 @@ blockedPathMessages[6] = "WIP";
 blockedPathMessages[7] = "wIP";
 blockedPathMessages[8] = "WIP";
 
-
 var mapLocation = 1;
 
 var gameMessage = "Welcome to a game where you explore some strangers home!"
@@ -122,7 +121,7 @@ function playGame()
 		break;
 		
 		case "west":
-		if(mapLocation % != 0)
+		if(mapLocation % 3 != 0)
 		{
 		mapLocation -= 1;
 		}
