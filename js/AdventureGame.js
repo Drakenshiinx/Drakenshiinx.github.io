@@ -1,6 +1,5 @@
 //create the array
 var map = [];
-
 map[0] = "The back patio.";
 map[1] = "The backyard.";
 map[2] = "The tool shed.";
@@ -10,8 +9,8 @@ map[5] = "The Bedroom";
 map[6] = "empty room";
 map[7] = "empty room";
 map[8] = "empty room";
-//set player start location
 
+//images array
 var images = [];
 images[0] = "backpatio1.jpg";
 images[1] = "garden1.jpg";
@@ -20,6 +19,7 @@ images[3] = "kitchen1.jpg";
 images[4] = "livingroom1.jpg";
 images[5] = "bedroom1.jpg";
 
+//messages that display if you go out of bounds
 var blockedPathMessages = [];
 blockedPathMessages[0] = "There is nothing over there.";
 blockedPathMessages[1] = "There is a very tall fence you cannot get over.";
@@ -31,6 +31,7 @@ blockedPathMessages[6] = "WIP";
 blockedPathMessages[7] = "wIP";
 blockedPathMessages[8] = "WIP";
 
+//set player start location
 var mapLocation = 1;
 
 var gameMessage = "Welcome to a game where you explore some strangers home!"
