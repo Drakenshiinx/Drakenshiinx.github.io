@@ -16,6 +16,16 @@ images[2] = "toolshed1.png";
 images[3] = "kitchen1.jpg";
 images[4] = "livingroom1.jpg";
 images[5] = "bedroom1.jpg";
+
+var blockedPathMessages = [];
+blockedPathMessages[0] = "There is nothing over there.";
+blockedPathMessages[1] = "There is a very tall fence you cannot get over.";
+blockedPathMessages[2] = "You cannot go further.  You must turn back.";
+blockedPathMessages[3] = "A force stops you from going further.";
+blockedPathMessages[4] = "You cannot continue further.";
+blockedPathMessages[5] = "lol nope.";
+
+
 var mapLocation = 1;
 
 var gameMessage = "Welcome to a game where you explore some strangers home!"
@@ -73,19 +83,47 @@ function playGame()
 	switch(action)
 	{
 		case "north":
+		if(mapLocation >= 3)
+		{
 		mapLocation -= 3;
+		}
+		else
+		{
+			gameMessage = blockedPathMessages[mapLocation];
+		}
 		break;
 		
 		case "east":
+		if(mapLocation % 3 != 2)
+		{
 		mapLocation += 1;
+		}
+		else
+		{
+			gameMessage = blockedPathMessages[mapLocation];
+		}
 		break;
 		
 		case "south":
+		if (mapLocation < 6)
+		{
 		mapLocation += 3;
+		}
+		else
+		{
+			gameMessage = blockedPathMessages[mapLocation];
+		}
 		break;
 		
 		case "west":
+		if(mapLocation % != 0)
+		{
 		mapLocation -= 1;
+		}
+		else
+		{
+			gameMessage = blockedPathMessages[mapLocation];
+		}
 		break;
 		
 		default:
