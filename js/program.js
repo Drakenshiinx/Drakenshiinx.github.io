@@ -37,7 +37,6 @@ startBtn.addEventListener("click",startGameHandler,false);
 fireBtn.addEventListener("click",fireTorpedoHandler,false);
 window.addEventListener("keydown",keydownHandler,false);
 
-
 function startGameHandler( ) {
 	"use strict";
 	// Hide the intro screen, show the game screen
@@ -49,6 +48,7 @@ function startGameHandler( ) {
 
 function fireLaser(){
 	"use strict";
+	//this will play the sound when either the laser button or spacebar is pressed
 	let laserSound = document.getElementById("LaserBlast");
 	laserSound.play();
 }
@@ -60,8 +60,6 @@ function fireTorpedoHandler( ) {
 	// 'left' property changes value
 	torpedo.style.visibility = "visible";
 	torpedo.style.left = (rocket.x - 200)+ "px";
-
-	
 }
 
 function keydownHandler(event) {
