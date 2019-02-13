@@ -7,6 +7,9 @@ map[2] = "The tool shed.";
 map[3] = "The kitchen.";
 map[4] = "The livingroom.";
 map[5] = "The Bedroom";
+map[6] = "empty room";
+map[7] = "empty room";
+map[8] = "empty room";
 //set player start location
 
 var images = [];
@@ -24,6 +27,9 @@ blockedPathMessages[2] = "You cannot go further.  You must turn back.";
 blockedPathMessages[3] = "A force stops you from going further.";
 blockedPathMessages[4] = "You cannot continue further.";
 blockedPathMessages[5] = "lol nope.";
+blockedPathMessages[6] = "WIP";
+blockedPathMessages[7] = "wIP";
+blockedPathMessages[8] = "WIP";
 
 
 var mapLocation = 1;
