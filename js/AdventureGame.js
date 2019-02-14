@@ -149,7 +149,7 @@ function render()
 		image.src = "../images/" + images[mapLocation];
 		
 		//display an item if it's in the location
-		for(var = 0; i < items.length; i++)
+		for(var i = 0; i < items.length; i++)
 		{
 			if(mapLocation === itemLocations[i])
 			{
