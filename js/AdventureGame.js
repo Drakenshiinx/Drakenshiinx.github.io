@@ -147,9 +147,24 @@ function render()
 		//render the location
 		output.innerHTML = map[mapLocation];
 		image.src = "../images/" + images[mapLocation];
+		
+		//display an item if it's in the location
+		for(var = 0; i < items.length; i++)
+		{
+			if(mapLocation === itemLocations[i])
+			{
+				output.innerHTML += "<br>You see a <strong>" + items[i] + "</strong> here."
+			}
+		}
 			
 		//display the game message
 		output.innerHTML += "<br><em>" + gameMessage + "</em>";
+		
+		//display backback contents
+		//if(backpack.length !== 0)
+		//{
+			//output.innerHTML += "<br>You are carrying: " + backpack.join(", ");
+		//}
 	}
 
 //display the players location
