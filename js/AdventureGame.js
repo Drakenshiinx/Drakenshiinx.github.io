@@ -10,6 +10,11 @@ map[6] = "empty room";
 map[7] = "empty room";
 map[8] = "empty room";
 
+//items array
+var items = ["item one", "item two", "item three"];
+
+//location of items
+var itemLocations =[1, 4, 6];
 //images array
 var images = [];
 images[0] = "backpatio1.jpg";
