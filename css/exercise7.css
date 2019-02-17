@@ -1,37 +1,37 @@
-		body 
-		{
-			font-size: 100%;
-			background-color: #ffdfaf;
-			font-family: American Typewriter, serif;
-		}
+body 
+{
+  font-size: 100%;
+  background-color: #ffdfaf;
+  font-family: American Typewriter, serif;
+}
 		
-		#image 
-		{
-			top: 7px;
-            right: 12px;
-		    position: absolute;
-		}
+#image 
+{
+  top: 7px;
+  right: 12px;
+  position: absolute;
+}
 		
-		#banner 
-		{
-			width: 920px;
-		  	height: 100px;
-			overflow: hidden;
-			margin: 25px auto;
-			position: relative;
-			background-color: #8e67ea;
-            box-shadow: 5px 5px 12px #4b3e6b;
-		}
+#banner 
+{
+  width: 920px;
+  height: 100px;
+  overflow: hidden;
+  margin: 25px auto;
+  position: relative;
+  background-color: #8e67ea;
+  box-shadow: 5px 5px 12px #4b3e6b;
+}
 		
-        .text 
-		{
-            top: 25px;
-			left: 55px;
-			width: inherit;
-            font-size: 44px;
-			font-weight: bold;
-			position: absolute;
-			text-align: center;
-			color: rgba(233, 144, 11, 0.85);
-			text-shadow: 5px 5px 10px #4b3e6b;
-        }
+.text 
+{
+  top: 25px;
+  left: 55px;
+  width: inherit;
+  font-size: 44px;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  color: rgba(233, 144, 11, 0.85);
+  text-shadow: 5px 5px 10px #4b3e6b;
+}
