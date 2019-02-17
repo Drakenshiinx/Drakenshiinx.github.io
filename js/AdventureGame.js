@@ -6,9 +6,9 @@ map[2] = "The tool shed.";
 map[3] = "The kitchen.";
 map[4] = "The livingroom.";
 map[5] = "The Bedroom";
-map[6] = "empty room";
-map[7] = "empty room";
-map[8] = "empty room";
+//map[6] = "empty room";
+//map[7] = "empty room";
+//map[8] = "empty room";
 
 //set player start location
 var mapLocation = 1;
@@ -30,9 +30,9 @@ blockedPathMessages[2] = "You cannot go further.  You must turn back.";
 blockedPathMessages[3] = "A force stops you from going further.";
 blockedPathMessages[4] = "You cannot continue further.";
 blockedPathMessages[5] = "lol nope.";
-blockedPathMessages[6] = "WIP";
-blockedPathMessages[7] = "wIP";
-blockedPathMessages[8] = "WIP";
+//blockedPathMessages[6] = "WIP";
+//blockedPathMessages[7] = "wIP";
+//blockedPathMessages[8] = "WIP";
 
 //items array
 var items = ["key", "watch", "picture"];
@@ -191,9 +191,11 @@ function takeItem()
 		gameMessage = "You take the " + item + ".";
 		//add the item to the players backpack
 		backpack.push(item);
+		
 		//remove teh item from the game world
 		items.splice(itemIndexNumber, 1);
 		itemLocations.splice(itemIndexNumber, 1);
+		
 		//display in the console for testing
 		console.log("World items: " + items);
 		console.log("backpack items: " + backpack);	
