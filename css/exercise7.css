@@ -7,8 +7,8 @@
 		
 		#image 
 		{
-			top: 5px;
-            right: 0px;
+			top: 7px;
+            right: 12px;
 		    position: absolute;
 		}
 		
@@ -20,7 +20,7 @@
 			margin: 25px auto;
 			position: relative;
 			background-color: #8e67ea;
-            box-shadow: 5px 5px 12px rgba(0,0,0,0.5);
+            box-shadow: 5px 5px 12px #4b3e6b;
 		}
 		
         .text 
