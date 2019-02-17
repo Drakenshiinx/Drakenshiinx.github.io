@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tweening Basics</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        body {
+            background-color: #ccc;
+        }
+
+        #icon {
+          position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+<img id="icon" src="images/blue-zebra.png" alt="blue zebra icon" width="210" height="210">
+
+<!-- load Content Delivery Network (CDN) scripts -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/easing/EasePack.min.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js">
+</script>
+
+
+<!-- add your own script -->
+<script>
+	var icon = document.getElementById("icon");
+
+    TweenLite.to(icon, 2, {rotation:360, left:400, ease:Back.easeOut, delay:1});
+	
+
+</script>
+
+
+</body>
+</html>

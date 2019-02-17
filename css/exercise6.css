@@ -1,0 +1,36 @@
+		body 
+		{
+			font-family: American Typewriter, serif;
+			font-size: 100%;
+		}
+		
+		#banner 
+		{
+		  	height: 100px;
+			width: 920px;
+			background-color: #f7caa0;
+			margin: 40px auto;
+			position: relative;
+			overflow: hidden;
+            box-shadow: 5px 5px 8px rgba(0,0,0,0.3);
+		}
+		
+		#image 
+		{
+		    position: absolute;
+            top: 5px;
+            right: 0px;
+		}
+		
+        .text 
+		{
+            top: 25px;
+			left: 55px;
+            font-size: 44px;
+			font-weight: bold;
+			position: absolute;
+			width: inherit;
+			text-align: center;
+			color: rgba(241, 108, 35, 0.99);
+			text-shadow: 5px 5px 10px #7D7D7D;
+        }
