@@ -16,9 +16,9 @@
 			width: 920px;
 		  	height: 100px;
 			overflow: hidden;
-			margin: 40px auto;
+			margin: 25px auto;
 			position: relative;
-			background-color: #f7caa0;
+			background-color: #8e67ea;
             box-shadow: 5px 5px 8px rgba(0,0,0,0.3);
 		}
 		
@@ -31,6 +31,6 @@
 			font-weight: bold;
 			position: absolute;
 			text-align: center;
-			color: rgba(241, 108, 35, 0.99);
-			text-shadow: 5px 5px 10px #7D7D7D;
+			color: rgba(233, 144, 11, 0.85);
+			text-shadow: 5px 5px 10px #4b3e6b;
         }
