@@ -10,11 +10,9 @@ map[6] = "empty room";
 map[7] = "empty room";
 map[8] = "empty room";
 
-//items array
-var items = ["item one", "item two", "item three"];
+//set player start location
+var mapLocation = 1;
 
-//location of items
-var itemLocations =[1, 4, 6];
 //images array
 var images = [];
 images[0] = "backpatio1.jpg";
@@ -36,24 +34,29 @@ blockedPathMessages[6] = "WIP";
 blockedPathMessages[7] = "wIP";
 blockedPathMessages[8] = "WIP";
 
-//set player start location
-var mapLocation = 1;
-
-var gameMessage = "Welcome to a game where you explore some strangers home!"
-gameMessage += "To explore the home, you will want to use words north, south, east and west."
-
+//items array
+var items = ["key", "watch", "picture"];
+//location of items
+var itemLocations =[1, 4, 6];
+//backpack array
+var backpack = [];
 //initialize the players input
 var playersInput = "";
-
 //initialize the gameMessage
 var gameMessage = "";
 
 //create an array of actions the game will understand and a variable to store the current action
-var actionsIKnow = ["north","east","south","west"];
+var actionsIKnow = ["north","east","south","west", "take", "use", "drop"];
+//variable to store the current action
 var action = "";
 
-//the output, input and image fields
+//an array of items the game understands
+var itemsIKnow = ["key", "watch", "picture"];
+//and a variable to store the current item
+var item = "";
+//the img element
 var image = document.querySelector("img");
+//the input and output fields
 var output = document.querySelector("#output");
 var input = document.querySelector("#input");
 
@@ -61,6 +64,17 @@ var input = document.querySelector("#input");
 var button = document.querySelector("button");
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
+
+
+
+
+
+var gameMessage = "Welcome to a game where you explore some strangers home!";
+gameMessage += "To explore the home, you will want to use words north, south, east and west.";
+
+
+
+
 
 //display the players location
 render();
@@ -81,7 +95,7 @@ function playGame()
 	action = "";
 	
 	//figure out the players action
-	for(var i=0; i < actionsIKnow.length; i++)
+	for(var i = 0; i < actionsIKnow.length; i++)
 	{
 		if(playersInput.indexOf(actionsIKnow[i]) !== -1)
 		{
@@ -90,13 +104,24 @@ function playGame()
 			break;
 		}
 	}
+	
+	//figure out the item the player wants
+	for (i = 0; i < itemsIKnow.length; i++)
+	{
+		if(playersInput.indexOf(itemsIKnow[i]) !== -1)
+		{
+			item = itemsIKnow[i];
+			console.log("Player's item: " + item);
+		}	
+	}
+	
 	//choose the correct action
 	switch(action)
 	{
 		case "north":
 		if(mapLocation >= 3)
 		{
-		mapLocation -= 3;
+			mapLocation -= 3;
 		}
 		else
 		{
@@ -107,7 +132,7 @@ function playGame()
 		case "east":
 		if(mapLocation % 3 != 2)
 		{
-		mapLocation += 1;
+			mapLocation += 1;
 		}
 		else
 		{
@@ -118,7 +143,7 @@ function playGame()
 		case "south":
 		if (mapLocation < 6)
 		{
-		mapLocation += 3;
+			mapLocation += 3;
 		}
 		else
 		{
@@ -129,7 +154,7 @@ function playGame()
 		case "west":
 		if(mapLocation % 3 != 0)
 		{
-		mapLocation -= 1;
+			mapLocation -= 1;
 		}
 		else
 		{
@@ -137,11 +162,135 @@ function playGame()
 		}
 		break;
 		
+		case "take":
+		takeItem();
+		break;
+		
+		case "drop":
+		dropItem();
+		break;
+		
+		case "use":
+		useItem();
+		break;
+		
 		default:
 		gameMessage ="I don't understand that.";
 	}
+	//render the game
 	render();
 }
+
+function takeItem()
+{
+	//find the index number of the item in the items array
+	var itemIndexNumber = items.indexOf(item);
+	//does the item exist in the game world and is it at the players current location?
+	if(itemIndexNumber !== -1 && itemLocations[itemIndexNumber] === mapLocation)
+	{
+		gameMessage = "You take the " + item + ".";
+		//add the item to the players backpack
+		backpack.push(item);
+		//remove teh item from the game world
+		items.splice(itemIndexNumber, 1);
+		itemLocations.splice(itemIndexNumber, 1);
+		//display in the console for testing
+		console.log("World items: " + items);
+		console.log("backpack items: " + backpack);	
+	}
+	else
+	{
+		//message if the player tries to take an item that isn't in the current location
+		gameMessage = "you can't do that.";
+	}
+}
+
+function dropItem()
+{
+	//try to drop the item only if the backpack isn't empty
+	if(backpack.length !== 0)
+	{
+		//find the tiem's array index number in the backpack
+		var backpackIndexNumber = backpack.indexOf(item);
+		//the item is in the backpack if the backpackIndexNumber isn't -1
+		if(backpackIndexNumber !== -1)
+		{
+			//tell the player that the item has been dropped
+			gameMessage = "You dropped the " + item + ".";
+			
+			//add the item from the backpack to the game world
+			items.push(backpack[backpackIndexNumber]);
+			itemLocations.push(mapLocation);
+			//remove the item from the player's backpack
+			backpack.splice(backpackIndexNumber, 1);
+		}
+		else
+		{
+			//message if the player tries to drop something that is not in the backpack
+			gameMessage = "You can't do that.";
+		}
+	}
+	else
+	{
+		//message if the backpack is empty
+		gameMessage = "You're not carrying anything.";
+	}
+}
+
+function useItem()
+{
+	//find out if the item is in the backpack
+	//find the item's array index number in the backpack
+	var backpackIndexNumber = backpack.indexOf(item);
+	//if the index number is -1, then it isn't in the backpack
+	//tell the player that he or she isn't carrying it
+	if(backpackIndexNumber === -1)
+	{
+		gameMessage = "You're not carrying any items.";
+	}
+	//if there are no items in teh backpack, then tell teh player the backpack is empty
+	if(backpack.length === 0)
+	{
+		gameMessage += "Your backpack is empty";
+	}
+	
+	//if the item is found in the backpack figure out what to do with the item
+	if(backpackIndexNumber !== -1)
+	{
+		switch(item)
+		{
+			case "key":
+			if(mapLocation === 2)
+			{
+				gameMessage = "You use the rusty key to open the chest in the tool shed";
+			}
+			else
+			{
+			gameMessage = "A rusty key sits in your hand";
+			}
+			break;
+			
+			case "watch":
+			gameMessage = "You gently place the ancient pocket watch into your bag";
+			break;
+
+		
+		case "picture":
+			if(mapLocation === 5)
+			{
+				gameMessage = "You place the picture on the bed side table";
+				//remove item from players backpack
+				backpack.splice(backpackIndexNumber, 1);
+			}
+			else
+			{
+		gameMessage = "You find an old picture of someone's great grandparent.  It is usless to you, but you decide to keep it anyway.";
+			}
+		break;
+		}
+	}
+}
+
 function render()
 	{
 		//render the location
@@ -153,7 +302,8 @@ function render()
 		{
 			if(mapLocation === itemLocations[i])
 			{
-				output.innerHTML += "<br>You see a <strong>" + items[i] + "</strong> here."
+				//display it
+				output.innerHTML += "<br>You see a <strong>" + items[i] + "</strong> here.";
 			}
 		}
 			
@@ -161,11 +311,11 @@ function render()
 		output.innerHTML += "<br><em>" + gameMessage + "</em>";
 		
 		//display backback contents
-		//if(backpack.length !== 0)
-		//{
-			//output.innerHTML += "<br>You are carrying: " + backpack.join(", ");
-		//}
+		if(backpack.length !== 0)
+		{
+			output.innerHTML += "<br>You are carrying: " + backpack.join(", ");
+		}
 	}
 
 //display the players location
-output.innerHTML = map[mapLocation];
+//output.innerHTML = map[mapLocation];
