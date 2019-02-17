@@ -1,35 +1,35 @@
 		body 
 		{
-			font-family: American Typewriter, serif;
 			font-size: 100%;
-		}
-		
-		#banner 
-		{
-		  	height: 100px;
-			width: 920px;
-			background-color: #f7caa0;
-			margin: 40px auto;
-			position: relative;
-			overflow: hidden;
-            box-shadow: 5px 5px 8px rgba(0,0,0,0.3);
+			font-family: American Typewriter, serif;
 		}
 		
 		#image 
 		{
-		    position: absolute;
-            top: 5px;
+			top: 5px;
             right: 0px;
+		    position: absolute;
+		}
+		
+		#banner 
+		{
+			width: 920px;
+		  	height: 100px;
+			overflow: hidden;
+			margin: 40px auto;
+			position: relative;
+			background-color: #f7caa0;
+            box-shadow: 5px 5px 8px rgba(0,0,0,0.3);
 		}
 		
         .text 
 		{
             top: 25px;
 			left: 55px;
+			width: inherit;
             font-size: 44px;
 			font-weight: bold;
 			position: absolute;
-			width: inherit;
 			text-align: center;
 			color: rgba(241, 108, 35, 0.99);
 			text-shadow: 5px 5px 10px #7D7D7D;
