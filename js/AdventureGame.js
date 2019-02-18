@@ -70,7 +70,7 @@ button.addEventListener("click", clickHandler, false);
 
 
 var gameMessage = "Welcome to a game where you explore some strangers home! ";
-gameMessage += "To explore the home, you will want to use words north, south, east and west. ";
+gameMessage += "To explore the home, you will want to use words north, south, east and west. <br>";
 gameMessage += "If you come across an item, be sure to type the word take followed by the item name."
 
 
