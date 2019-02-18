@@ -65,7 +65,7 @@ var button = document.querySelector("button");
 
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
-window.addEventListener("keydown", keydownHandler, false);
+//window.addEventListener("keydown", keydownHandler, false);
 
 
 
