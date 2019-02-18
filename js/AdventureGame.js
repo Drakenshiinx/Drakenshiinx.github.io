@@ -62,8 +62,10 @@ var input = document.querySelector("#input");
 
 //the button
 var button = document.querySelector("button");
+
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
+window.addEventListener("keydown", keydownHandler, false);
 
 
 
