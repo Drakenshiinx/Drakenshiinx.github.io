@@ -1,4 +1,4 @@
-//create the array
+//Array to store locations on the map
 var map = [];
 map[0] = "The back patio.";
 map[1] = "The backyard.";
@@ -10,10 +10,10 @@ map[5] = "The Bedroom";
 //map[7] = "empty room";
 //map[8] = "empty room";
 
-//set player start location
+//variable where the player will start
 var mapLocation = 1;
 
-//images array
+//Array to store my images
 var images = [];
 images[0] = "backpatio1.jpg";
 images[1] = "garden1.jpg";
@@ -22,26 +22,26 @@ images[3] = "kitchen1.jpg";
 images[4] = "livingroom1.jpg";
 images[5] = "bedroom1.jpg";
 
-//messages that display if you go out of bounds
-var blockedPathMessages = [];
-blockedPathMessages[0] = "There is nothing over there.";
-blockedPathMessages[1] = "There is a very tall fence you cannot get over.";
-blockedPathMessages[2] = "You cannot go further.  You must turn back.";
-blockedPathMessages[3] = "A force stops you from going further.";
-blockedPathMessages[4] = "You cannot continue further.";
-blockedPathMessages[5] = "lol nope.";
-//blockedPathMessages[6] = "WIP";
-//blockedPathMessages[7] = "wIP";
-//blockedPathMessages[8] = "WIP";
+//Array that stores blocked path messages
+var blockedPath = [];
+blockedPath[0] = "There is nothing over there.";
+blockedPath[1] = "There is a very tall fence you cannot get over.";
+blockedPath[2] = "You cannot go further.  You must turn back.";
+blockedPath[3] = "A force stops you from going further.";
+blockedPath[4] = "You cannot continue further.";
+blockedPath[5] = "lol nope.";
+//blockedPath[6] = "WIP";
+//blockedPath[7] = "wIP";
+//blockedPath[8] = "WIP";
 
 //items array
-var items = ["key", "watch", "picture"];
+var gameItems = ["key", "watch", "picture"];
 //location of items
 var itemLocations =[1, 4, 6];
 //backpack array
 var backpack = [];
 //initialize the players input
-var playersInput = "";
+var userInput = "";
 //initialize the gameMessage
 var gameMessage = "";
 
@@ -87,8 +87,8 @@ function clickHandler()
 function playGame()
 {
 	//get the players input and convert it to lowercase
-	playersInput = input.value;
-	playersInput = playersInput.toLowerCase();
+	userInput = input.value;
+	userInput = userInput.toLowerCase();
 	
 	//reset these variables from the previous turn
 	gameMessage = "";
@@ -97,7 +97,7 @@ function playGame()
 	//figure out the players action
 	for(var i = 0; i < actionsIKnow.length; i++)
 	{
-		if(playersInput.indexOf(actionsIKnow[i]) !== -1)
+		if(userInput.indexOf(actionsIKnow[i]) !== -1)
 		{
 			action = actionsIKnow[i];
 			console.log("player's action: " + action);
@@ -108,7 +108,7 @@ function playGame()
 	//figure out the item the player wants
 	for (i = 0; i < itemsIKnow.length; i++)
 	{
-		if(playersInput.indexOf(itemsIKnow[i]) !== -1)
+		if(userInput.indexOf(itemsIKnow[i]) !== -1)
 		{
 			item = itemsIKnow[i];
 			console.log("Player's item: " + item);
@@ -125,7 +125,7 @@ function playGame()
 		}
 		else
 		{
-			gameMessage = blockedPathMessages[mapLocation];
+			gameMessage = blockedPath[mapLocation];
 		}
 		break;
 		
@@ -136,7 +136,7 @@ function playGame()
 		}
 		else
 		{
-			gameMessage = blockedPathMessages[mapLocation];
+			gameMessage = blockedPath[mapLocation];
 		}
 		break;
 		
@@ -147,7 +147,7 @@ function playGame()
 		}
 		else
 		{
-			gameMessage = blockedPathMessages[mapLocation];
+			gameMessage = blockedPath[mapLocation];
 		}
 		break;
 		
@@ -158,7 +158,7 @@ function playGame()
 		}
 		else
 		{
-			gameMessage = blockedPathMessages[mapLocation];
+			gameMessage = blockedPath[mapLocation];
 		}
 		break;
 		
@@ -184,7 +184,7 @@ function playGame()
 function takeItem()
 {
 	//find the index number of the item in the items array
-	var itemIndexNumber = items.indexOf(item);
+	var itemIndexNumber = gameItems.indexOf(item);
 	//does the item exist in the game world and is it at the players current location?
 	if(itemIndexNumber !== -1 && itemLocations[itemIndexNumber] === mapLocation)
 	{
@@ -193,11 +193,11 @@ function takeItem()
 		backpack.push(item);
 		
 		//remove the item from the game world
-		items.splice(itemIndexNumber, 1);
+		gameItems.splice(itemIndexNumber, 1);
 		itemLocations.splice(itemIndexNumber, 1);
 		
 		//display in the console for testing
-		console.log("World items: " + items);
+		console.log("World items: " + gameItems);
 		console.log("backpack items: " + backpack);	
 	}
 	else
@@ -221,7 +221,7 @@ function dropItem()
 			gameMessage = "You dropped the " + item + ".";
 			
 			//add the item from the backpack to the game world
-			items.push(backpack[backpackIndexNumber]);
+			gameItems.push(backpack[backpackIndexNumber]);
 			itemLocations.push(mapLocation);
 			//remove the item from the player's backpack
 			backpack.splice(backpackIndexNumber, 1);
@@ -300,12 +300,12 @@ function render()
 		image.src = "../images/" + images[mapLocation];
 		
 		//display an item if it's in the location
-		for(var i = 0; i < items.length; i++)
+		for(var i = 0; i < gameItems.length; i++)
 		{
 			if(mapLocation === itemLocations[i])
 			{
 				//display it
-				output.innerHTML += "<br>You see a <strong>" + items[i] + "</strong> here.";
+				output.innerHTML += "<br>You see a <strong>" + gameItems[i] + "</strong> here.";
 			}
 		}
 			
