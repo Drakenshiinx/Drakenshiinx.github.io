@@ -176,8 +176,9 @@ function playGame()
 		break;
 		
 		default:
-		gameMessage ="I don't understand that.";
+		gameMessage ="This is not a valid option.";
 	}
+	
 	//render the game
 	render();
 }
@@ -319,6 +320,3 @@ function render()
 			output.innerHTML += "<br>You are carrying: " + backpack.join(", ");
 		}
 	}
-
-//display the players location
-//output.innerHTML = map[mapLocation];
