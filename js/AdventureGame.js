@@ -1,3 +1,5 @@
+const ENTER = 13;
+
 //Array to store locations on the map
 var map = [];
 map[0] = "The back patio.";
@@ -65,7 +67,7 @@ var button = document.querySelector("button");
 
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
-//window.addEventListener("keydown", keydownHandler, false);
+window.addEventListener("keydown", keydownHandler, false);
 
 
 
@@ -81,6 +83,13 @@ gameMessage += "If you come across an item, be sure to type the word take follow
 
 //display the players location
 render();
+
+function keydownHandler(event)
+{
+  if(event.keyCode === ENTER)
+  {
+    playGame();
+  }
 
 function clickHandler()
 {
