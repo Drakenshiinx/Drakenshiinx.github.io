@@ -37,7 +37,7 @@ blockedPath[5] = "lol nope.";
 //items array
 var gameItems = ["key", "watch", "picture"];
 //location of items
-var itemLocations =[1, 4, 6];
+var itemLocations =[1, 4, 5];
 //backpack array
 var backpack = [];
 //initialize the players input
