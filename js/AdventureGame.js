@@ -313,7 +313,7 @@ function render()
 		}
 			
 		//This displays the game message
-		output.innerHTML += "<br><em>" + gameMessage + "</em><br>";
+		output.innerHTML += "<br>" + gameMessage + "<br>";
 		
 		//This displays the contents in the backpack
 		if(backpack.length !== 0)
