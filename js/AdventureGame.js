@@ -192,7 +192,7 @@ function takeItem()
 		//add the item to the players backpack
 		backpack.push(item);
 		
-		//remove teh item from the game world
+		//remove the item from the game world
 		items.splice(itemIndexNumber, 1);
 		itemLocations.splice(itemIndexNumber, 1);
 		
