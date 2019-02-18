@@ -11,7 +11,7 @@ map[5] = "The Bedroom";
 //map[8] = "empty room";
 
 //variable where the player will start
-var mapLocation = 1;
+var mapLocation = 3;
 
 //Array to store my images
 var images = [];
@@ -71,6 +71,7 @@ button.addEventListener("click", clickHandler, false);
 
 var gameMessage = "Welcome to a game where you explore some strangers home!";
 gameMessage += "To explore the home, you will want to use words north, south, east and west.";
+gameMessage += "If you come across an item, be sure to type the word take followed by the item name."
 
 
 
