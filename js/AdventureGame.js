@@ -297,24 +297,23 @@ function useItem()
 
 function render()
 	{
-		//render the location
+		//This renders the location
 		output.innerHTML = map[mapLocation];
 		image.src = "../images/" + images[mapLocation];
 		
-		//display an item if it's in the location
+		//This will display an item if it happens to be in the players location
 		for(var i = 0; i < gameItems.length; i++)
 		{
 			if(mapLocation === itemLocations[i])
 			{
-				//display it
 				output.innerHTML += "<br>You see a <strong>" + gameItems[i] + "</strong> here.";
 			}
 		}
 			
-		//display the game message
-		output.innerHTML += "<br><em>" + gameMessage + "</em>";
+		//This displays the game message
+		output.innerHTML += "<br><em>" + gameMessage + "</em><br>";
 		
-		//display backback contents
+		//This displays the contents in the backpack
 		if(backpack.length !== 0)
 		{
 			output.innerHTML += "<br>You are carrying: " + backpack.join(", ");
