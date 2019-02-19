@@ -26,10 +26,10 @@ images[5] = "bedroom1.jpg";
 
 //Array that stores blocked path messages
 var blockedPath = [];
-blockedPath[0] = "There is nothing over there.";
+blockedPath[0] = "There is nothing of interest over there.";
 blockedPath[1] = "There is a very tall fence you cannot get over.";
-blockedPath[2] = "You cannot go further.  You must turn back.";
-blockedPath[3] = "A force stops you from going further.";
+blockedPath[2] = "This is a dead end.  You must turn back.";
+blockedPath[3] = "You are a living being and are unable to phase through walls.";
 blockedPath[4] = "You cannot continue further.";
 blockedPath[5] = "lol nope.";
 //blockedPath[6] = "WIP";
@@ -84,6 +84,7 @@ gameMessage += "If you come across an item, be sure to type the word take follow
 //display the players location
 render();
 
+//allows the user to hit enter
 function keydownHandler(event)
 {
   if(event.keyCode === ENTER)
