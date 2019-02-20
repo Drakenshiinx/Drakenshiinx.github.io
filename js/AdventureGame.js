@@ -23,16 +23,16 @@ images[2] = "toolshed1.png";
 images[3] = "kitchen1.jpg";
 images[4] = "livingroom1.jpg";
 images[5] = "bedroom1.jpg";
-images[6] = "basement.jpeg";
+images[6] = "basement.jpg";
 
 //Array that stores blocked path messages
 var blockedPath = [];
-blockedPath[0] = "There is nothing of interest over there.";
-blockedPath[1] = "There is a very tall fence you cannot get over.";
-blockedPath[2] = "This is a dead end.  You must turn back.";
-blockedPath[3] = "You are a living being and are unable to phase through walls.";
-blockedPath[4] = "You cannot continue further.";
-blockedPath[5] = "lol nope.";
+blockedPath[0] = "<i>There is nothing of interest over there.</i>";
+blockedPath[1] = "<i>There is a very tall fence you cannot get over.</i>";
+blockedPath[2] = "<i>This is a dead end.  You must turn back.</i>";
+blockedPath[3] = "<i>You are a living being and are unable to phase through walls.</i>";
+blockedPath[4] = "<i>You cannot continue further.</i>";
+blockedPath[5] = "<i>lol nope.</i>";
 blockedPath[6] = "<i>The deer head mounted on the wall stares into your soul preventing you from going in that direction.</i>";
 //blockedPath[7] = "wIP";
 //blockedPath[8] = "WIP";
