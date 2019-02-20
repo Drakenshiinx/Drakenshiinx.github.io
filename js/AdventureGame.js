@@ -33,7 +33,7 @@ blockedPath[2] = "This is a dead end.  You must turn back.";
 blockedPath[3] = "You are a living being and are unable to phase through walls.";
 blockedPath[4] = "You cannot continue further.";
 blockedPath[5] = "lol nope.";
-blockedPath[6] = "The deer head stares into your soul preventing you from going in that direction.";
+blockedPath[6] = "<i>The deer head mounted on the wall stares into your soul preventing you from going in that direction.</i>";
 //blockedPath[7] = "wIP";
 //blockedPath[8] = "WIP";
 
