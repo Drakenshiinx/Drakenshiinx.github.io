@@ -62,6 +62,7 @@ var image = document.querySelector("img");
 //the input and output fields
 var output = document.querySelector("#output");
 var input = document.querySelector("#input");
+var startBtn = document.querySelector("#start");
 
 //the button
 var button = document.querySelector("button");
@@ -69,6 +70,7 @@ var button = document.querySelector("button");
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
 window.addEventListener("keydown", keydownHandler, false);
+startBtn.addEventListener("click",startGameHandler,false);
 
 
 
