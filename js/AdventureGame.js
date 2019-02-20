@@ -65,10 +65,12 @@ var input = document.querySelector("#input");
 
 //the button
 var button = document.querySelector("button");
+var lastSessionButton = sessionStorage.getItem("playerPosition");
 
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
 window.addEventListener("keydown", keydownHandler, false);
+lastSessionButton.addEventListener("click", clickHandler, false);
 
 
 
