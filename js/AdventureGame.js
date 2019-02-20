@@ -76,7 +76,7 @@ window.addEventListener("keydown", keydownHandler, false);
 
 function lastPlace()
 {
-	sessionStorage.getItem("playerPosition");
+	localStorage.getItem("playerPosition");
 	playGame();
 
 }
