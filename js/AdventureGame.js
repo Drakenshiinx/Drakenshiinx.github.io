@@ -8,7 +8,7 @@ map[2] = "The tool shed.";
 map[3] = "The kitchen.";
 map[4] = "The livingroom.";
 map[5] = "The Bedroom";
-//map[6] = "empty room";
+map[6] = "The basement";
 //map[7] = "empty room";
 //map[8] = "empty room";
 
@@ -23,6 +23,7 @@ images[2] = "toolshed1.png";
 images[3] = "kitchen1.jpg";
 images[4] = "livingroom1.jpg";
 images[5] = "bedroom1.jpg";
+images[6] = "basement.jpeg";
 
 //Array that stores blocked path messages
 var blockedPath = [];
@@ -32,7 +33,7 @@ blockedPath[2] = "This is a dead end.  You must turn back.";
 blockedPath[3] = "You are a living being and are unable to phase through walls.";
 blockedPath[4] = "You cannot continue further.";
 blockedPath[5] = "lol nope.";
-//blockedPath[6] = "WIP";
+blockedPath[6] = "The deer head stares into your soul preventing you from going in that direction.";
 //blockedPath[7] = "wIP";
 //blockedPath[8] = "WIP";
 
