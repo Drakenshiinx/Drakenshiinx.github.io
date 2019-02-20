@@ -62,7 +62,6 @@ var image = document.querySelector("img");
 //the input and output fields
 var output = document.querySelector("#output");
 var input = document.querySelector("#input");
-var startBtn = document.querySelector("#start");
 
 //the button
 var button = document.querySelector("button");
@@ -70,7 +69,6 @@ var button = document.querySelector("button");
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
 window.addEventListener("keydown", keydownHandler, false);
-startBtn.addEventListener("click",startGameHandler,false);
 
 
 
@@ -139,6 +137,8 @@ function playGame()
 		if(mapLocation >= 3)
 		{
 			mapLocation -= 3;
+			localStorage.setItem("playerPosition",mapLocation);
+			console.log(mapLocation);
 		}
 		else
 		{
@@ -150,6 +150,8 @@ function playGame()
 		if(mapLocation % 3 != 2)
 		{
 			mapLocation += 1;
+			localStorage.setItem("playerPosition",mapLocation);
+			console.log(mapLocation);
 		}
 		else
 		{
@@ -161,6 +163,8 @@ function playGame()
 		if (mapLocation < 6)
 		{
 			mapLocation += 3;
+			localStorage.setItem("playerPosition",mapLocation);
+			console.log(mapLocation);
 		}
 		else
 		{
@@ -172,6 +176,8 @@ function playGame()
 		if(mapLocation % 3 != 0)
 		{
 			mapLocation -= 1;
+			localStorage.setItem("playerPosition",mapLocation);
+			console.log(mapLocation);
 		}
 		else
 		{
