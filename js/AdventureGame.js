@@ -62,7 +62,7 @@ var image = document.querySelector("img");
 //the input and output fields
 var output = document.querySelector("#output");
 var input = document.querySelector("#input");
-//var lastSessionButton = document.querySelector("#lastSessionButton");
+var lastSessionButton = document.querySelector("#lastSessionButton");
 
 //the button
 var button = document.querySelector("button");
@@ -71,7 +71,7 @@ var button = document.querySelector("button");
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
 window.addEventListener("keydown", keydownHandler, false);
-lastSessionButton.addEventListener("click", lastPlace, false);
+//lastSessionButton.addEventListener("click", lastPlace, false);
 
 
 function lastPlace()
