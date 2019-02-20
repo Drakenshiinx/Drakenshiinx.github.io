@@ -62,17 +62,24 @@ var image = document.querySelector("img");
 //the input and output fields
 var output = document.querySelector("#output");
 var input = document.querySelector("#input");
+//var lastSessionButton = document.querySelector("#lastSessionButton");
 
 //the button
 var button = document.querySelector("button");
-var lastSessionButton = sessionStorage.getItem("playerPosition");
+
 
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
 window.addEventListener("keydown", keydownHandler, false);
-lastSessionButton.addEventListener("click", clickHandler, false);
+lastSessionButton.addEventListener("click", lastPlace, false);
 
 
+function lastPlace()
+{
+	sessionStorage.getItem("playerPosition");
+	playGame();
+
+}
 
 
 
@@ -98,6 +105,7 @@ function keydownHandler(event)
 
 function clickHandler()
 {
+	var x = localStorage.getItem("playerPosition");
 	playGame();
 }
 
