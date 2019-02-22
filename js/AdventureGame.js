@@ -159,7 +159,7 @@ function playGame()
 		break;
 		
 		case "east":
-		if(mapLocation % 3 != 2 && mapLocation[2])
+		if(mapLocation[2])
 		{
 			console.log("checking if condition");
 		}
