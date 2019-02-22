@@ -106,7 +106,7 @@ function keydownHandler(event)
 
 function clickHandler()
 {
-	//var x = localStorage.getItem("playerPosition");
+	var x = localStorage.getItem("playerPosition");
 	playGame();
 }
 
