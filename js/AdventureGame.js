@@ -161,7 +161,7 @@ function playGame()
 		
 		if(mapLocation === 2)
 		{
-				if(backpack.includes("key"))
+				if(!backpack.includes("key"))
 				{
 					console.log("loop to check key");
 					console.log(backpack);
