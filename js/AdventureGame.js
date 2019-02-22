@@ -80,14 +80,6 @@ function lastPlace()
 	console.log("teesssting" + x + mapLocation);
 	output.innerHTML = map[x];
 	image.src = "../images/" + images[x];
-			for(var i = 0; i < gameItems.length; i++)
-		{
-			if(x === itemLocations[i])
-			{
-				output.innerHTML += "<br>You see a <strong>" + gameItems[i] + "</strong> here.";
-			}
-		}
-			
 
 }
 
