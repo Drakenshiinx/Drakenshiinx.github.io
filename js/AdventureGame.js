@@ -78,7 +78,8 @@ function lastPlace()
 {
 	var x = localStorage.getItem("playerPosition");
 	console.log("teesssting");
-	playGame();
+	mapLocation[x];
+	//playGame();
 
 }
 
@@ -107,8 +108,7 @@ function keydownHandler(event)
 function clickHandler()
 {
 	var x = localStorage.getItem("playerPosition");
-	mapLocation[x];
-	//playGame();
+	playGame();
 }
 
 function playGame()
