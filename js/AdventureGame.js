@@ -311,15 +311,14 @@ function useItem()
 			case "watch":
 			gameMessage = "You gently place the ancient pocket watch into your bag";
 			break;
-
 		
-		case "picture":
-			if(mapLocation === 5)
-			{
-				gameMessage = "You place the picture on the bed side table";
-				//remove item from players backpack
-				backpack.splice(backpackIndexNumber, 1);
-			}
+			case "picture":
+				if(mapLocation === 5)
+				{
+					gameMessage = "You place the picture on the bed side table";
+					//remove item from players backpack
+					backpack.splice(backpackIndexNumber, 1);
+				}
 			else
 			{
 		gameMessage = "You find an old picture of someone's great grandparent.  It is usless to you, but you decide to keep it anyway.";
@@ -340,7 +339,7 @@ function render()
 		{
 			if(mapLocation === itemLocations[i])
 			{
-				output.innerHTML += "<br>You see a <strong>" + gameItems[i] + "</strong> here.";
+				output.innerHTML += "<br>You notice a <strong>" + gameItems[i] + "</strong> here in the room.";
 			}
 		}
 			
