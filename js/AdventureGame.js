@@ -161,14 +161,12 @@ function playGame()
 		
 		if(mapLocation === 2)
 		{
-			for(var i = 0; backpack.length; i++)
-			{
-				if(backpack ==="key")
+				if(backpack.includes("key"))
 				{
 					console.log("loop to check key");
 					console.log(backpack);
-				}
-			}
+					gameMessage="The door unlocks";
+				}			
 		}
 		
 		else if(mapLocation % 3 != 2)
