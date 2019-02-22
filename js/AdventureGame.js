@@ -304,7 +304,7 @@ function useItem()
 			}
 			else
 			{
-			gameMessage = "A rusty key sits in your hand";
+			gameMessage = "You don't see anything in the room that would use the key.";
 			}
 			break;
 			
