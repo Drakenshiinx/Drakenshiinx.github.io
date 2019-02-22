@@ -7,6 +7,10 @@
   font-size: 15px;
 }
 
+#output {
+	margin: 0px auto;
+}
+
 body {
 	background-image: url("../images/backgroundgame.jpg");
 	background-repeat: repeat;
