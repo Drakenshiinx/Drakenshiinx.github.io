@@ -107,7 +107,8 @@ function keydownHandler(event)
 function clickHandler()
 {
 	var x = localStorage.getItem("playerPosition");
-	playGame();
+	mapLocation[x];
+	//playGame();
 }
 
 function playGame()
