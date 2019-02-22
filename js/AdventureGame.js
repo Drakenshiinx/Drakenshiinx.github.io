@@ -165,7 +165,8 @@ function playGame()
 			{
 				if(backpack ==="key")
 				{
-					console.log ("loop to check key")
+					console.log("loop to check key");
+					console.log(backpack);
 				}
 			}
 		}
