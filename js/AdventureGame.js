@@ -132,6 +132,14 @@ function playGame()
 		}
 	}
 	
+	for(var i = 0; i < mapLocation.length; i++)
+	{
+		if(mapLocation[2])
+		{
+			console.log("checking if condition");
+		}
+	}
+	
 	//figure out the item the player wants
 	for (i = 0; i < itemsIKnow.length; i++)
 	{
@@ -159,11 +167,7 @@ function playGame()
 		break;
 		
 		case "east":
-		if(mapLocation[2])
-		{
-			console.log("checking if condition");
-		}
-		else if(mapLocation % 3 != 2)
+		if(mapLocation % 3 != 2)
 		{
 			mapLocation += 1;
 			localStorage.setItem("playerPosition",mapLocation);
