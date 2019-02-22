@@ -162,20 +162,18 @@ function playGame()
 		
 		if(mapLocation % 3 != 2)
 		{
-			if(mapLocation === 2)
-			{
-				if(!backpack.includes("key"))
-				{
-					console.log("loop to check key");
-					console.log(backpack);
-					gameMessage="The door unlocks";
-				}			
-			}
-		else{
+			//if(mapLocation === 2)
+			//{
+				//if(!backpack.includes("key"))
+				//{
+					//console.log("loop to check key");
+				//}			
+			//} 
+		//else{
 			mapLocation += 1;
 			localStorage.setItem("playerPosition",mapLocation);
 			console.log(mapLocation);
-		}
+			//}
 		}
 		else
 		{
