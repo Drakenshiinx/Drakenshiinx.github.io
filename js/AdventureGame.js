@@ -77,8 +77,9 @@ window.addEventListener("keydown", keydownHandler, false);
 function lastPlace()
 {
 	let x = localStorage.getItem("playerPosition");
-	console.log("teesssting" + x);
-	render();
+	console.log("teesssting" + x + mapLocation);
+	output.innerHTML = map[mapLocation];
+	image.src = "../images/" + images[mapLocation];
 
 }
 
