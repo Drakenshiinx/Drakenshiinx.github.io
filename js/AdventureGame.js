@@ -136,7 +136,7 @@ function playGame()
 	{
 		if(mapLocation[2])
 		{
-			console.log("checking if condition");
+			alert("checking if condition");
 		}
 	}
 	
