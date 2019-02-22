@@ -71,7 +71,7 @@ var button = document.querySelector("button");
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
 window.addEventListener("keydown", keydownHandler, false);
-//lastSessionButton.addEventListener("click", lastPlace, false);
+lastSessionButton.addEventListener("click", lastPlace, false);
 
 
 function lastPlace()
