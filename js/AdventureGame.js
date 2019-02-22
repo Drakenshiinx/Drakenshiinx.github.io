@@ -163,7 +163,8 @@ function playGame()
 		{
 			console.log("checking if condition");
 		}
-		else if{
+		else if(mapLocation % 3 != 2)
+		{
 			mapLocation += 1;
 			localStorage.setItem("playerPosition",mapLocation);
 			console.log(mapLocation);
