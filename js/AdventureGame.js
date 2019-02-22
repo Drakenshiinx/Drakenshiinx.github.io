@@ -78,8 +78,8 @@ function lastPlace()
 {
 	let x = localStorage.getItem("playerPosition");
 	console.log("teesssting" + x + mapLocation);
-	output.innerHTML = map[mapLocation];
-	image.src = "../images/" + images[mapLocation];
+	//output.innerHTML = map[mapLocation];
+	//image.src = "../images/" + images[mapLocation];
 
 }
 
