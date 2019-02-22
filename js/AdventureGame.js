@@ -159,16 +159,16 @@ function playGame()
 		
 		case "east":
 		
-//		if(mapLocation === 2)
-		//{
-			//for(var i = 0, backpack.length, i++)
-			//{
-				//if(backpack["key"])
-				//{
-					//console.log ("loop to check key")
-				//}
-			//}
-		//}
+		if(mapLocation === 2)
+		{
+			for(var i = 0; backpack.length; i++)
+			{
+				if(backpack["key"])
+				{
+					console.log ("loop to check key")
+				}
+			}
+		}
 		
 		else if(mapLocation % 3 != 2)
 		{
