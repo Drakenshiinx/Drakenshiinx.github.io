@@ -80,6 +80,7 @@ function lastPlace()
 	console.log("teesssting" + x + mapLocation);
 	output.innerHTML = map[x];
 	image.src = "../images/" + images[x];
+	playGame();
 
 }
 
