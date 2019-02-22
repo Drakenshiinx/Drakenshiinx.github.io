@@ -40,7 +40,7 @@ blockedPath[6] = "<i>The deer head mounted on the wall stares into your soul pre
 //items array
 var gameItems = ["key", "watch", "picture"];
 //location of items
-var itemLocations =[1, 4, 5];
+var itemLocations =[1, 4, 6];
 //backpack array
 var backpack = [];
 //initialize the players input
