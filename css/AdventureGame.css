@@ -12,3 +12,9 @@ body {
 	background-image: url("../images/backgroundgame.jpg");
 	background-repeat: repeat;
 }
+
+image.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
