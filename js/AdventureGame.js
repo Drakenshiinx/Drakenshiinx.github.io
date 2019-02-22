@@ -224,7 +224,7 @@ function takeItem()
 	//does the item exist in the game world and is it at the players current location?
 	if(itemIndexNumber !== -1 && itemLocations[itemIndexNumber] === mapLocation)
 	{
-		gameMessage = "You take the " + item + ".";
+		gameMessage = "You take the " + item + " and place it into your backpack.";
 		//add the item to the players backpack
 		backpack.push(item);
 		
