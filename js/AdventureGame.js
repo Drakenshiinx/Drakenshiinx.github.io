@@ -77,7 +77,7 @@ window.addEventListener("keydown", keydownHandler, false);
 function lastPlace()
 {
 	var x = localStorage.getItem("playerPosition");
-	console.log("teesssting");
+	console.log("teesssting" + x);
 	playGame();
 
 }
