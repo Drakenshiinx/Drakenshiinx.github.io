@@ -71,7 +71,7 @@ var button = document.querySelector("button");
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
 window.addEventListener("keydown", keydownHandler, false);
-lastSessionButton.addEventListener("click", lastPlace, false);
+//lastSessionButton.addEventListener("click", lastPlace, false);
 
 
 function lastPlace()
@@ -106,7 +106,7 @@ function keydownHandler(event)
 
 function clickHandler()
 {
-	var x = localStorage.getItem("playerPosition");
+	//var x = localStorage.getItem("playerPosition");
 	playGame();
 }
 
