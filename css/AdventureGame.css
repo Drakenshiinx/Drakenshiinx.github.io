@@ -7,3 +7,8 @@
   font-family: Trebuchet MS, sans-serif;
   font-size: 15px;
 }
+
+body {
+	background-image: url("images/backgroundgame.jpg");
+	background-repeat: repeat;
+}
