@@ -158,7 +158,19 @@ function playGame()
 		break;
 		
 		case "east":
-		if(mapLocation % 3 != 2)
+		
+		if(mapLocation === 2)
+		{
+			for(var i = 0, backpack.length, i++)
+			{
+				if(backpack["key"])
+				{
+					console.log ("loop to check key")
+				}
+			}
+		}
+		
+		else if(mapLocation % 3 != 2)
 		{
 			mapLocation += 1;
 			localStorage.setItem("playerPosition",mapLocation);
