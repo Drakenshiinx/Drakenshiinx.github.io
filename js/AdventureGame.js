@@ -111,6 +111,16 @@ function clickHandler()
 	playGame();
 }
 
+function checkItems()
+{
+	var itemIndexNumber = gameItems.indexOf("key");
+	//does the item exist in the game world and is it at the players current location?
+	if(backpack[itemIndexNumber] === "key" && mapLocation === 2)
+	{
+		gameMessage="BLAAAAAAAAAAAAAAARG";
+}
+
+
 function playGame()
 {
 	//get the players input and convert it to lowercase
