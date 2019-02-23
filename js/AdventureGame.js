@@ -309,6 +309,7 @@ function useItem()
 			if(mapLocation === 2)
 			{
 				gameMessage = "You use the rusty key to open the chest in the tool shed";
+				backpack.splice(backpackIndexNumber, 1);
 			}
 			else
 			{
