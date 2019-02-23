@@ -117,9 +117,24 @@ function checkItems()
 {
     //var itemIndexNumber = gameItems.indexOf("key");
 	//does the item exist in the game world and is it at the players current location?
-	if(backpack.includes("key") && mapLocation === 2)
+	if(!backpack.includes("key"))
 	{
-		window.alert("BLAAAAAAAAAAAAAAARG");
+		alert("yep");
+	}
+
+	if( mapLocation===1 && !backpack.includes("key"))
+	{
+		window.alert("You cannot enter without key");
+	}
+	else if (mapLocation===5 && !backpack.includes("key"))
+	{
+		window.alert("You cannot enter from room 5 ");
+	}
+	else
+	{
+		let backpackIndexNumber = backpack.indexOf("key");
+		window.alert("you use the key and enter the shed");
+		backpack.splice(backpackIndexNumber, 1);
 	}
 }
 
