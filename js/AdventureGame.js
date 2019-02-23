@@ -123,16 +123,16 @@ function checkItems()
 		alert("yep");
 	}
 
-	if( mapLocation===1 && !backpack.includes("key"))
+	if( mapLocation===2 && !backpack.includes("key"))
 	{
 		window.alert("You cannot enter without key");
 		mapLocation = 1;
 	}
-	else if (mapLocation===5 && !backpack.includes("key"))
-	{
-		window.alert("You cannot enter from room 5 ");
-		mapLocation = 5;
-	}
+//	else if (mapLocation===5 && !backpack.includes("key"))
+	///{
+		//window.alert("You cannot enter from room 5 ");
+	///mapLocation = 5;
+	//}
 	else
 	{
 		let backpackIndexNumber = backpack.indexOf("key");
