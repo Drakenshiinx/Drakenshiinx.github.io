@@ -119,7 +119,7 @@ function checkItems()
 	//does the item exist in the game world and is it at the players current location?
 	if(backpack.includes("key") && mapLocation === 2)
 	{
-		Alert("BLAAAAAAAAAAAAAAARG");
+		window.alert("BLAAAAAAAAAAAAAAARG");
 	}
 }
 
