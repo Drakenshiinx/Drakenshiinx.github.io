@@ -61,7 +61,7 @@ var item = "";
 var image = document.querySelector("img");
 //the input and output fields
 var output = document.querySelector("#output");
-var myInput = document.querySelector("#input");
+var input = document.querySelector("#input");
 var lastSessionButton = document.querySelector("#lastSessionButton");
 
 //the button
@@ -114,7 +114,7 @@ function clickHandler()
 function playGame()
 {
 	//get the players input and convert it to lowercase
-	userInput = myInput.value;
+	userInput = input.value;
 	userInput = userInput.toLowerCase();
 	
 	//reset these variables from the previous turn
