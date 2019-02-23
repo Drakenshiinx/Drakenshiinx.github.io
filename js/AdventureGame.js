@@ -2,13 +2,13 @@ const ENTER = 13;
 
 //Array to store locations on the map
 var map = [];
-map[0] = "The back patio.";
-map[1] = "The backyard.";
-map[2] = "The tool shed.";
-map[3] = "The kitchen.";
-map[4] = "The livingroom.";
-map[5] = "The Bedroom";
-map[6] = "The basement";
+map[0] = "You step outside and onto the patio.<br>";
+map[1] = "While walking outside, you enter the backyard.<br>";
+map[2] = "You decide to walk towards the toolshed and enter inside.<br>";
+map[3] = "You have entered the kitchen.<br>";
+map[4] = "You enter the livingroom.<br>";
+map[5] = "You enter the bedroom.<br>";
+map[6] = "The followed the stairs that entered the basement.<br>";
 //map[7] = "empty room";
 //map[8] = "empty room";
 
