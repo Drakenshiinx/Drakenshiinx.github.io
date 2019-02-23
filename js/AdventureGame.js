@@ -118,10 +118,6 @@ function checkItems()
 {
     //var itemIndexNumber = gameItems.indexOf("key");
 	//does the item exist in the game world and is it at the players current location?
-	if(!backpack.includes("key"))
-	{
-		alert("yep");
-	}
 
 	if( mapLocation===2 && !backpack.includes("key"))
 	{
@@ -129,9 +125,9 @@ function checkItems()
 		mapLocation = 1;
 	}
 //	else if (mapLocation===5 && !backpack.includes("key"))
-	///{
+	//{
 		//window.alert("You cannot enter from room 5 ");
-	///mapLocation = 5;
+	//mapLocation = 5;
 	//}
 	else
 	{
@@ -165,7 +161,7 @@ function playGame()
 	
 	for(var i = 0; i < mapLocation.length; i++)
 	{
-		if(mapLocation[2])
+		if(mapLocation===2)
 		{
 			alert("checking if condition");
 		}
@@ -184,6 +180,7 @@ function playGame()
 	//choose the correct action
 	switch(action)
 	{
+		//move north command
 		case "north":
 		if(mapLocation >= 3)
 		{
@@ -197,6 +194,7 @@ function playGame()
 		}
 		break;
 		
+		//move east command
 		case "east":
 		if(mapLocation % 3 != 2)
 		{
@@ -210,6 +208,7 @@ function playGame()
 		}
 		break;
 		
+		//move south command
 		case "south":
 		if (mapLocation < 6)
 		{
@@ -223,6 +222,7 @@ function playGame()
 		}
 		break;
 		
+		//move west command
 		case "west":
 		if(mapLocation % 3 != 0)
 		{
@@ -319,8 +319,7 @@ function useItem()
 	//find out if the item is in the backpack
 	//find the item's array index number in the backpack
 	var backpackIndexNumber = backpack.indexOf(item);
-	//if the index number is -1, then it isn't in the backpack
-	//tell the player that he or she isn't carrying it
+	//error message that lets the player know the backpack is empty (-1 means inventory is empty)
 	if(backpackIndexNumber === -1)
 	{
 		gameMessage = "You're not carrying any items.";
