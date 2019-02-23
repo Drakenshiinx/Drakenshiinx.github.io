@@ -116,10 +116,7 @@ function clickHandler()
 
 function checkItems()
 {
-    //var itemIndexNumber = gameItems.indexOf("key");
-	//does the item exist in the game world and is it at the players current location?
-
-	if( map[1]&& !backpack.includes("key"))
+	if( mapLocation = 1 && !backpack.includes("key"))
 	{
 		window.alert("You cannot enter without key");
 		mapLocation = 1;
