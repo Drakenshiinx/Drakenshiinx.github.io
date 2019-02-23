@@ -118,6 +118,7 @@ function checkItems()
 	if(backpack[itemIndexNumber] === "key" && mapLocation === 2)
 	{
 		gameMessage="BLAAAAAAAAAAAAAAARG";
+	}
 }
 
 
