@@ -15,7 +15,7 @@ body {
 	background-repeat: repeat;
 }
 
-img.center {
+img.center, .input {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
