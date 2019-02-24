@@ -88,6 +88,11 @@ function lastPlace()
 }
 
 
+function startGame()
+{
+	mapLocation = 3;
+}
+
 
 var gameMessage = "Welcome to a game where you explore some strangers home! ";
 gameMessage += "To explore the home, you will want to use words north, south, east and west. <br>";
