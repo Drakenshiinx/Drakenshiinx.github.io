@@ -1,4 +1,4 @@
-const ENTER = 13;
+var ENTER = 13;
 
 //Array to store locations on the map
 var map = [];
@@ -40,7 +40,7 @@ blockedPath[6] = "<i>The deer head mounted on the wall stares into your soul pre
 //items array
 var gameItems = ["key", "watch", "picture"];
 //location of items
-var itemLocations =[1, 4, 6];
+var itemLocations = [1, 4, 6];
 //backpack array
 var backpack = [];
 //initialize the players input
@@ -67,28 +67,17 @@ var input = document.querySelector("#input");
 var lastSessionButton = document.querySelector("#lastSessionButton");
 var check = document.querySelector("#check");
 
-//the button
-var button = document.querySelector("button");
+//function that will bring the player to the last position they left off at
+function lastPlace( ) 
+     {
+	mapLocation = localStorage.getItem("playerPosition");
+	console.log("teesssting" + mapLocation);
+	output.innerHTML = map[mapLocation];
+	image.src = "../images/" + images[mapLocation];
+     }
 
-
-button.style.cursor = "pointer";
-button.addEventListener("click", clickHandler, false);
-window.addEventListener("keydown", keydownHandler, false);
-//lastSessionButton.addEventListener("click", lastPlace, false);
-//button.addEventListener("click", checkItems, false);
-
-
-function lastPlace()
-{
-	let x = localStorage.getItem("playerPosition");
-	console.log("teesssting" + x + mapLocation);
-	output.innerHTML = map[x];
-	image.src = "../images/" + images[x];
-
-}
-
-
-function startGame()
+//function that loads the game
+function startGame( )
 {
 	mapLocation = 3;
 	output.innerHTML = map[mapLocation];
@@ -96,13 +85,19 @@ function startGame()
 	alert("the startgame button works");
 }
 
-
 var gameMessage = "Welcome to a game where you explore some strangers home! ";
 gameMessage += "To explore the home, you will want to use words north, south, east and west. <br>";
 gameMessage += "If you come across an item, be sure to type the word take followed by the item name.";
 
 
+//the button
+var button = document.querySelector("button");
 
+button.style.cursor = "pointer";
+button.addEventListener("click", clickHandler, false);
+window.addEventListener("keydown", keydownHandler, false);
+//lastSessionButton.addEventListener("click", lastPlace, false);
+//button.addEventListener("click", checkItems, false);
 
 
 //display the players location
