@@ -72,9 +72,18 @@ function lastPlace()
      {
 	mapLocation = localStorage.getItem("playerPosition");
 	console.log("teesssting" + mapLocation);
-	//output.innerHTML = map[mapLocation];
-	//image.src = "../images/" + images[mapLocation];
-	render(mapLocation);
+	output.innerHTML = map[mapLocation];
+	image.src = "../images/" + images[mapLocation];
+	
+	for(var i = 0; i < gameItems.length; i++)
+		{
+			if(mapLocation === itemLocations[i])
+			{
+				output.innerHTML += "<br>You notice a <strong>" + gameItems[i] + "</strong> here in the room.";
+			}
+		}
+			
+	//render();
      }
 
 
