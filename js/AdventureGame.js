@@ -48,13 +48,15 @@ var userInput = "";
 //initialize the gameMessage
 var gameMessage = "";
 
-//create an array of actions the game will understand and a variable to store the current action
-var actionsIKnow = ["north","east","south","west", "take", "use", "drop"];
+//an array of actions you will type in the text box
+var actionsIKnow = ["north", "east", "south", "west", "take", "use", "drop"];
+
 //variable to store the current action
 var action = "";
 
-//an array of items the game understands
+//an array of items you will type in the text box along with the actions
 var itemsIKnow = ["key", "watch", "picture"];
+
 //and a variable to store the current item
 var item = "";
 //the img element
@@ -109,7 +111,7 @@ function keydownHandler(event)
 
 function clickHandler()
 {
-	var x = localStorage.getItem("playerPosition");
+	let x = localStorage.getItem("playerPosition");
 	//checkItems();
 	playGame();
 }
@@ -121,7 +123,7 @@ function clickHandler()
 	//{
 		//window.alert("You cannot enter without key");
 		//mapLocation = 1;
-	}
+	//}
 //	else if (mapLocation===5 && !backpack.includes("key"))
 	//{
 		//window.alert("You cannot enter from room 5 ");
