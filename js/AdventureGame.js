@@ -79,11 +79,10 @@ function lastPlace()
 		{
 			if(mapLocation === itemLocations[i])
 			{
+				alert(gameItems[i]);
 				output.innerHTML += "<br>You notice a <strong>" + gameItems[i] + "</strong> here in the room.";
 			}
 		}
-		//This displays the game message
-		output.innerHTML += "<br>" + gameMessage + "<br>";
 			
 	//render();
      }
