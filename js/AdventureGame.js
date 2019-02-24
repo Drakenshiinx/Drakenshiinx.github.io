@@ -91,6 +91,8 @@ function lastPlace()
 function startGame()
 {
 	mapLocation = 3;
+	output.innerHTML = map[mapLocation];
+	image.src = "../images/" + images[mapLocation];
 }
 
 
