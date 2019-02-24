@@ -16,8 +16,8 @@ body {
 }
 
 img.center, .input {
-	top: 125px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: auto;
 }
