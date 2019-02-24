@@ -15,6 +15,8 @@ map[6] = "The followed the stairs that entered the basement.<br>";
 //variable where the player will start
 var mapLocation;
 
+var welcomeImage = "introImage.jpg";
+
 //Array to store my images
 var images = [];
 images[0] = "backpatio1.jpg";
@@ -83,6 +85,12 @@ function startGame( )
 	output.innerHTML = map[mapLocation];
 	image.src = "../images/" + images[mapLocation];
 	alert("the startgame button works");
+}
+
+function welcomeScreen()
+{
+	output.innerHTML = welcomeImage;
+	image.src = "../images/" + welcomeImage;
 }
 
 var gameMessage = "Welcome to a game where you explore some strangers home! ";
