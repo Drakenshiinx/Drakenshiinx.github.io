@@ -13,7 +13,7 @@ map[6] = "The followed the stairs that entered the basement.<br>";
 //map[8] = "empty room";
 
 //variable where the player will start
-var mapLocation;
+var mapLocation = 3;
 
 var welcomeImage = "introImage.jpg";
 
@@ -81,7 +81,7 @@ function lastPlace( )
 //function that loads the game
 function startGame( )
 {
-	mapLocation = 3;
+	//mapLocation = 3;
 	output.innerHTML = map[mapLocation];
 	image.src = "../images/" + images[mapLocation];
 	alert("the startgame button works");
