@@ -70,10 +70,11 @@ var check = document.querySelector("#check");
 //function that will bring the player to the last position they left off at
 function lastPlace( ) 
      {
-	mapLocation = localStorage.getItem("playerPosition");
-	console.log("teesssting" + mapLocation);
-	output.innerHTML = map[mapLocation];
-	image.src = "../images/" + images[mapLocation];
+		 render();
+	//mapLocation = localStorage.getItem("playerPosition");
+	//console.log("teesssting" + mapLocation);
+	//output.innerHTML = map[mapLocation];
+	//image.src = "../images/" + images[mapLocation];
      }
 
 
@@ -365,6 +366,7 @@ function useItem()
 function render()
 	{
 		//This renders the location
+		mapLocation = localStorage.getItem("playerPosition");
 		output.innerHTML = map[mapLocation];
 		image.src = "../images/" + images[mapLocation];
 		
