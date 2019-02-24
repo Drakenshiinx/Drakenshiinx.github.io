@@ -13,7 +13,7 @@ map[6] = "The followed the stairs that entered the basement.<br>";
 //map[8] = "empty room";
 
 //variable where the player will start
-var mapLocation = 3;
+var mapLocation;
 
 //Array to store my images
 var images = [];
@@ -112,30 +112,30 @@ function keydownHandler(event)
 function clickHandler()
 {
 	let x = localStorage.getItem("playerPosition");
-	//checkItems();
+	checkItems();
 	playGame();
 }
 
 //function that checks if you have required item before entering the shed
-//function checkItems()
-//{
-	//if( mapLocation = 1 && !backpack.includes("key"))
-	//{
-		//window.alert("You cannot enter without key");
-		//mapLocation = 1;
-	//}
-//	else if (mapLocation===5 && !backpack.includes("key"))
-	//{
-		//window.alert("You cannot enter from room 5 ");
-	//mapLocation = 5;
-	//}
-	//else
-	//{
-		//let backpackIndexNumber = backpack.indexOf("key");
-		//window.alert("you use the key and enter the shed");
-		//backpack.splice(backpackIndexNumber, 1);
-	//}
-//}
+function checkItems()
+{
+	if( mapLocation == 1 && !backpack.includes("key"))
+	{
+		window.alert("You cannot enter without key");
+		mapLocation = 1;
+	}
+	else if (mapLocation == 5 && !backpack.includes("key"))
+	{
+		window.alert("You cannot enter from room 5 ");
+	mapLocation = 5;
+	}
+	else
+	{
+		let backpackIndexNumber = backpack.indexOf("key");
+		window.alert("you use the key and enter the shed");
+		backpack.splice(backpackIndexNumber, 1);
+	}
+}
 
 
 function playGame()
@@ -159,13 +159,13 @@ function playGame()
 		}
 	}
 	
-	for(var i = 0; i < mapLocation.length; i++)
-	{
-		if(mapLocation===2)
-		{
-			alert("checking if condition");
-		}
-	}
+	//for(var i = 0; i < mapLocation.length; i++)
+	//{
+		//if(mapLocation===2)
+		//{
+			//alert("checking if condition");
+		//}
+	//}
 	
 	//figure out the item the player wants
 	for (i = 0; i < itemsIKnow.length; i++)
