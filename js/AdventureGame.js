@@ -110,29 +110,30 @@ function keydownHandler(event)
 function clickHandler()
 {
 	var x = localStorage.getItem("playerPosition");
-	checkItems();
+	//checkItems();
 	playGame();
 }
 
-function checkItems()
-{
-	if( mapLocation = 1 && !backpack.includes("key"))
-	{
-		window.alert("You cannot enter without key");
-		mapLocation = 1;
+//function that checks if you have required item before entering the shed
+//function checkItems()
+//{
+	//if( mapLocation = 1 && !backpack.includes("key"))
+	//{
+		//window.alert("You cannot enter without key");
+		//mapLocation = 1;
 	}
 //	else if (mapLocation===5 && !backpack.includes("key"))
 	//{
 		//window.alert("You cannot enter from room 5 ");
 	//mapLocation = 5;
 	//}
-	else
-	{
-		let backpackIndexNumber = backpack.indexOf("key");
-		window.alert("you use the key and enter the shed");
-		backpack.splice(backpackIndexNumber, 1);
-	}
-}
+	//else
+	//{
+		//let backpackIndexNumber = backpack.indexOf("key");
+		//window.alert("you use the key and enter the shed");
+		//backpack.splice(backpackIndexNumber, 1);
+	//}
+//}
 
 
 function playGame()
