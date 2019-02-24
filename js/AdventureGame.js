@@ -15,8 +15,6 @@ map[6] = "The followed the stairs that entered the basement.<br>";
 //variable where the player will start
 var mapLocation = 3;
 
-var welcomeImage = "introImage.jpg";
-
 //Array to store my images
 var images = [];
 images[0] = "backpatio1.jpg";
@@ -78,20 +76,6 @@ function lastPlace( )
 	image.src = "../images/" + images[mapLocation];
      }
 
-//function that loads the game
-function startGame( )
-{
-	//mapLocation = 3;
-	output.innerHTML = map[mapLocation];
-	image.src = "../images/" + images[mapLocation];
-	alert("the startgame button works");
-}
-
-function welcomeScreen()
-{
-	output.innerHTML = welcomeImage;
-	image.src = "../images/" + welcomeImage;
-}
 
 var gameMessage = "Welcome to a game where you explore some strangers home! ";
 gameMessage += "To explore the home, you will want to use words north, south, east and west. <br>";
