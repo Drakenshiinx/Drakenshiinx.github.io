@@ -1,3 +1,4 @@
+"use strict";
 var ENTER = 13;
 
 //Array to store locations on the map
@@ -80,11 +81,10 @@ var input = document.querySelector("#input");
 //function that will bring the player to the last position they left off at
 function lastPlace() 
 {
-  var x = localStorage.getItem("playerPosition");
+  let x = localStorage.getItem("playerPosition");
   console.log("saved map location" + x);
   output.innerHTML = map[x];
   image.src = "../images/" + images[x];
-  playGame(x);
 }
 
 var gameMessage = "";
