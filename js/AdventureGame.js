@@ -82,7 +82,7 @@ var input = document.querySelector("#input");
 //function that will bring the player to the last position they left off at
 function lastPlace() 
 {
-  mapLocation = y;
+  //mapLocation = y;
   //var x = localStorage.getItem("playerPosition");
   console.log("saved map location" + y);
   output.innerHTML = map[y];
