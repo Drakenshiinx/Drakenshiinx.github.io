@@ -109,6 +109,7 @@ render();
 //allows the user to hit enter
 function keydownHandler(event)
 {
+  let x = localStorage.getItem("playerPosition");
   if(event.keyCode === ENTER)
   {
     playGame();
