@@ -55,7 +55,7 @@ var actionsIKnow = ["north", "east", "south", "west", "take", "use", "drop"];
 var action = "";
 
 //an array of items you will type in the text box along with the actions
-var itemsIKnow = ["key", "watch", "picture"];
+var itemsIKnow = ["key", "pocket watch", "picture"];
 
 //and a variable to store the current item
 var item = "";
