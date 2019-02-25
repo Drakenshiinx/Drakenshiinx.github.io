@@ -4,7 +4,7 @@ var ENTER = 13;
 var map = [];
 map[0] = "You step outside and onto the patio.<br>";
 map[1] = "While walking outside, you enter the backyard.<br>";
-map[2] = "You decide to walk towards the toolshed and enter inside.<br>";
+map[2] = "You decide to walk towards the toolshed and enter inside.  You spot a locked chest on the floor.<br>";
 map[3] = "You have entered the kitchen.<br>";
 map[4] = "You enter the livingroom.<br>";
 map[5] = "You enter the bedroom.<br>";
@@ -55,7 +55,7 @@ var actionsIKnow = ["north", "east", "south", "west", "take", "use", "drop"];
 var action = "";
 
 //an array of items you will type in the text box along with the actions
-var itemsIKnow = ["key", "pocket watch", "picture"];
+var itemsIKnow = ["key", "watch", "picture"];
 
 //and a variable to store the current item
 var item = "";
@@ -348,7 +348,7 @@ function useItem()
 				gameMessage = "You use the rusty key to open the chest in the tool shed";
 				gameMessage += "In the chest, you spot an old pocket watch.  You grab the watch and place it into the backpack.";
 				backpack.splice(backpackIndexNumber, 1);
-				items.push("pocket watch");
+				items.push("watch");
 				itemLocations.push(mapLocation);
 			}
 			else
