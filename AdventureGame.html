@@ -6,17 +6,20 @@
 </head>
 
 <h1> Welcome to Exploring a Strangers home! </h1>
-<div id ="display">
+<section id = "display">
 <body>
-<img class="center" src="C:\Users\Shino\Desktop\PROG209\Drakenshiinx.github.io\images" width="500" height="500">
+<img class="center" src="images" width="500" height="500">
 <br>
 <p id="output"></p>
-
-<input id="input" type "text" onfocus="this.value=''" placeholder="Enter your action...">
-<button>Enter</button>
-<button onclick = "lastPlace()"> Last Session </button>
+<div style="text-align:center;">
+    <input id="input" type="text" onfocus="this.value=''" placeholder="Enter your action...">
+    <button>Enter</button>
+    <button onclick = "lastPlace()">Last Sesson</button>
+</div>
 <br>
-
+</section>
+<div id = "instructions">
+<p><b> Movement Commands:</b> north, south, east, west. Type help for assistance.</p>
 </div>
 </body>
 <script src="js/AdventureGame.js"></script>

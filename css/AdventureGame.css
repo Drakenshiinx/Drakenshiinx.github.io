@@ -1,27 +1,42 @@
 #display {
   width: 600px;
-  height: 700px;
-  /*border: 5px solid gray;*/
+  height: 555px;
+  font-size: 15px;
+  margin: 0px auto;
   position: static;
   padding: 0px, 25px, 0px, 0px;
-  margin: 0px auto;
   font-family: Trebuchet MS, sans-serif;
-  font-size: 15px;
-  /*background-color: #fcc8c4;*/
 }
-h1 {
-	text-align: center;
-	font-family: Trebuchet MS, sans-serif;
+#instructions {
+  width: 150px;
+  height: 100px;
+  margin: 0px auto;
+}
+button, #input {
+  box-shadow: 4px 4px #b2b2b2;
 }
 
 body {
-	background-image: url("../images/backgroundimg.png");
-	background-repeat: repeat;
+  background-repeat: repeat;
+  background-image: url("../images/backgroundimg.png");
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 2px 2px #b2b2b2;
+  font-family: Trebuchet MS, sans-serif;
+}
+
+p {
+  text-align: center;
+  text-shadow: 2px 2px #b2b2b2;
+  font-family: Trebuchet MS, sans-serif;
 }
 
 img.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: auto;
+  display: block;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow:8px 8px #b2b2b2;
 }
