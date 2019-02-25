@@ -13,8 +13,6 @@ map[6] = "The followed the stairs that entered the basement.<br>";
 //variable where the player will start
 var mapLocation = 0;
 
-var y = localStorage.getItem("playerPosition");
-
 //help messages
 var helpMessages = [];
 helpMessages[0] = "<i>It seems a little dark by the patio.  If only we had something to light the area with... </i>";
@@ -82,11 +80,10 @@ var input = document.querySelector("#input");
 //function that will bring the player to the last position they left off at
 function lastPlace() 
 {
-  //mapLocation = y;
-  //var x = localStorage.getItem("playerPosition");
-  console.log("saved map location" + y);
-  output.innerHTML = map[y];
-  image.src = "../images/" + images[y];
+  var x = localStorage.getItem("playerPosition");
+  console.log("saved map location" + x);
+  output.innerHTML = map[x];
+  image.src = "../images/" + images[x];
   
 }
 
