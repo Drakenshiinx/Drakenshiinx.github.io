@@ -15,6 +15,16 @@ map[6] = "The followed the stairs that entered the basement.<br>";
 //variable where the player will start
 var mapLocation = 3;
 
+//help messages
+var helpMessages = [];
+helpMessages[0] = "<i>It seems a little dark by the patio.  If only we had something to light the area with... </i>";
+helpMessages[1] = "<i>There is a slightly rusted key laying in the middle of the yard. </i>";
+helpMessages[2] = "<i>You spot a locked chest in the shed.  Perhaps you can use something to unlock it.</i>";
+helpMessages[3] = "<i>You notice there is cheese in the fridge.  Perhaps this may be useful.</i>";
+helpMessages[4] = "<i>There is nothing of interest here. </i>";
+helpMessages[5] = "<i> You notice a broken picture frame with the picture missing. </i>";
+helpMessages[6] = "<i> A small mouse skitters across the room with something in its mouth.  Maybe you can lure it out. </i>";
+
 //Array to store my images
 var images = [];
 images[0] = "backpatio1.jpg";
@@ -38,34 +48,37 @@ blockedPath[6] = "<i>The deer head mounted on the wall stares into your soul pre
 //blockedPath[8] = "WIP";
 
 //items array
-var gameItems = ["key", "watch", "picture"];
+var gameItems = ["key", "cheese"];
+
 //location of items
-var itemLocations = [1, 4, 6];
+var itemLocations = [1, 3];
+
 //backpack array
 var backpack = [];
+
 //initialize the players input
 var userInput = "";
+
 //initialize the gameMessage
 var gameMessage = "";
 
 //an array of actions you will type in the text box
-var actionsIKnow = ["north", "east", "south", "west", "take", "use", "drop"];
+var actionsIKnow = ["north", "east", "south", "west", "take", "use", "drop", "help", "instructions"];
 
 //variable to store the current action
 var action = "";
 
 //an array of items you will type in the text box along with the actions
-var itemsIKnow = ["key", "watch", "picture"];
+var itemsIKnow = ["key", "candle", "picture", "cheese"];
 
 //and a variable to store the current item
 var item = "";
+
 //the img element
 var image = document.querySelector("img");
 //the input and output fields
 var output = document.querySelector("#output");
 var input = document.querySelector("#input");
-var lastSessionButton = document.querySelector("#lastSessionButton");
-var check = document.querySelector("#check");
 
 //function that will bring the player to the last position they left off at
 function lastPlace() 
@@ -75,6 +88,7 @@ function lastPlace()
 	output.innerHTML = map[mapLocation];
 	image.src = "../images/" + images[mapLocation];
 	
+	//to display items in the world
 	//for(var i = 0; i < gameItems.length; i++)
 		//{
 			//if(mapLocation === itemLocations[i])
@@ -82,26 +96,18 @@ function lastPlace()
 			//	alert(gameItems[i]);
 			//	output.innerHTML += "<br>You notice a <strong>" + gameItems[i] + "</strong> here in the room.";
 			//}
-		//}
-			
+		//}			
 	//render();
      }
 
-
-var gameMessage = "Welcome to a game where you explore some strangers home! ";
-gameMessage += "To explore the home, you will want to use words north, south, east and west. <br>";
-gameMessage += "If you come across an item, be sure to type the word take followed by the item name.";
+var gameMessage = "";
 
 
-//the button
+//the buttons and mouse click event listeners
 var button = document.querySelector("button");
-
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
 window.addEventListener("keydown", keydownHandler, false);
-//lastSessionButton.addEventListener("click", lastPlace, false);
-//button.addEventListener("click", checkItems, false);
-
 
 //display the players location
 render();
@@ -124,25 +130,25 @@ function clickHandler()
 }
 
 //function that checks if you have required item before entering the shed
-function checkItems()
-{
-	if( mapLocation == 1 && !backpack.includes("key"))
-	{
-		window.alert("You cannot enter without key");
-		mapLocation = 1;
-	}
-	else if (mapLocation == 5 && !backpack.includes("key"))
-	{
-		window.alert("You cannot enter from room 5 ");
-	mapLocation = 5;
-	}
-	else
-	{
-		let backpackIndexNumber = backpack.indexOf("key");
-		window.alert("you use the key and enter the shed");
-		backpack.splice(backpackIndexNumber, 1);
-	}
-}
+//function checkItems()
+//{
+	//if( mapLocation == 1 && !backpack.includes("key"))
+	//{
+		//window.alert("You cannot enter without key");
+		//mapLocation = 1;
+	//}
+	//else if (mapLocation == 5 && !backpack.includes("key"))
+	//{
+		//window.alert("You cannot enter from room 5 ");
+	    //mapLocation = 5;
+	//}
+	//else
+	//{
+		//let backpackIndexNumber = backpack.indexOf("key");
+		//window.alert("you use the key and enter the shed");
+		//backpack.splice(backpackIndexNumber, 1);
+	//}
+//}
 
 
 function playGame()
@@ -243,16 +249,34 @@ function playGame()
 		}
 		break;
 		
+		//take command
 		case "take":
 		takeItem();
 		break;
 		
+		//drop command
 		case "drop":
 		dropItem();
 		break;
 		
+		//use command
 		case "use":
 		useItem();
+		break;
+		
+		//help command
+		case "help":
+        if(helpMessages[mapLocation] !== "")
+          {
+            gameMessage = helpMessages[mapLocation] + " ";
+			gameMessage += "<b><br><i>Type instructions if you need game instructions. </i></b>";
+          }
+        break;
+		
+		//instructions command
+		case "instructions":
+		gameMessage = "<i>To explore the home, you will want to use words north, south, east and west. <br></i>";
+		gameMessage += "<i>If you come across an item, be sure to type the word take followed by the item name.</i>";
 		break;
 		
 		default:
@@ -277,6 +301,8 @@ function takeItem()
 		//remove the item from the game world
 		gameItems.splice(itemIndexNumber, 1);
 		itemLocations.splice(itemIndexNumber, 1);
+		console.log(itemIndexNumber);
+		console.log(item);
 		
 		//display in the console for testing
 		console.log("World items: " + gameItems);
@@ -289,6 +315,7 @@ function takeItem()
 	}
 }
 
+//drop item function
 function dropItem()
 {
 	//try to drop the item only if the backpack isn't empty
@@ -307,6 +334,7 @@ function dropItem()
 			itemLocations.push(mapLocation);
 			//remove the item from the player's backpack
 			backpack.splice(backpackIndexNumber, 1);
+			
 		}
 		else
 		{
@@ -321,11 +349,13 @@ function dropItem()
 	}
 }
 
+//use item function
 function useItem()
 {
 	//find out if the item is in the backpack
 	//find the item's array index number in the backpack
 	var backpackIndexNumber = backpack.indexOf(item);
+	
 	//error message that lets the player know the backpack is empty (-1 means inventory is empty)
 	if(backpackIndexNumber === -1)
 	{
@@ -342,11 +372,18 @@ function useItem()
 	{
 		switch(item)
 		{
+			//use key
 			case "key":
 			if(mapLocation === 2)
 			{
-				gameMessage = "You use the rusty key to open the chest in the tool shed";
+				gameMessage = "You use the rusty key to open the chest in the tool shed.";
 				backpack.splice(backpackIndexNumber, 1);
+				//check location of player
+				console.log(mapLocation + " current map location");
+				
+			gameItems.push("candle");
+	        itemLocations.push(mapLocation);
+			console.log(backpackIndexNumber);
 			}
 			else
 			{
@@ -354,10 +391,36 @@ function useItem()
 			}
 			break;
 			
-			case "watch":
-			gameMessage = "You gently place the ancient pocket watch into your bag";
+			//use cheese
+			case "cheese":
+			if(mapLocation === 6)
+			{
+				gameMessage = "You give the mouse the piece of cheese.  The mouse brings you a picture.  You place the picture in your backpack.";
+				backpack.splice(backpackIndexNumber, 1);
+				//check location of player
+				console.log(mapLocation + " current map location");
+				
+			gameItems.push("picture");
+	        itemLocations.push(mapLocation);
+			console.log(backpackIndexNumber);
+			}
+			else
+			{
+				gameMessage = "Your stomach growls, you eyeball the cheese, but decide not to eat it as it may be useful in a different location of the house.";
+			}
+			break;
+			
+			//use candle
+			case "candle":
+			if(mapLocation === 0)
+			{
+				gameMessage = "You light the candle and place it on the patio table.  The candle emits a lovely glow.";
+				backpack.splice(backpackIndexNumber, 1);
+			}
+			//gameMessage = "You gently place the ancient pocket watch into your bag";
 			break;
 		
+			//use picture
 			case "picture":
 				if(mapLocation === 5)
 				{
@@ -374,6 +437,7 @@ function useItem()
 	}
 }
 
+//function that renders the game
 function render()
 	{
 		//This renders the location
@@ -385,7 +449,7 @@ function render()
 		{
 			if(mapLocation === itemLocations[i])
 			{
-				output.innerHTML += "<br>You notice a <strong>" + gameItems[i] + "</strong> here in the room.";
+				output.innerHTML += "<br>You notice a <strong>" + gameItems[i] + "</strong>.  It appears to be useful somehow. <br>";
 			}
 		}
 			
@@ -395,7 +459,7 @@ function render()
 		//This displays the contents in the backpack
 		if(backpack.length !== 0)
 		{
-			output.innerHTML += "<br>You are carrying: " + backpack.join(", ");
+			output.innerHTML += "<br>Your current backpack inventory: " + backpack.join(", ");
 		}
 		input.value = "";
 	}
