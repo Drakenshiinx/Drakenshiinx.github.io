@@ -38,9 +38,9 @@ blockedPath[6] = "<i>The deer head mounted on the wall stares into your soul pre
 //blockedPath[8] = "WIP";
 
 //items array
-var gameItems = ["key", "watch", "picture"];
+var gameItems = ["key"];
 //location of items
-var itemLocations = [1, 4, 6];
+var itemLocations = [6];
 //backpack array
 var backpack = [];
 //initialize the players input
@@ -329,9 +329,9 @@ function useItem()
 	//error message that lets the player know the backpack is empty (-1 means inventory is empty)
 	if(backpackIndexNumber === -1)
 	{
-		gameMessage = "You're not carrying any items.";
+		gameMessage = "You check your backpack and notice that it is empty.";
 	}
-	//if there are no items in teh backpack, then tell teh player the backpack is empty
+	//if there are no items in the backpack, then tell the player the backpack is empty
 	if(backpack.length === 0)
 	{
 		gameMessage += "Your backpack is empty";
@@ -346,7 +346,10 @@ function useItem()
 			if(mapLocation === 2)
 			{
 				gameMessage = "You use the rusty key to open the chest in the tool shed";
+				gameMessage += "In the chest, you spot an old pocket watch.  You grab the watch and place it into the backpack.";
 				backpack.splice(backpackIndexNumber, 1);
+				items.push("pocket watch");
+				itemLocations.push(mapLocation);
 			}
 			else
 			{
