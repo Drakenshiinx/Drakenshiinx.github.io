@@ -84,7 +84,7 @@ function lastPlace()
   console.log("saved map location" + x);
   output.innerHTML = map[x];
   image.src = "../images/" + images[x];
-  
+  playGame(x);
 }
 
 var gameMessage = "";
@@ -111,7 +111,6 @@ function keydownHandler(event)
 function clickHandler()
 {
 	let x = localStorage.getItem("playerPosition");
-	//checkItems();
 	playGame();
 }
 
