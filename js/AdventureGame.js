@@ -9,11 +9,11 @@ map[3] = "You have entered the kitchen.<br>";
 map[4] = "You enter the livingroom.<br>";
 map[5] = "You enter the bedroom.<br>";
 map[6] = "The followed the stairs that entered the basement.<br>";
-//map[7] = "empty room";
-//map[8] = "empty room";
 
 //variable where the player will start
-var mapLocation = 3;
+var mapLocation = 0;
+
+var y = localStorage.getItem("playerPosition");
 
 //help messages
 var helpMessages = [];
@@ -44,8 +44,6 @@ blockedPath[3] = "<i>You are a living being and are unable to phase through wall
 blockedPath[4] = "<i>You cannot continue further.</i>";
 blockedPath[5] = "<i>lol nope.</i>";
 blockedPath[6] = "<i>The deer head mounted on the wall stares into your soul preventing you from going in that direction.</i>";
-//blockedPath[7] = "wIP";
-//blockedPath[8] = "WIP";
 
 //items array
 var gameItems = ["key", "cheese"];
@@ -76,32 +74,23 @@ var item = "";
 
 //the img element
 var image = document.querySelector("img");
+
 //the input and output fields
 var output = document.querySelector("#output");
 var input = document.querySelector("#input");
 
 //function that will bring the player to the last position they left off at
 function lastPlace() 
-     {
-	mapLocation = localStorage.getItem("playerPosition");
-	console.log("saved map location" + mapLocation);
-	output.innerHTML = map[mapLocation];
-	image.src = "../images/" + images[mapLocation];
-	
-	//to display items in the world
-	//for(var i = 0; i < gameItems.length; i++)
-		//{
-			//if(mapLocation === itemLocations[i])
-			//{
-			//	alert(gameItems[i]);
-			//	output.innerHTML += "<br>You notice a <strong>" + gameItems[i] + "</strong> here in the room.";
-			//}
-		//}			
-	//render();
-     }
+{
+  mapLocation = y;
+  //var x = localStorage.getItem("playerPosition");
+  console.log("saved map location" + y);
+  output.innerHTML = map[y];
+  image.src = "../images/" + images[y];
+  
+}
 
 var gameMessage = "";
-
 
 //the buttons and mouse click event listeners
 var button = document.querySelector("button");
@@ -129,28 +118,6 @@ function clickHandler()
 	playGame();
 }
 
-//function that checks if you have required item before entering the shed
-//function checkItems()
-//{
-	//if( mapLocation == 1 && !backpack.includes("key"))
-	//{
-		//window.alert("You cannot enter without key");
-		//mapLocation = 1;
-	//}
-	//else if (mapLocation == 5 && !backpack.includes("key"))
-	//{
-		//window.alert("You cannot enter from room 5 ");
-	    //mapLocation = 5;
-	//}
-	//else
-	//{
-		//let backpackIndexNumber = backpack.indexOf("key");
-		//window.alert("you use the key and enter the shed");
-		//backpack.splice(backpackIndexNumber, 1);
-	//}
-//}
-
-
 function playGame()
 {
 	//get the players input and convert it to lowercase
@@ -171,14 +138,6 @@ function playGame()
 			break;
 		}
 	}
-	
-	//for(var i = 0; i < mapLocation.length; i++)
-	//{
-		//if(mapLocation===2)
-		//{
-			//alert("checking if condition");
-		//}
-	//}
 	
 	//figure out the item the player wants
 	for (i = 0; i < itemsIKnow.length; i++)
