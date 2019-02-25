@@ -400,4 +400,5 @@ function render()
 		{
 			output.innerHTML += "<br>You are carrying: " + backpack.join(", ");
 		}
+		input.value = "";
 	}
