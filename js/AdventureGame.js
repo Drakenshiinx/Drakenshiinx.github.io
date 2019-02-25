@@ -4,7 +4,7 @@ var ENTER = 13;
 var map = [];
 map[0] = "You step outside and onto the patio.<br>";
 map[1] = "While walking outside, you enter the backyard.<br>";
-map[2] = "You decide to walk towards the toolshed and enter inside.  You spot a locked chest on the floor.<br>";
+map[2] = "You decide to walk towards the toolshed and enter inside.<br>";
 map[3] = "You have entered the kitchen.<br>";
 map[4] = "You enter the livingroom.<br>";
 map[5] = "You enter the bedroom.<br>";
@@ -38,9 +38,9 @@ blockedPath[6] = "<i>The deer head mounted on the wall stares into your soul pre
 //blockedPath[8] = "WIP";
 
 //items array
-var gameItems = ["key"];
+var gameItems = ["key", "watch", "picture"];
 //location of items
-var itemLocations = [6];
+var itemLocations = [1, 4, 6];
 //backpack array
 var backpack = [];
 //initialize the players input
@@ -294,7 +294,7 @@ function dropItem()
 	//try to drop the item only if the backpack isn't empty
 	if(backpack.length !== 0)
 	{
-		//find the tiem's array index number in the backpack
+		//find the item's array index number in the backpack
 		var backpackIndexNumber = backpack.indexOf(item);
 		//the item is in the backpack if the backpackIndexNumber isn't -1
 		if(backpackIndexNumber !== -1)
@@ -329,7 +329,7 @@ function useItem()
 	//error message that lets the player know the backpack is empty (-1 means inventory is empty)
 	if(backpackIndexNumber === -1)
 	{
-		gameMessage = "You check your backpack and notice that it is empty.";
+		gameMessage = "You're not carrying any items.";
 	}
 	//if there are no items in the backpack, then tell the player the backpack is empty
 	if(backpack.length === 0)
@@ -346,10 +346,7 @@ function useItem()
 			if(mapLocation === 2)
 			{
 				gameMessage = "You use the rusty key to open the chest in the tool shed";
-				gameMessage += "In the chest, you spot an old pocket watch.  You grab the watch and place it into the backpack.";
 				backpack.splice(backpackIndexNumber, 1);
-				items.push("watch");
-				itemLocations.push(mapLocation);
 			}
 			else
 			{
