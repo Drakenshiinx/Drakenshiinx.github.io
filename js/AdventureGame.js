@@ -318,7 +318,7 @@ function useItem() {
           itemLocations.push(mapLocation);
           console.log(backpackIndexNumber);
         } else {
-          gameMessage = "Your stomach growls, you eyeball the cheese, but decide not to eat it as it may be useful in a different location of the house.";
+          gameMessage = "You cannot use the cheese here.";
         }
         break;
 
@@ -328,7 +328,8 @@ function useItem() {
           gameMessage = "You light the candle and place it on the patio table.  The candle emits a lovely glow.";
           backpack.splice(backpackIndexNumber, 1);
         }
-        //gameMessage = "You gently place the ancient pocket watch into your bag";
+		else:
+		gameMessage = "You cannot use the candle here.";
         break;
 
       //use picture
@@ -338,7 +339,7 @@ function useItem() {
           //remove item from players backpack
           backpack.splice(backpackIndexNumber, 1);
         } else {
-          gameMessage = "You find an old picture of someone's great grandparent.  It is usless to you, but you decide to keep it anyway.";
+          gameMessage = "You cannot use the picture here.";
         }
         break;
     }
