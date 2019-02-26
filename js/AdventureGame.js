@@ -1,5 +1,6 @@
 "use strict";
 
+//variable for the enter key
 var ENTER = 13;
 
 //Array to store locations on the map
@@ -87,6 +88,7 @@ function lastPlace() {
   image.src = "../images/" + images[x];
 }
 
+//variable for the game message on the display
 var gameMessage = "";
 
 //the buttons and mouse click event listeners
@@ -106,17 +108,19 @@ function keydownHandler(event) {
   }
 }
 
+//function for mouse click handler
 function clickHandler() {
   let x = localStorage.getItem("playerPosition");
   playGame();
 }
 
+//this function is for playing the game
 function playGame() {
-  //get the players input and convert it to lowercase
+  //get the players input and converts it to lowercase
   userInput = input.value;
   userInput = userInput.toLowerCase();
 
-  //reset these variables from the previous turn
+  //resets the variables from the previous turn
   gameMessage = "";
   action = "";
 
@@ -293,7 +297,7 @@ function useItem() {
         if (mapLocation === 2) {
           gameMessage = "You use the rusty key to open the chest in the tool shed.";
           backpack.splice(backpackIndexNumber, 1);
-          //check location of player
+          //checks location of player
           console.log(mapLocation + " current map location");
 
           gameItems.push("candle");
@@ -343,7 +347,7 @@ function useItem() {
   }
 }
 
-//function that renders the game
+//this function renders the game
 function render() {
   //This renders the location
   output.innerHTML = map[mapLocation];
