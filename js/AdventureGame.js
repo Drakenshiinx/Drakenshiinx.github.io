@@ -16,7 +16,7 @@ map[6] = "The followed the stairs that entered the basement.<br>";
 //variable where the player will start
 var mapLocation = 0;
 
-//help messages
+//help messages array
 var helpMessages = [];
 helpMessages[0] = "<i>It seems a little dark by the patio.  If only we had something to light the area with... </i>";
 helpMessages[1] = "<i>There is a slightly rusted key laying in the middle of the yard. </i>";
@@ -147,7 +147,8 @@ function playGame() {
         mapLocation -= 3;
         localStorage.setItem("playerPosition", mapLocation);
         console.log(mapLocation);
-      } else {
+      } 
+	  else {
         gameMessage = blockedPath[mapLocation];
       }
       break;
@@ -158,7 +159,8 @@ function playGame() {
         mapLocation += 1;
         localStorage.setItem("playerPosition", mapLocation);
         console.log(mapLocation);
-      } else {
+      } 
+	  else {
         gameMessage = blockedPath[mapLocation];
       }
       break;
@@ -169,7 +171,8 @@ function playGame() {
         mapLocation += 3;
         localStorage.setItem("playerPosition", mapLocation);
         console.log(mapLocation);
-      } else {
+      } 
+	  else {
         gameMessage = blockedPath[mapLocation];
       }
       break;
@@ -180,7 +183,8 @@ function playGame() {
         mapLocation -= 1;
         localStorage.setItem("playerPosition", mapLocation);
         console.log(mapLocation);
-      } else {
+      } 
+	  else {
         gameMessage = blockedPath[mapLocation];
       }
       break;
@@ -240,7 +244,8 @@ function takeItem() {
     //display in the console for testing
     console.log("World items: " + gameItems);
     console.log("backpack items: " + backpack);
-  } else {
+  } 
+  else {
     //message if the player tries to take an item that isn't in the current location
     gameMessage = "you can't do that.";
   }
@@ -262,11 +267,13 @@ function dropItem() {
       itemLocations.push(mapLocation);
       //remove the item from the player's backpack
       backpack.splice(backpackIndexNumber, 1);
-    } else {
+    } 
+	else {
       //message if the player tries to drop something that is not in the backpack
       gameMessage = "You can't do that.";
     }
-  } else {
+  } 
+  else {
     //message if the backpack is empty
     gameMessage = "You're not carrying anything.";
   }
@@ -301,7 +308,8 @@ function useItem() {
           gameItems.push("candle");
           itemLocations.push(mapLocation);
           console.log(backpackIndexNumber);
-        } else {
+        } 
+		else {
           gameMessage = "You don't see anything in the room that would use the key.";
         }
         break;
@@ -317,7 +325,8 @@ function useItem() {
           gameItems.push("picture");
           itemLocations.push(mapLocation);
           console.log(backpackIndexNumber);
-        } else {
+        } 
+		else {
           gameMessage = "You cannot use the cheese here.";
         }
         break;
@@ -328,8 +337,9 @@ function useItem() {
           gameMessage = "You light the candle and place it on the patio table.  The candle emits a lovely glow.";
           backpack.splice(backpackIndexNumber, 1);
         }
-		else:
+		else {
 		gameMessage = "You cannot use the candle here.";
+		}
         break;
 
       //use picture
