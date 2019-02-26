@@ -1,7 +1,7 @@
 "use strict";
 
 //variable for the enter key
-var ENTER = 13;
+const ENTER = 13;
 
 //Array to store locations on the map
 var map = [];
