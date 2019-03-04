@@ -1,6 +1,9 @@
 var canvasElement = document.querySelector("#myCanvas");
 var ctx = canvasElement.getContext("2d");
  
+ // save previous display state
+ctx.save();
+ 
 // this creates the triangle shape
 ctx.beginPath();
 ctx.moveTo(300, 200);
