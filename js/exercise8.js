@@ -27,6 +27,7 @@ $(function() {
 //button 3
 $(function() {
     "use strict";
+	
 	var $item = $('#test');
     
     $('#button3').click(function(e) {
