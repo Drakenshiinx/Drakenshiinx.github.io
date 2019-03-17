@@ -12,6 +12,8 @@ map[3] = "You have entered the kitchen.<br>";
 map[4] = "You enter the livingroom.<br>";
 map[5] = "You enter the bedroom.<br>";
 map[6] = "The followed the stairs that entered the basement.<br>";
+map[7] = "You have entered the Game Room. <br>";
+map[8] = "You have entered the kids bedroom. <br>";
 
 //variable where the player will start
 var mapLocation = 0;
@@ -25,6 +27,8 @@ helpMessages[3] = "<i>You notice there is cheese in the fridge.  Perhaps this ma
 helpMessages[4] = "<i>There is nothing of interest here. </i>";
 helpMessages[5] = "<i> You notice a broken picture frame with the picture missing. </i>";
 helpMessages[6] = "<i> A small mouse skitters across the room with something in its mouth.  Maybe you can lure it out. </i>";
+helpMessages[7] = "<i> Insert Message Here for Gameroom. </i>";
+helpMessages[8] = "<i> Insert message here for kids bedroom. </i>";
 
 //Array to store my images
 var images = [];
@@ -35,6 +39,8 @@ images[3] = "kitchen1.jpg";
 images[4] = "livingroom1.jpg";
 images[5] = "bedroom1.jpg";
 images[6] = "basement.jpg";
+images[7] = "gameroom1.jpg";
+images[8] = "kidsbedroom1.jpg";
 
 //Array that stores blocked path messages
 var blockedPath = [];
@@ -45,6 +51,8 @@ blockedPath[3] = "<i>You are a living being and are unable to phase through wall
 blockedPath[4] = "<i>You cannot continue further.</i>";
 blockedPath[5] = "<i>lol nope.</i>";
 blockedPath[6] = "<i>The deer head mounted on the wall stares into your soul preventing" + " you from going in that direction.</i>";
+blockedPath[7] = "<i>Enter a blocked path message for the game room.</i>";
+blockedPath[8] = "<i>Enter a blocked path message for the kids bedroom.</i>";
 
 //items array
 var gameItems = ["key", "cheese"];
