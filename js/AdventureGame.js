@@ -55,10 +55,10 @@ blockedPath[7] = "<i>Enter a blocked path message for the game room.</i>";
 blockedPath[8] = "<i>Enter a blocked path message for the kids bedroom.</i>";
 
 //items array
-var gameItems = ["key", "cheese"];
+var gameItems = ["key", "cheese", "toy"];
 
 //location of items
-var itemLocations = [1, 3];
+var itemLocations = [1, 3, 7];
 
 //backpack array
 var backpack = [];
@@ -76,7 +76,7 @@ var actionsIKnow = ["north", "east", "south", "west", "take", "use", "drop", "he
 var action = "";
 
 //an array of items you will type in the text box along with the actions
-var itemsIKnow = ["key", "candle", "picture", "cheese"];
+var itemsIKnow = ["key", "candle", "picture", "cheese", "toy"];
 
 //and a variable to store the current item
 var item = "";
@@ -353,13 +353,23 @@ function useItem() {
       //use picture
       case "picture":
         if (mapLocation === 5) {
-          gameMessage = "You place the picture on the bed side table";
+          gameMessage = "You place the picture on the bed side table.";
           //remove item from players backpack
           backpack.splice(backpackIndexNumber, 1);
         } else {
           gameMessage = "You cannot use the picture here.";
         }
         break;
+		
+		case "toy":
+		if (mapLocation === 8) {
+			gameMessage = "You place the toy back into the toy box where it belongs.";
+		    //remove item from players backpack
+			backpack.splice(backpackIndexNumber, 1);
+		} else {
+			gameMessage = "You cannot use the toy here.";
+		}
+		break;
     }
   }
 }
