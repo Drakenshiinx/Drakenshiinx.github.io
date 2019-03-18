@@ -99,7 +99,7 @@ function lastPlace() {
 //sound effect function for when player opens chest with key
 function chestOpen(){
 	"use strict";
-button or spacebar is pressed
+
 	let chestOpening = document.getElementById("Chest");
 	chestOpening.play();
 }
