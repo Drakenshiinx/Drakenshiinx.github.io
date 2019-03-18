@@ -96,6 +96,14 @@ function lastPlace() {
   image.src = "../images/" + images[x];
 }
 
+//sound effect function for when player opens chest with key
+function chestOpen(){
+	"use strict";
+button or spacebar is pressed
+	let chestOpening = document.getElementById("Chest");
+	chestOpening.play();
+}
+
 //variable for the game message on the display
 var gameMessage = "";
 
@@ -308,6 +316,7 @@ function useItem() {
       //use key
       case "key":
         if (mapLocation === 2) {
+		  chestOpen();
           gameMessage = "You use the rusty key to open the chest in the tool shed.";
           backpack.splice(backpackIndexNumber, 1);
           //checks location of player
