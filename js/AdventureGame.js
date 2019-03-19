@@ -1,10 +1,12 @@
-"use strict";
-
 //variable for the enter key
 const ENTER = 13;
 
+//created a variable for my last save state button
+let lastBtn = document.getElementById("lastSession");
+lastBtn.addEventListener("click", lastPlace, "false");
+
 //Array to store locations on the map
-var map = [];
+let map = [];
 map[0] = "You step outside and onto the patio.<br>";
 map[1] = "While walking outside, you enter the backyard.<br>";
 map[2] = "You decide to walk towards the toolshed and enter inside.<br>";
@@ -16,10 +18,10 @@ map[7] = "You have entered the Game Room. <br>";
 map[8] = "You have entered the kids bedroom. <br>";
 
 //variable where the player will start
-var mapLocation = 0;
+let mapLocation = 0;
 
 //help messages array
-var helpMessages = [];
+let helpMessages = [];
 helpMessages[0] = "<i>It seems a little dark by the patio.  If only we had something to light the area with... </i>";
 helpMessages[1] = "<i>There is a slightly rusted key laying in the middle of the yard. </i>";
 helpMessages[2] = "<i>You spot a locked chest in the shed.  Perhaps you can use something to unlock it.</i>";
@@ -31,7 +33,7 @@ helpMessages[7] = "<i> Insert Message Here for Gameroom. </i>";
 helpMessages[8] = "<i> Insert message here for kids bedroom. </i>";
 
 //Array to store my images
-var images = [];
+let images = [];
 images[0] = "backpatio1.jpg";
 images[1] = "garden1.jpg";
 images[2] = "toolshed1.png";
@@ -43,7 +45,7 @@ images[7] = "gameroom1.jpg";
 images[8] = "kidsbedroom1.jpg";
 
 //Array that stores blocked path messages
-var blockedPath = [];
+let blockedPath = [];
 blockedPath[0] = "<i>There is nothing of interest over there.</i>";
 blockedPath[1] = "<i>There is a very tall fence you cannot get over.</i>";
 blockedPath[2] = "<i>This is a dead end.  You must turn back.</i>";
@@ -55,45 +57,43 @@ blockedPath[7] = "<i>Enter a blocked path message for the game room.</i>";
 blockedPath[8] = "<i>Enter a blocked path message for the kids bedroom.</i>";
 
 //items array
-var gameItems = ["key", "cheese", "toy"];
+let gameItems = ["key", "cheese", "toy"];
 
 //location of items
-var itemLocations = [1, 3, 7];
+let itemLocations = [1, 3, 7];
 
 //backpack array
-var backpack = [];
+let backpack = [];
 
 //initialize the players input
-var userInput = "";
-
-//initialize the gameMessage
-var gameMessage = "";
+let userInput = "";
 
 //an array of actions you will type in the text box
-var actionsIKnow = ["north", "east", "south", "west", "take", "use", "drop", "help", "instructions"];
+let actionsIKnow = ["north", "east", "south", "west", "take", "use", "drop", "help", "instructions"];
 
 //variable to store the current action
-var action = "";
+let action = "";
 
 //an array of items you will type in the text box along with the actions
-var itemsIKnow = ["key", "candle", "picture", "cheese", "toy"];
+let itemsIKnow = ["key", "candle", "picture", "cheese", "toy"];
 
 //and a variable to store the current item
-var item = "";
+let item = "";
 
 //the img element
-var image = document.querySelector("img");
+let image = document.querySelector("img");
 
 //the input and output fields
-var output = document.querySelector("#output");
-var input = document.querySelector("#input");
+let output = document.querySelector("#output");
+let input = document.querySelector("#input");
 
 //function that will bring the player to the last position they left off at
 function lastPlace() {
   let x = localStorage.getItem("playerPosition");
-  console.log("saved map location" + x);
+  console.log("saved map location " + x);
   output.innerHTML = map[x];
   image.src = "../images/" + images[x];
+  
 }
 
 //sound effect function for when player opens chest with key
@@ -103,10 +103,10 @@ function chestOpen(){
 }
 
 //variable for the game message on the display
-var gameMessage = "";
+let gameMessage = "";
 
 //the buttons and mouse click event listeners
-var button = document.querySelector("button");
+let button = document.querySelector("button");
 button.style.cursor = "pointer";
 button.addEventListener("click", clickHandler, false);
 window.addEventListener("keydown", keydownHandler, false);
@@ -128,8 +128,11 @@ function clickHandler() {
 
 //this function is for playing the game
 function playGame() {
+	"use strict";
   //get the players input and converts it to lowercase
-  userInput = input.value;
+let i = 0; 
+
+ userInput = input.value;
   userInput = userInput.toLowerCase();
 
   //resets the variables from the previous turn
@@ -137,7 +140,7 @@ function playGame() {
   action = "";
 
   //figure out the players action
-  for (var i = 0; i < actionsIKnow.length; i++) {
+  for (i; i < actionsIKnow.length; i+=1) {
     if (userInput.indexOf(actionsIKnow[i]) !== -1) {
       action = actionsIKnow[i];
       console.log("player's action: " + action);
@@ -146,7 +149,7 @@ function playGame() {
   }
 
   //figure out the item the player wants
-  for (i = 0; i < itemsIKnow.length; i++) {
+  for (i; i < itemsIKnow.length; i+=1) {
     if (userInput.indexOf(itemsIKnow[i]) !== -1) {
       item = itemsIKnow[i];
       console.log("Player's item: " + item);
@@ -242,7 +245,7 @@ function playGame() {
 
 function takeItem() {
   //find the index number of the item in the items array
-  var itemIndexNumber = gameItems.indexOf(item);
+  let itemIndexNumber = gameItems.indexOf(item);
   //does the item exist in the game world and is it at the players current location?
   if (itemIndexNumber !== -1 && itemLocations[itemIndexNumber] === mapLocation) {
     gameMessage = "You take the " + item + " and place it into your backpack.";
@@ -270,7 +273,7 @@ function dropItem() {
   //try to drop the item only if the backpack isn't empty
   if (backpack.length !== 0) {
     //find the item's array index number in the backpack
-    var backpackIndexNumber = backpack.indexOf(item);
+    let backpackIndexNumber = backpack.indexOf(item);
     //the item is in the backpack if the backpackIndexNumber isn't -1
     if (backpackIndexNumber !== -1) {
       //tell the player that the item has been dropped
@@ -297,7 +300,7 @@ function dropItem() {
 function useItem() {
   //find out if the item is in the backpack
   //find the item's array index number in the backpack
-  var backpackIndexNumber = backpack.indexOf(item);
+  let backpackIndexNumber = backpack.indexOf(item);
 
   //error message that lets the player know the backpack is empty (-1 means inventory is empty)
   if (backpackIndexNumber === -1) {
@@ -383,12 +386,14 @@ function useItem() {
 
 //this function renders the game
 function render() {
+	
+	let i = 0;
   //This renders the location
   output.innerHTML = map[mapLocation];
   image.src = "../images/" + images[mapLocation];
 
   //This will display an item if it happens to be in the players location
-  for (var i = 0; i < gameItems.length; i++) {
+  for (i; i < gameItems.length; i+=1) {
     if (mapLocation === itemLocations[i]) {
       output.innerHTML += "<br>You notice a <strong>" + gameItems[i] + "</strong>.  It appears to be useful somehow. <br>";
     }
