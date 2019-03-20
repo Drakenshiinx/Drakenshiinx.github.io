@@ -9,6 +9,7 @@ let saveBtn = document.getElementById("saveGame");
 saveBtn.addEventListener("click", savedGame, "false");
 
 var startBtn = document.getElementById("startButton");
+startBtn.addEventListener("click", render, "false");
 
 //Array to store locations on the map
 let map = [];
