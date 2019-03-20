@@ -398,6 +398,7 @@ function useItem() {
 function render() {
 	
 	startBtn.style.display = "none";
+	display.style.display = "block";
 	
 	let i;
   //This renders the location
