@@ -1,9 +1,13 @@
+"use strict";
 //variable for the enter key
 const ENTER = 13;
 
 //created a variable for my last save state button
 let lastBtn = document.getElementById("lastSession");
 lastBtn.addEventListener("click", lastPlace, "false");
+
+let saveBtn = document.getElementById("saveGame");
+saveBtn.addEventListener("click", savedGame, "false");
 
 //Array to store locations on the map
 let map = [];
@@ -96,6 +100,11 @@ function lastPlace() {
   
 }
 
+function savedGame() {
+localStorage.setItem("playerPosition", mapLocation);
+alert("you saved your game at " + mapLocation);
+}
+
 //sound effect function for when player opens chest with key
 function chestOpen(){
 	let chestOpening = document.getElementById("Chest");
@@ -128,11 +137,8 @@ function clickHandler() {
 
 //this function is for playing the game
 function playGame() {
-	"use strict";
   //get the players input and converts it to lowercase
-let i = 0; 
-
- userInput = input.value;
+  userInput = input.value;
   userInput = userInput.toLowerCase();
 
   //resets the variables from the previous turn
@@ -140,7 +146,7 @@ let i = 0;
   action = "";
 
   //figure out the players action
-  for (i; i < actionsIKnow.length; i+=1) {
+  for (var i = 0; i < actionsIKnow.length; i++) {
     if (userInput.indexOf(actionsIKnow[i]) !== -1) {
       action = actionsIKnow[i];
       console.log("player's action: " + action);
@@ -149,7 +155,7 @@ let i = 0;
   }
 
   //figure out the item the player wants
-  for (i; i < itemsIKnow.length; i+=1) {
+  for (i = 0; i < itemsIKnow.length; i++) {
     if (userInput.indexOf(itemsIKnow[i]) !== -1) {
       item = itemsIKnow[i];
       console.log("Player's item: " + item);
@@ -245,7 +251,7 @@ let i = 0;
 
 function takeItem() {
   //find the index number of the item in the items array
-  let itemIndexNumber = gameItems.indexOf(item);
+  var itemIndexNumber = gameItems.indexOf(item);
   //does the item exist in the game world and is it at the players current location?
   if (itemIndexNumber !== -1 && itemLocations[itemIndexNumber] === mapLocation) {
     gameMessage = "You take the " + item + " and place it into your backpack.";
@@ -273,7 +279,7 @@ function dropItem() {
   //try to drop the item only if the backpack isn't empty
   if (backpack.length !== 0) {
     //find the item's array index number in the backpack
-    let backpackIndexNumber = backpack.indexOf(item);
+    var backpackIndexNumber = backpack.indexOf(item);
     //the item is in the backpack if the backpackIndexNumber isn't -1
     if (backpackIndexNumber !== -1) {
       //tell the player that the item has been dropped
@@ -300,7 +306,7 @@ function dropItem() {
 function useItem() {
   //find out if the item is in the backpack
   //find the item's array index number in the backpack
-  let backpackIndexNumber = backpack.indexOf(item);
+  var backpackIndexNumber = backpack.indexOf(item);
 
   //error message that lets the player know the backpack is empty (-1 means inventory is empty)
   if (backpackIndexNumber === -1) {
@@ -317,7 +323,6 @@ function useItem() {
       //use key
       case "key":
         if (mapLocation === 2) {
-		  chestOpen();
           gameMessage = "You use the rusty key to open the chest in the tool shed.";
           backpack.splice(backpackIndexNumber, 1);
           //checks location of player
@@ -363,37 +368,25 @@ function useItem() {
       //use picture
       case "picture":
         if (mapLocation === 5) {
-          gameMessage = "You place the picture on the bed side table.";
+          gameMessage = "You place the picture on the bed side table";
           //remove item from players backpack
           backpack.splice(backpackIndexNumber, 1);
         } else {
           gameMessage = "You cannot use the picture here.";
         }
         break;
-		
-		case "toy":
-		if (mapLocation === 8) {
-			gameMessage = "You place the toy back into the toy box where it belongs.";
-		    //remove item from players backpack
-			backpack.splice(backpackIndexNumber, 1);
-		} else {
-			gameMessage = "You cannot use the toy here.";
-		}
-		break;
     }
   }
 }
 
 //this function renders the game
 function render() {
-	
-	let i = 0;
   //This renders the location
   output.innerHTML = map[mapLocation];
   image.src = "../images/" + images[mapLocation];
 
   //This will display an item if it happens to be in the players location
-  for (i; i < gameItems.length; i+=1) {
+  for (var i = 0; i < gameItems.length; i++) {
     if (mapLocation === itemLocations[i]) {
       output.innerHTML += "<br>You notice a <strong>" + gameItems[i] + "</strong>.  It appears to be useful somehow. <br>";
     }
