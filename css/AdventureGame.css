@@ -48,11 +48,3 @@ img.center {
   margin-right: auto;
   box-shadow:8px 8px #d6ce9a;
 }
-
-img.startScreen {
-  display: hide;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow:8px 8px #d6ce9a;
-}
