@@ -41,7 +41,15 @@ p {
   font-family: Trebuchet MS, sans-serif;
 }
 
-img {
+img.center {
+  display: none;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow:8px 8px #d6ce9a;
+}
+
+img.start {
   display: block;
   margin-top: auto;
   margin-left: auto;
