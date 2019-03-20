@@ -8,6 +8,8 @@ lastBtn.addEventListener("click", lastPlace, "false");
 let saveBtn = document.getElementById("saveGame");
 saveBtn.addEventListener("click", savedGame, "false");
 
+var startBtn = document.getElementById("startButton");
+
 //Array to store locations on the map
 let map = [];
 map[0] = "You step outside and onto the patio.<br>";
@@ -120,7 +122,7 @@ button.addEventListener("click", clickHandler, false);
 window.addEventListener("keydown", keydownHandler, false);
 
 //display the players location
-render();
+//render();
 
 //allows the user to hit enter
 function keydownHandler(event) {
@@ -394,6 +396,8 @@ function useItem() {
 
 //this function renders the game
 function render() {
+	
+	startBtn.style.display = "none";
 	
 	let i;
   //This renders the location
