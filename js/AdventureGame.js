@@ -144,9 +144,10 @@ function playGame() {
   //resets the variables from the previous turn
   gameMessage = "";
   action = "";
+  let i;
 
   //figure out the players action
-  for (var i = 0; i < actionsIKnow.length; i++) {
+  for (i = 0; i < actionsIKnow.length; i+=1) {
     if (userInput.indexOf(actionsIKnow[i]) !== -1) {
       action = actionsIKnow[i];
       console.log("player's action: " + action);
@@ -155,7 +156,7 @@ function playGame() {
   }
 
   //figure out the item the player wants
-  for (i = 0; i < itemsIKnow.length; i++) {
+  for (i = 0; i < itemsIKnow.length; i+=1) {
     if (userInput.indexOf(itemsIKnow[i]) !== -1) {
       item = itemsIKnow[i];
       console.log("Player's item: " + item);
@@ -251,7 +252,7 @@ function playGame() {
 
 function takeItem() {
   //find the index number of the item in the items array
-  var itemIndexNumber = gameItems.indexOf(item);
+  let itemIndexNumber = gameItems.indexOf(item);
   //does the item exist in the game world and is it at the players current location?
   if (itemIndexNumber !== -1 && itemLocations[itemIndexNumber] === mapLocation) {
     gameMessage = "You take the " + item + " and place it into your backpack.";
