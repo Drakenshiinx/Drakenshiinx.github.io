@@ -398,6 +398,7 @@ function useItem() {
 function render() {
 	
 	startBtn.style.display = "none";
+	startScreen.style.display = "none";
 	display.style.display = "block";
 	
 	let i;
