@@ -1,4 +1,3 @@
-"use strict";
 //variable for the enter key
 const ENTER = 13;
 
@@ -137,14 +136,16 @@ function clickHandler() {
 
 //this function is for playing the game
 function playGame() {
+	//"use strict";
   //get the players input and converts it to lowercase
-  userInput = input.value;
+let i; 
+
+ userInput = input.value;
   userInput = userInput.toLowerCase();
 
   //resets the variables from the previous turn
   gameMessage = "";
   action = "";
-  let i;
 
   //figure out the players action
   for (i = 0; i < actionsIKnow.length; i+=1) {
@@ -169,7 +170,7 @@ function playGame() {
     case "north":
       if (mapLocation >= 3) {
         mapLocation -= 3;
-        localStorage.setItem("playerPosition", mapLocation);
+        //localStorage.setItem("playerPosition", mapLocation);
         console.log(mapLocation);
       } 
 	  else {
@@ -181,7 +182,7 @@ function playGame() {
     case "east":
       if (mapLocation % 3 != 2) {
         mapLocation += 1;
-        localStorage.setItem("playerPosition", mapLocation);
+        //localStorage.setItem("playerPosition", mapLocation);
         console.log(mapLocation);
       } 
 	  else {
@@ -193,7 +194,7 @@ function playGame() {
     case "south":
       if (mapLocation < 6) {
         mapLocation += 3;
-        localStorage.setItem("playerPosition", mapLocation);
+        //localStorage.setItem("playerPosition", mapLocation);
         console.log(mapLocation);
       } 
 	  else {
@@ -205,7 +206,7 @@ function playGame() {
     case "west":
       if (mapLocation % 3 != 0) {
         mapLocation -= 1;
-        localStorage.setItem("playerPosition", mapLocation);
+        //localStorage.setItem("playerPosition", mapLocation);
         console.log(mapLocation);
       } 
 	  else {
@@ -280,7 +281,7 @@ function dropItem() {
   //try to drop the item only if the backpack isn't empty
   if (backpack.length !== 0) {
     //find the item's array index number in the backpack
-    var backpackIndexNumber = backpack.indexOf(item);
+    let backpackIndexNumber = backpack.indexOf(item);
     //the item is in the backpack if the backpackIndexNumber isn't -1
     if (backpackIndexNumber !== -1) {
       //tell the player that the item has been dropped
@@ -307,7 +308,7 @@ function dropItem() {
 function useItem() {
   //find out if the item is in the backpack
   //find the item's array index number in the backpack
-  var backpackIndexNumber = backpack.indexOf(item);
+  let backpackIndexNumber = backpack.indexOf(item);
 
   //error message that lets the player know the backpack is empty (-1 means inventory is empty)
   if (backpackIndexNumber === -1) {
@@ -324,6 +325,7 @@ function useItem() {
       //use key
       case "key":
         if (mapLocation === 2) {
+		  chestOpen();
           gameMessage = "You use the rusty key to open the chest in the tool shed.";
           backpack.splice(backpackIndexNumber, 1);
           //checks location of player
@@ -369,25 +371,37 @@ function useItem() {
       //use picture
       case "picture":
         if (mapLocation === 5) {
-          gameMessage = "You place the picture on the bed side table";
+          gameMessage = "You place the picture on the bed side table.";
           //remove item from players backpack
           backpack.splice(backpackIndexNumber, 1);
         } else {
           gameMessage = "You cannot use the picture here.";
         }
         break;
+		
+		case "toy":
+		if (mapLocation === 8) {
+			gameMessage = "You place the toy back into the toy box where it belongs.";
+		    //remove item from players backpack
+			backpack.splice(backpackIndexNumber, 1);
+		} else {
+			gameMessage = "You cannot use the toy here.";
+		}
+		break;
     }
   }
 }
 
 //this function renders the game
 function render() {
+	
+	let i;
   //This renders the location
   output.innerHTML = map[mapLocation];
   image.src = "../images/" + images[mapLocation];
 
   //This will display an item if it happens to be in the players location
-  for (var i = 0; i < gameItems.length; i++) {
+  for (i = 0; i < gameItems.length; i+=1) {
     if (mapLocation === itemLocations[i]) {
       output.innerHTML += "<br>You notice a <strong>" + gameItems[i] + "</strong>.  It appears to be useful somehow. <br>";
     }
