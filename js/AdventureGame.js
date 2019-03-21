@@ -1,3 +1,20 @@
+var shadowButton = function () {
+  duration = 0.3
+  var button = document.getElementById("startButton");
+  button.onmouseenter = function(){
+     TweenMax.to(button, duration, {boxShadow: "11px 11px #ffb52d"});
+  }
+  button.onmouseleave = function(){
+     TweenMax.to(button, duration, {boxShadow: "0px 0px"});
+  }
+};
+
+if (window.addEventListener) {
+  window.addEventListener('load', shadowButton);
+} else if (window.attachEvent)  {
+  window.attachEvent('load', shadowButton);
+}
+
 //variable for the enter key
 const ENTER = 13;
 
