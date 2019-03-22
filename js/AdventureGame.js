@@ -1,12 +1,14 @@
 var shadowButton = function () {
-  duration = 0.3
-  var button = document.getElementById("startButton");
-  button.onmouseenter = function(){
+var duration = 0.3;
+var button = document.getElementById("startButton");
+
+button.onmouseenter = function(){
      TweenMax.to(button, duration, {boxShadow: "11px 11px #ffb52d"});
-  }
-  button.onmouseleave = function(){
+  };
+  
+button.onmouseleave = function(){
      TweenMax.to(button, duration, {boxShadow: "0px 0px"});
-  }
+  };
 };
 
 if (window.addEventListener) {
@@ -25,7 +27,7 @@ lastBtn.addEventListener("click", lastPlace, "false");
 let saveBtn = document.getElementById("saveGame");
 saveBtn.addEventListener("click", savedGame, "false");
 
-var startBtn = document.getElementById("startButton");
+let startBtn = document.getElementById("startButton");
 startBtn.addEventListener("click", render, "false");
 
 //Array to store locations on the map
@@ -121,7 +123,7 @@ function lastPlace() {
 
 function savedGame() {
 localStorage.setItem("playerPosition", mapLocation);
-alert("you saved your game at " + mapLocation);
+//alert("you saved your game at " + mapLocation);
 }
 
 //sound effect function for when player opens chest with key
@@ -134,9 +136,9 @@ function chestOpen(){
 let gameMessage = "";
 
 //the buttons and mouse click event listeners
-let button = document.querySelector("button");
-button.style.cursor = "pointer";
-button.addEventListener("click", clickHandler, false);
+let enterBtn = document.getElementById("enterButton");
+enterBtn.style.cursor = "pointer";
+enterBtn.addEventListener("click", () => playGame(), false);
 window.addEventListener("keydown", keydownHandler, false);
 
 //display the players location
@@ -150,9 +152,9 @@ function keydownHandler(event) {
 }
 
 //function for mouse click handler
-function clickHandler() {
-  playGame();
-}
+//function clickHandler() {
+ // playGame();
+//}
 
 //this function is for playing the game
 function playGame() {
@@ -253,18 +255,18 @@ let i;
     case "help":
       if (helpMessages[mapLocation] !== "") {
         gameMessage = helpMessages[mapLocation] + " ";
-        gameMessage += "<b><br><i>Type instructions if you need game instructions. </i></b>";
+        gameMessage += `<b><br><i>Type instructions if you need game instructions. </i></b>`;
       }
       break;
 
     //instructions command
     case "instructions":
-      gameMessage = "<i>To explore the home, you will want to use words north, south, east and west. <br></i>";
-      gameMessage += "<i>If you come across an item, be sure to type the word take followed by the item name.</i>";
+      gameMessage = `<i>To explore the home, you will want to use words north, south, east and west. <br></i>`;
+      gameMessage += `<i>If you come across an item, be sure to type the word take followed by the item name.</i>`;
       break;
 
     default:
-      gameMessage = "This is not a valid option.";
+      gameMessage = `This is not a valid option.`;
   }
 
   //render the game
@@ -276,7 +278,7 @@ function takeItem() {
   let itemIndexNumber = gameItems.indexOf(item);
   //does the item exist in the game world and is it at the players current location?
   if (itemIndexNumber !== -1 && itemLocations[itemIndexNumber] === mapLocation) {
-    gameMessage = "You take the " + item + " and place it into your backpack.";
+    gameMessage = `You take the ` + item + ` and place it into your backpack.`;
     //add the item to the players backpack
     backpack.push(item);
 
@@ -292,7 +294,7 @@ function takeItem() {
   } 
   else {
     //message if the player tries to take an item that isn't in the current location
-    gameMessage = "you can't do that.";
+    gameMessage = `you can't do that.`;
   }
 }
 
@@ -305,7 +307,7 @@ function dropItem() {
     //the item is in the backpack if the backpackIndexNumber isn't -1
     if (backpackIndexNumber !== -1) {
       //tell the player that the item has been dropped
-      gameMessage = "You dropped the " + item + ".";
+      gameMessage = `You dropped the ` + item + `.`;
 
       //add the item from the backpack to the game world
       gameItems.push(backpack[backpackIndexNumber]);
@@ -315,12 +317,12 @@ function dropItem() {
     } 
 	else {
       //message if the player tries to drop something that is not in the backpack
-      gameMessage = "You can't do that.";
+      gameMessage = `You can't do that.`;
     }
   } 
   else {
     //message if the backpack is empty
-    gameMessage = "You're not carrying anything.";
+    gameMessage = `You're not carrying anything.`;
   }
 }
 
@@ -332,11 +334,11 @@ function useItem() {
 
   //error message that lets the player know the backpack is empty (-1 means inventory is empty)
   if (backpackIndexNumber === -1) {
-    gameMessage = "You're not carrying any items.";
+    gameMessage = `You're not carrying any items. `;
   }
   //if there are no items in the backpack, then tell the player the backpack is empty
   if (backpack.length === 0) {
-    gameMessage += "Your backpack is empty";
+    gameMessage += `Your backpack is empty`;
   }
 
   //if the item is found in the backpack figure out what to do with the item
@@ -346,7 +348,7 @@ function useItem() {
       case "key":
         if (mapLocation === 2) {
 		  chestOpen();
-          gameMessage = "You use the rusty key to open the chest in the tool shed.";
+          gameMessage = `You use the rusty key to open the chest in the tool shed.`;
           backpack.splice(backpackIndexNumber, 1);
           //checks location of player
           console.log(mapLocation + " current map location");
@@ -356,14 +358,14 @@ function useItem() {
           console.log(backpackIndexNumber);
         } 
 		else {
-          gameMessage = "You don't see anything in the room that would use the key.";
+          gameMessage = `You don't see anything in the room that would use the key.`;
         }
         break;
 
       //use cheese
       case "cheese":
         if (mapLocation === 6) {
-          gameMessage = "You give the mouse the piece of cheese.  The mouse brings you a picture.  You place the picture in your backpack.";
+          gameMessage = `You give the mouse the piece of cheese.  The mouse brings you a picture.  You place the picture in your backpack.`;
           backpack.splice(backpackIndexNumber, 1);
           //check location of player
           console.log(mapLocation + " current map location");
@@ -373,39 +375,39 @@ function useItem() {
           console.log(backpackIndexNumber);
         } 
 		else {
-          gameMessage = "You cannot use the cheese here.";
+          gameMessage = `You cannot use the cheese here.`;
         }
         break;
 
       //use candle
       case "candle":
         if (mapLocation === 0) {
-          gameMessage = "You light the candle and place it on the patio table.  The candle emits a lovely glow.";
+          gameMessage = `You light the candle and place it on the patio table.  The candle emits a lovely glow.`;
           backpack.splice(backpackIndexNumber, 1);
         }
 		else {
-		gameMessage = "You cannot use the candle here.";
+		gameMessage = `You cannot use the candle here.`;
 		}
         break;
 
       //use picture
       case "picture":
         if (mapLocation === 5) {
-          gameMessage = "You place the picture on the bed side table.";
+          gameMessage = `You place the picture on the bed side table.`;
           //remove item from players backpack
           backpack.splice(backpackIndexNumber, 1);
         } else {
-          gameMessage = "You cannot use the picture here.";
+          gameMessage = `You cannot use the picture here.`;
         }
         break;
 		
 		case "toy":
 		if (mapLocation === 8) {
-			gameMessage = "You place the toy back into the toy box where it belongs.";
+			gameMessage = `You place the toy back into the toy box where it belongs.`;
 		    //remove item from players backpack
 			backpack.splice(backpackIndexNumber, 1);
 		} else {
-			gameMessage = "You cannot use the toy here.";
+			gameMessage = `You cannot use the toy here.`;
 		}
 		break;
     }
