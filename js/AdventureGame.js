@@ -117,25 +117,31 @@ let input = document.querySelector("#input");
 //function that will bring the player to the last position they left off at
 function lastPlace() {
 	"use strict";
-  let x = localStorage.getItem("playerPosition");
+  mapLocation = parseInt(localStorage.getItem("playerPosition"));
   backpack = JSON.parse(localStorage.getItem("backpackItems"));
-  console.log("saved map location " + x);
-  output.innerHTML = map[x];
-  image.src = "../images/" + images[x];
+  console.log("saved map location " + mapLocation);
+  output.innerHTML = map[mapLocation];
+  image.src = "../images/" + images[mapLocation];
+  output.innerHTML += "<br>" + gameMessage + "<br>";
+
+  //This displays the contents in the backpack
+  if (backpack.length !== 0) {
+    output.innerHTML += "<br>Your current backpack inventory: " + backpack.join(", ");
+  }
 }
 
 //this function allows the user to hit the save button in order to save their location and backpack
 function savedGame() {
-	"use strict";
-localStorage.setItem("playerPosition", mapLocation);
-localStorage.setItem("backpackItems",JSON.stringify(backpack));
+  "use strict";
+  localStorage.setItem("playerPosition", mapLocation);
+  localStorage.setItem("backpackItems",JSON.stringify(backpack));
 }
 
 //sound effect function for when player opens chest with key in the toolshed
 function chestOpen(){
-	"use strict";
-	let chestOpening = document.getElementById("Chest");
-	chestOpening.play();
+  "use strict";
+  let chestOpening = document.getElementById("Chest");
+  chestOpening.play();
 }
 
 //variable for the game message on the display
@@ -430,7 +436,7 @@ function render() {
     }
   }
 
-  //This displays the game message
+  
   output.innerHTML += "<br>" + gameMessage + "<br>";
 
   //This displays the contents in the backpack
