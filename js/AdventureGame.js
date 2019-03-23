@@ -146,6 +146,7 @@ function lastPlace() {
   output.innerHTML = map[mapLocation];
   image.src = "../images/" + images[mapLocation];
   output.innerHTML += "<br>" + gameMessage + "<br>";
+  startBtn.style.display = "none";
   //This displays the contents in the backpack
   if (backpack.length !== 0) {
     output.innerHTML += "<br>Your current backpack inventory: " + backpack.join(", ");
