@@ -2,11 +2,11 @@
 var shadowButton = function () {
 var duration = 0.3;
 var button = document.getElementById("startButton");
-
+//the shadow appears behind button when cursor is hovering over button
 button.onmouseenter = function(){
      TweenMax.to(button, duration, {boxShadow: "11px 11px #ffb52d"});
   };
-  
+ //the shadow fades behind button when cursor leaves button
 button.onmouseleave = function(){
      TweenMax.to(button, duration, {boxShadow: "0px 0px"});
   };
@@ -118,15 +118,17 @@ let input = document.querySelector("#input");
 function lastPlace() {
 	"use strict";
   let x = localStorage.getItem("playerPosition");
+  backpack = JSON.parse(localStorage.getItem("backpackItems"));
   console.log("saved map location " + x);
   output.innerHTML = map[x];
   image.src = "../images/" + images[x];
 }
 
+//this function allows the user to hit the save button in order to save their location and backpack
 function savedGame() {
 	"use strict";
 localStorage.setItem("playerPosition", mapLocation);
-//alert("you saved your game at " + mapLocation);
+localStorage.setItem("backpackItems",JSON.stringify(backpack));
 }
 
 //sound effect function for when player opens chest with key in the toolshed
@@ -188,7 +190,6 @@ function playGame() {
     case "north":
       if (mapLocation >= 3) {
         mapLocation -= 3;
-        //localStorage.setItem("playerPosition", mapLocation);
         console.log(mapLocation);
       } 
 	  else {
@@ -200,7 +201,6 @@ function playGame() {
     case "east":
       if (mapLocation % 3 != 2) {
         mapLocation += 1;
-        //localStorage.setItem("playerPosition", mapLocation);
         console.log(mapLocation);
       } 
 	  else {
@@ -212,7 +212,6 @@ function playGame() {
     case "south":
       if (mapLocation < 6) {
         mapLocation += 3;
-        //localStorage.setItem("playerPosition", mapLocation);
         console.log(mapLocation);
       } 
 	  else {
@@ -224,7 +223,6 @@ function playGame() {
     case "west":
       if (mapLocation % 3 != 0) {
         mapLocation -= 1;
-        //localStorage.setItem("playerPosition", mapLocation);
         console.log(mapLocation);
       } 
 	  else {
@@ -325,7 +323,7 @@ function dropItem() {
   }
 }
 
-//use item function
+//this function allows user to use an item from their inventory
 function useItem() {
   "use strict";
   //find out if the item is in the backpack
