@@ -22,13 +22,15 @@ if (window.addEventListener) {
 //variable for the enter key
 const ENTER = 13;
 
-//created a variable for my last save state button
+//created a variable for load save button
 let lastBtn = document.getElementById("lastSession");
 lastBtn.addEventListener("click", lastPlace, "false");
 
+//variable for save button
 let saveBtn = document.getElementById("saveGame");
 saveBtn.addEventListener("click", savedGame, "false");
 
+//variable for start button
 let startBtn = document.getElementById("startButton");
 startBtn.addEventListener("click", render, "false");
 
@@ -80,6 +82,17 @@ blockedPath[6] = "<i>The deer head mounted on the wall stares into your soul pre
 blockedPath[7] = "<i>Enter a blocked path message for the game room.</i>";
 blockedPath[8] = "<i>Enter a blocked path message for the kids bedroom.</i>";
 
+//error messages related to items being used in incorrect locations
+let errMessage = {
+errKey: "You cannot use the key here.",
+errCheese: "You cannot use the cheese here.",
+errCandle: "You cannot use the candle here.",
+errPicture: "You cannot use the picture here.",
+errToy: "You cannot use the toy here."
+};
+
+let notValid = "Invalid. You cannot do that.";
+
 //variable where the player will start
 let mapLocation = 0;
 
@@ -114,9 +127,18 @@ let image = document.querySelector("img");
 let output = document.querySelector("#output");
 let input = document.querySelector("#input");
 
+//variable for the game message on the display
+let gameMessage = "";
+
+//the buttons and mouse click event listeners
+let enterBtn = document.getElementById("enterButton");
+enterBtn.style.cursor = "pointer";
+enterBtn.addEventListener("click", () => playGame(), false);
+window.addEventListener("keydown", keydownHandler, false);
+
 //function that will bring the player to the last position they left off at
 function lastPlace() {
-	"use strict";
+  "use strict";
   mapLocation = parseInt(localStorage.getItem("playerPosition"));
   backpack = JSON.parse(localStorage.getItem("backpackItems"));
   console.log("saved map location " + mapLocation);
@@ -144,15 +166,6 @@ function chestOpen(){
   chestOpening.play();
 }
 
-//variable for the game message on the display
-let gameMessage = "";
-
-//the buttons and mouse click event listeners
-let enterBtn = document.getElementById("enterButton");
-enterBtn.style.cursor = "pointer";
-enterBtn.addEventListener("click", () => playGame(), false);
-window.addEventListener("keydown", keydownHandler, false);
-
 //allows the user to hit enter
 function keydownHandler(event) {
   if (event.keyCode === ENTER) {
@@ -162,12 +175,12 @@ function keydownHandler(event) {
 
 //this function is for playing the game
 function playGame() {
-"use strict";
-//variable for the for loops
- let i; 
-//get the players input and converts it to lowercase
- userInput = input.value;
- userInput = userInput.toLowerCase();
+  "use strict";
+  //variable for the for loops
+  let i; 
+  //get the players input and converts it to lowercase
+  userInput = input.value;
+  userInput = userInput.toLowerCase();
 
   //resets the variables from the previous turn
   gameMessage = "";
@@ -266,9 +279,9 @@ function playGame() {
       break;
 
     default:
-      gameMessage = `This is not a valid option.`;
+      gameMessage = notValid;
+	  console.log(notValid.includes("Invalid"));
   }
-
   //render the game
   render();
 }
@@ -296,7 +309,8 @@ function takeItem() {
   } 
   else {
     //message if the player tries to take an item that isn't in the current location
-    gameMessage = `you can't do that.`;
+    gameMessage = notValid;
+	console.log(notValid.includes("Invalid"));
   }
 }
 
@@ -362,7 +376,8 @@ function useItem() {
           console.log(backpackIndexNumber);
         } 
 		else {
-          gameMessage = `You don't see anything in the room that would use the key.`;
+			//object literal error message for key
+			gameMessage = errMessage.errKey;
         }
         break;
 
@@ -379,7 +394,8 @@ function useItem() {
           console.log(backpackIndexNumber);
         } 
 		else {
-          gameMessage = `You cannot use the cheese here.`;
+			//object literal error message for cheese
+			gameMessage = errMessage.errCheese;
         }
         break;
 
@@ -390,7 +406,8 @@ function useItem() {
           backpack.splice(backpackIndexNumber, 1);
         }
 		else {
-		gameMessage = `You cannot use the candle here.`;
+			//object literal error message for candle
+	        gameMessage = errCandle;
 		}
         break;
 
@@ -401,7 +418,8 @@ function useItem() {
           //remove item from players backpack
           backpack.splice(backpackIndexNumber, 1);
         } else {
-          gameMessage = `You cannot use the picture here.`;
+			//object literal error message for picture
+			gameMessage = errMessage.errPicture;
         }
         break;
 		
@@ -411,7 +429,8 @@ function useItem() {
 		    //remove item from players backpack
 			backpack.splice(backpackIndexNumber, 1);
 		} else {
-			gameMessage = `You cannot use the toy here.`;
+			//object literal error message for toy
+			gameMessage = errMessage.errToy;
 		}
 		break;
     }
@@ -420,11 +439,11 @@ function useItem() {
 
 //this function renders the game
 function render() {
-	"use strict";
-	startBtn.style.display = "none";
-	display.style.display = "block";
+  "use strict";
+  startBtn.style.display = "none";
+  display.style.display = "block";
 	
-	let i;
+  let i;
   //This renders the location
   output.innerHTML = map[mapLocation];
   image.src = "../images/" + images[mapLocation];
