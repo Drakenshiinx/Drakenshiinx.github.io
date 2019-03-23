@@ -90,7 +90,7 @@ errCandle: "You cannot use the candle here.",
 errPicture: "You cannot use the picture here.",
 errToy: "You cannot use the toy here."
 };
-
+//variable that creates error message - this is used with an includes statement
 let notValid = "Invalid. You cannot do that.";
 
 //variable where the player will start
@@ -136,7 +136,7 @@ enterBtn.style.cursor = "pointer";
 enterBtn.addEventListener("click", () => playGame(), false);
 window.addEventListener("keydown", keydownHandler, false);
 
-//function that will bring the player to the last position they left off at
+//function that will bring the player to the last position they left off at and saved backpack items
 function lastPlace() {
   "use strict";
   mapLocation = parseInt(localStorage.getItem("playerPosition"));
@@ -145,7 +145,6 @@ function lastPlace() {
   output.innerHTML = map[mapLocation];
   image.src = "../images/" + images[mapLocation];
   output.innerHTML += "<br>" + gameMessage + "<br>";
-
   //This displays the contents in the backpack
   if (backpack.length !== 0) {
     output.innerHTML += "<br>Your current backpack inventory: " + backpack.join(", ");
@@ -194,7 +193,6 @@ function playGame() {
       break;
     }
   }
-
   //figure out the item the player wants
   for (i = 0; i < itemsIKnow.length; i+=1) {
     if (userInput.indexOf(itemsIKnow[i]) !== -1) {
@@ -202,7 +200,6 @@ function playGame() {
       console.log("Player's item: " + item);
     }
   }
-
   //choose the correct action
   switch (action) {
     //move north command
@@ -279,6 +276,7 @@ function playGame() {
       break;
 
     default:
+	  //message if the player tries to take an item that isn't in the current location
       gameMessage = notValid;
 	  console.log(notValid.includes("Invalid"));
   }
@@ -370,7 +368,6 @@ function useItem() {
           backpack.splice(backpackIndexNumber, 1);
           //checks location of player
           console.log(mapLocation + " current map location");
-
           gameItems.push("candle");
           itemLocations.push(mapLocation);
           console.log(backpackIndexNumber);
@@ -388,7 +385,6 @@ function useItem() {
           backpack.splice(backpackIndexNumber, 1);
           //check location of player
           console.log(mapLocation + " current map location");
-
           gameItems.push("picture");
           itemLocations.push(mapLocation);
           console.log(backpackIndexNumber);
@@ -454,8 +450,6 @@ function render() {
       output.innerHTML += "<br>You notice a <strong>" + gameItems[i] + "</strong>.  It appears to be useful somehow. <br>";
     }
   }
-
-  
   output.innerHTML += "<br>" + gameMessage + "<br>";
 
   //This displays the contents in the backpack
