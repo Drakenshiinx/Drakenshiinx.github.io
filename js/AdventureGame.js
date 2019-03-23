@@ -1,4 +1,4 @@
-//*****CODE FOR THE BUTTON ANIMATION ON THE START PAGE****
+//*****CODE FOR THE BUTTON ANIMATION ON THE START PAGE*****
 var shadowButton = function () {
 var duration = 0.3;
 var button = document.getElementById("startButton");
@@ -17,8 +17,9 @@ if (window.addEventListener) {
 } else if (window.attachEvent)  {
   window.attachEvent('load', shadowButton);
 }
-//*****END CODE FOR THE BUTTON ANIMATION ON THE START PAGE****
+//*****END CODE FOR THE BUTTON ANIMATION ON THE START PAGE*****
 
+//*****START CODE FOR THE ADVENTURE GAME*****
 //variable for the enter key
 const ENTER = 13;
 
@@ -458,3 +459,4 @@ function render() {
   }
   input.value = "";
 }
+//*****END CODE FOR THE ADVENTURE GAME*****
