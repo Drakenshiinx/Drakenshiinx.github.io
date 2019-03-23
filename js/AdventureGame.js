@@ -1,3 +1,4 @@
+//*****CODE FOR THE BUTTON ANIMATION ON THE START PAGE****
 var shadowButton = function () {
 var duration = 0.3;
 var button = document.getElementById("startButton");
@@ -16,6 +17,7 @@ if (window.addEventListener) {
 } else if (window.attachEvent)  {
   window.attachEvent('load', shadowButton);
 }
+//*****END CODE FOR THE BUTTON ANIMATION ON THE START PAGE****
 
 //variable for the enter key
 const ENTER = 13;
@@ -41,9 +43,6 @@ map[5] = "You enter the bedroom.<br>";
 map[6] = "The followed the stairs that entered the basement.<br>";
 map[7] = "You have entered the Game Room. <br>";
 map[8] = "You have entered the kids bedroom. <br>";
-
-//variable where the player will start
-let mapLocation = 0;
 
 //help messages array
 let helpMessages = [];
@@ -81,6 +80,9 @@ blockedPath[6] = "<i>The deer head mounted on the wall stares into your soul pre
 blockedPath[7] = "<i>Enter a blocked path message for the game room.</i>";
 blockedPath[8] = "<i>Enter a blocked path message for the kids bedroom.</i>";
 
+//variable where the player will start
+let mapLocation = 0;
+
 //items array
 let gameItems = ["key", "cheese", "toy"];
 
@@ -114,20 +116,22 @@ let input = document.querySelector("#input");
 
 //function that will bring the player to the last position they left off at
 function lastPlace() {
+	"use strict";
   let x = localStorage.getItem("playerPosition");
   console.log("saved map location " + x);
   output.innerHTML = map[x];
   image.src = "../images/" + images[x];
-  
 }
 
 function savedGame() {
+	"use strict";
 localStorage.setItem("playerPosition", mapLocation);
 //alert("you saved your game at " + mapLocation);
 }
 
-//sound effect function for when player opens chest with key
+//sound effect function for when player opens chest with key in the toolshed
 function chestOpen(){
+	"use strict";
 	let chestOpening = document.getElementById("Chest");
 	chestOpening.play();
 }
@@ -141,9 +145,6 @@ enterBtn.style.cursor = "pointer";
 enterBtn.addEventListener("click", () => playGame(), false);
 window.addEventListener("keydown", keydownHandler, false);
 
-//display the players location
-//render();
-
 //allows the user to hit enter
 function keydownHandler(event) {
   if (event.keyCode === ENTER) {
@@ -151,19 +152,14 @@ function keydownHandler(event) {
   }
 }
 
-//function for mouse click handler
-//function clickHandler() {
- // playGame();
-//}
-
 //this function is for playing the game
 function playGame() {
-	//"use strict";
-  //get the players input and converts it to lowercase
-let i; 
-
+"use strict";
+//variable for the for loops
+ let i; 
+//get the players input and converts it to lowercase
  userInput = input.value;
-  userInput = userInput.toLowerCase();
+ userInput = userInput.toLowerCase();
 
   //resets the variables from the previous turn
   gameMessage = "";
@@ -273,7 +269,9 @@ let i;
   render();
 }
 
+//this function allows the user to take an item from a room
 function takeItem() {
+  "use strict";
   //find the index number of the item in the items array
   let itemIndexNumber = gameItems.indexOf(item);
   //does the item exist in the game world and is it at the players current location?
@@ -300,6 +298,7 @@ function takeItem() {
 
 //drop item function
 function dropItem() {
+  "use strict";
   //try to drop the item only if the backpack isn't empty
   if (backpack.length !== 0) {
     //find the item's array index number in the backpack
@@ -328,6 +327,7 @@ function dropItem() {
 
 //use item function
 function useItem() {
+  "use strict";
   //find out if the item is in the backpack
   //find the item's array index number in the backpack
   let backpackIndexNumber = backpack.indexOf(item);
@@ -416,7 +416,7 @@ function useItem() {
 
 //this function renders the game
 function render() {
-	
+	"use strict";
 	startBtn.style.display = "none";
 	display.style.display = "block";
 	
